@@ -12,16 +12,14 @@ public class Temple : MonoBehaviour {
 	
 	void Awake ()
 	{
-		state = 0;
-		time = 20.0f;
-		elapsing = false;
+		Init();
 
 		Intro ();
 	}
 
 	void Update ()
 	{
-		if (Time.realtimeSinceStartup >= time)
+		if (Time.realtimeSinceStartup >= time && elapsing)
 		{
 			StopTime();
 			Failure();
@@ -46,15 +44,25 @@ public class Temple : MonoBehaviour {
 		return time - Time.realtimeSinceStartup;
 	}
 
-	private void Intro()
+    public void Init()
 	{
-		Debug.Log ("Intro");
-		//maybe called from somewhere else
-		StartTime ();
-		Debug.Log ("Start");
+		state = 0;
+		time = 20.0f;
+		elapsing = false;
 	}
 
-	private void Failure()
+    public void Intro()
+	{
+		Debug.Log ("Intro");
+	}
+
+	public void MainGame()
+	{
+		StartTime();
+		Debug.Log("Start");
+	}
+
+    public void Failure()
 	{
 		Debug.Log ("Game Over");
 	}
