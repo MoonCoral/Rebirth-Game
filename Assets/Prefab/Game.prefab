@@ -516,7 +516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &155194
 GameObject:
   m_ObjectHideFlags: 1
@@ -1898,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fb500beff740d489011f283854b198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InitialTime: 120
 --- !u!114 &11434602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2128,6 +2129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624e25c3f9e4dbc45a873d52ab9fa570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  temple: {fileID: 11430838}
 --- !u!114 &11450898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2382,6 +2384,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11430838}
         m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11423892}
+        m_MethodName: resetObjects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3535,7 +3548,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1320, y: 555}
+  m_AnchoredPosition: {x: -82.5, y: 553}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22487084
