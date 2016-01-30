@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21249886}
   - 50: {fileID: 5012364}
   - 58: {fileID: 5859782}
-  - 114: {fileID: 11432828}
+  - 114: {fileID: 11455178}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -60,7 +60,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -.239999995}
   serializedVersion: 2
   m_Radius: .219999999
---- !u!114 &11432828
+--- !u!114 &11455178
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -68,15 +68,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 183456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd43b0236070c8b41b6a18c0753e921c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3353f370d3b8d0a4f979aa521c8d1e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .100000001
+  speed: 1
   moving: 0
   up: {fileID: 0}
-  down: {fileID: 21300000, guid: a9bcfd166b05f1342ba4dfd7dd28b530, type: 3}
+  down: {fileID: 0}
   right: {fileID: 0}
-  left: {fileID: 21300000, guid: 4ef73a15064720a4596ef557dd38851c, type: 3}
+  left: {fileID: 0}
   rend: {fileID: 0}
 --- !u!212 &21249886
 SpriteRenderer:

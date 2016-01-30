@@ -12,13 +12,13 @@ public class LightCheck : MonoBehaviour {
 	void Start () {
 		if (nextMirror == null) {
 			// if this object is the target/light sink.
-			transform.LookAt (previousMirror.transform.position);
+			transform.rotation = getAngle(transform.position, previousMirror.transform.position);
 
 			minAngle = transform.rotation.eulerAngles.z - angleVariance;
 			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
 		} else if (previousMirror == null) {
 			// if this object is the light source.
-			transform.LookAt(nextMirror.transform.position);
+			transform.rotation = getAngle(transform.position, nextMirror.transform.position);
 
 			minAngle = transform.rotation.eulerAngles.z - angleVariance;
 			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
@@ -32,10 +32,14 @@ public class LightCheck : MonoBehaviour {
 			double angleToNext = Vector2.Angle(transform.up, toNext);
 
 			if(angleToPrev <= angleToNext) angle = angleToPrev + angle/2;
-			else angle = angleToNext + angle/2;
+			else angle = angleToPrev - angle/2;
 
 			minAngle = angle - angleVariance;
 			maxAngle = angle + angleVariance;
+
+			//Debug.Log(angle);
+			//Debug.Log(angleToPrev);
+			//Debug.Log(angleToNext);
 		}
 	}
 	
@@ -46,14 +50,20 @@ public class LightCheck : MonoBehaviour {
 	/*
 	 * check that this mirror is within tolerance.
 	 */
-	bool inTolerance() { return transform.rotation.eulerAngles.z >= minAngle && transform.rotation.eulerAngles.z <= maxAngle; }
+	public bool inTolerance() { return transform.rotation.eulerAngles.z >= minAngle && transform.rotation.eulerAngles.z <= maxAngle; }
 
 	/*
 	 * check that this and all prier mirrors are within tolerance angle to reflect light from source.
 	 */
-	bool inToleranceFromSource() {
+	public bool inToleranceFromSource() {
 		if (previousMirror != null)
 			return inTolerance () && previousMirror.GetComponent<LightCheck> ().inToleranceFromSource();
 		else return inTolerance();
+	}
+
+	private Quaternion getAngle(Vector3 sourcePos, Vector3 targetPos) {
+		Vector3 dir = targetPos - sourcePos;
+		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+		return Quaternion.Euler(0f, 0f, angle - 90);
 	}
 }
