@@ -21,7 +21,13 @@ public class MovingBlock : MonoBehaviour {
 					transform.position = temp;
 				}
 
-			}		
+
+			}
+			AudioSource audio = gameObject.GetComponent<AudioSource> ();
+			if (!audio.isPlaying) {
+				audio.Play();
+			}
+
 		}
 	}
 
