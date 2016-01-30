@@ -19,12 +19,20 @@ public class LightCheck : MonoBehaviour {
 		} else if (previousMirror == null) {
 			// if this object is the light source.
 			transform.LookAt(nextMirror.transform.position);
+
+			minAngle = transform.rotation.eulerAngles.z - angleVariance;
+			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
 		}
 		else {
 			// if this object is not the light source or sink.
 			Vector2 toPrev = previousMirror.transform.position - transform.position;
 			Vector2 toNext = nextMirror.transform.position - transform.position;
 			double angle = Vector2.Angle(toPrev, toNext);
+			double angleToPrev = Vector2.Angle(transform.up, toPrev);
+			double angleToNext = Vector2.Angle(transform.up, toNext);
+
+			if(angleToPrev <= angleToNext) angle = angleToPrev + angle/2;
+			else angle = angleToNext + angle/2;
 
 			minAngle = angle - angleVariance;
 			maxAngle = angle + angleVariance;
