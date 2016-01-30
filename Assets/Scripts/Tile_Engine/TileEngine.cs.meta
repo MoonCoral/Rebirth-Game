@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ba98818f3fb65804c8afbb28f4dcd87d
-timeCreated: 1454163707
+guid: cf9e10c11340e6b4ca06ceddad706480
+timeCreated: 1454179561
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -17,17 +17,16 @@ MonoImporter:
   - wall1Floor: {fileID: 190044, guid: 1f8510e335fdaf24eadc85be3cecd4be, type: 2}
   - wall1: {fileID: 161018, guid: 84af4b3bd7846a6448db18362b069893, type: 2}
   - wall2Broken: {fileID: 179060, guid: 40378447df72b734eaf1ba3601ee180b, type: 2}
-  - wall2Ceiling: {fileID: 150358, guid: 756ccaa807401a249bcd5cf023c45a87, type: 2}
-  - wall2Floor: {fileID: 125484, guid: 9714b571586385c48a6a4d525df6359c, type: 2}
-  - wall2: {fileID: 142544, guid: 129c88e9eb7b5df46832fdbfb09846c2, type: 2}
-  - wallSide: {fileID: 195254, guid: e76d4e31c8000744aa7fa2d1e2dd19e3, type: 2}
-  - wallSide2: {fileID: 128376, guid: aac64d041c1ace0418b12d9b2a7346aa, type: 2}
+  - wall2Ceiling: {instanceID: 0}
+  - wall2Floor: {instanceID: 0}
+  - wall2: {instanceID: 0}
+  - wallSide: {instanceID: 0}
+  - wallSide2: {instanceID: 0}
   - wallV2: {fileID: 134924, guid: ead075f7a9b209847b4035372d0ece97, type: 2}
   - moveable: {fileID: 168140, guid: 94a91d46ac0e36e4cab2be636ff61dda, type: 2}
   - door: {instanceID: 0}
-  - player: {fileID: 120048, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
   - reward: {instanceID: 0}
-  - map: {instanceID: 0}
+  - map: {fileID: 4900000, guid: f331f9f9e9723ec4eb5cbb5d7a169463, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
