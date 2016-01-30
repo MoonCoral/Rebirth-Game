@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Temple
+  - BottomSand
+  - TopSand
+  - StopWatch
+  - Switch
+  - Unpassable
   layers:
   - Default
   - TransparentFX
