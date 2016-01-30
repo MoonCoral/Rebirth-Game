@@ -73,7 +73,7 @@ public class Temple : MonoBehaviour
 	public void Init()
 	{
 		state = 0;
-		time = initialTime;
+		time = InitialTime;
 		elapsing = false;
 		paused = false;
         player.SetPlayerControl(false);
