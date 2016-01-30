@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Temple : MonoBehaviour {
+public class Temple : MonoBehaviour
+{
+
+    public float InitialTime = 120.0f;
 
 	private int state;
 	private float time;
@@ -15,7 +18,6 @@ public class Temple : MonoBehaviour {
 	{
 		player = FindObjectOfType<Player>();
 	    overlay = FindObjectOfType<Overlay>();
-		
 	}
 
     void Start()
@@ -71,7 +73,7 @@ public class Temple : MonoBehaviour {
 	public void Init()
 	{
 		state = 0;
-		time = 120.0f;
+		time = initialTime;
 		elapsing = false;
 		paused = false;
         player.SetPlayerControl(false);
