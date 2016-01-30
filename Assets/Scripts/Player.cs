@@ -15,17 +15,19 @@ public class Player : MonoBehaviour
     public Sprite right;
     public Sprite left;
     public SpriteRenderer renderer;
+	public GameObject cam;
 
 	// Use this for initialization
 	void Awake ()
 	{
         renderer = this.GetComponent<SpriteRenderer>();
         renderer.sprite = down;
+		cam = GameObject.Find ("Main Camera");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		cam.transform.position = new Vector3 (transform.position.x, transform.position.y, -10);	
 	}
 
     void FixedUpdate()

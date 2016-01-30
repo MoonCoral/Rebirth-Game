@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
+	GameObject camera;
+
 	public float speed = 1;
 	public bool moving;
 
@@ -16,10 +18,14 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 		rend = this.GetComponent<SpriteRenderer> ();
 		rend.sprite = down;
+		camera = GameObject.Find ("Main Camera");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Vector3 pos = transform.position;
+		pos.z = camera.transform.position.z;
+		camera.transform.position = pos;
 	}
 
 	void FixedUpdate() {
