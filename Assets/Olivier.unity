@@ -87,7 +87,13 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &391081284
+--- !u!114 &128424666 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11430838, guid: 188963d99f3333d4181fd80eef6e6223,
+    type: 2}
+  m_PrefabInternal: {fileID: 132720282}
+  m_Script: {fileID: 11500000, guid: 44fb500beff740d489011f283854b198, type: 3}
+--- !u!1001 &132720282
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -125,6 +131,22 @@ Prefab:
     - target: {fileID: 443984, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450238, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
+      propertyPath: temple
+      value: 
+      objectReference: {fileID: 128424666}
+    - target: {fileID: 153004, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22478864, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -82.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22478864, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 553
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
