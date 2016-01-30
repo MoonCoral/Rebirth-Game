@@ -7,7 +7,7 @@ public class TileEngine : MonoBehaviour {
 
 	public GameObject floor1, pillar2, stairsComp,stairsLeft,stairsMid,stairsRight,
 	Switch, wall1Broken,wall1Ceiling, wall1Floor,wall1,wall2Broken,wall2Ceiling,
-	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward;
+	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward, pit1;
 
 	private Player player;
 
@@ -144,6 +144,9 @@ public class TileEngine : MonoBehaviour {
 			break;
 		case 'd' :
 			return door;
+			break;
+		case 'k' :
+			return pit1;
 			break;
 		case 'r' :
 			return null;
