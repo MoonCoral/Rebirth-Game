@@ -1,17 +1,17 @@
-wwwwwwwwww        
-wfffbbfffw        
-wffbsbfffwwww     
-wffffffbffffw     
-dfffffffffffwww   
-wfkffbkfffffffw   
+wwwwwwwwww
+wfffbbfffw
+wffbsbfffwwww
+wffffffbffffw
+dfffffffffffwww
+wfkffbkfffffffw
 wfkfffffffffffwwww
 wwwfffffffffffbsfw
   wfffkffffffkfffw
   wwwwfffffffkkbww
-     wffbssbffffw 
-     wfffbffffffw 
-     wffffffbbffw 
-     wwwwwwwwwwww 
+     wffbssbffffw
+     wfffbffffffw
+     wffffffbbffw
+     wwwwwwwwwwww
 - Objects
 p 1 4 Player
 r 16 7 Reward
