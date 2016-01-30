@@ -23,8 +23,6 @@ public class TileEngine : MonoBehaviour {
 
 	private int objects;
 
-
-
 	// Use this for initialization
 	void Awake () {
 		player = FindObjectOfType<Player>();
@@ -38,7 +36,6 @@ public class TileEngine : MonoBehaviour {
 			string line = mapData[i];
 			if (line[0].Equals('-')) {
 				i++;
-				objects = i;
 				break;
 			}
 
@@ -57,39 +54,8 @@ public class TileEngine : MonoBehaviour {
 		}
 
 		//Add in the Objects
-		int k = -1; //object count
-		while (i < mapData.Length) {
-			string[] line = mapData[i].Split (' ');
-			char c = System.Char.Parse(line[0]);
-
-			if (line[0][0].Equals('-')) {
-				i++;
-				break;
-			}
-
-			if (c.Equals('p'))
-			{
-				int x = System.Int32.Parse(line[1]);
-				int y = System.Int32.Parse(line[2]);
-				player.SetPosition(new Vector3(x, -y, -1));
-			}
-			else
-			{
-				GameObject ob = getTile(c);
-				if (ob != null)
-				{
-					int x = System.Int32.Parse(line[1]);
-					int y = System.Int32.Parse(line[2]);
-					string name = line[3];
-					Vector3 pos;
-					pos = new Vector3(x, -y, 0);
-					GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
-					ob2.name = name;
-				}
-			}
-
-			i++;		
-		}
+		objects = i;
+		i += addObjects();
 
 		//Add rules
 		int p = -1; //rule count
@@ -133,10 +99,6 @@ public class TileEngine : MonoBehaviour {
 				break;
 			}
 		}
-
-		//Add in the Objects
-		addObjects ();
-
 	}
 
 	void Update () {
@@ -198,7 +160,7 @@ public class TileEngine : MonoBehaviour {
 	}
 
 	bool checkWin() {
-		GameObject[] go = GameObject.FindGameObjectsWithTag ("switch");
+		GameObject[] go = GameObject.FindGameObjectsWithTag("switch");
 		for (int i=0; i<go.Length; i++) {
 			if (!go[i].GetComponent<Switch>().triggered) {
 				return false;
@@ -250,36 +212,55 @@ public class TileEngine : MonoBehaviour {
 		}
 	}
 
-	void addObjects() {
+	int addObjects() {
 		int i = objects;
 		while (i < mapData.Length) {
 			string[] line = mapData[i].Split (' ');
+			char c = System.Char.Parse(line[0]);
 			
-			GameObject ob = getTile (System.Char.Parse(line[0]));
-			if (ob != null) {
-				int x = System.Int32.Parse (line[1]);
-				int y = System.Int32.Parse (line[2]);
-				string name = line[3];
-				Vector3 pos;
-				if (name.Equals("Player"))
-					pos = new Vector3 (x, -y, -1);
-				else
-					pos = new Vector3 (x, -y, 0);
-				GameObject ob2 = (GameObject) Instantiate(ob, pos, transform.rotation);
-				ob2.name = name;
-				ob2.transform.parent = transform.FindChild ("Objects");
-			}			
+			if (line[0][0].Equals('-')) {
+				i++;
+				break;
+			}
+			
+			if (c.Equals('p'))
+			{
+				int x = System.Int32.Parse(line[1]);
+				int y = System.Int32.Parse(line[2]);
+				player.SetPosition(new Vector3(x, -y, -1));
+			}
+			else
+			{
+				GameObject ob = getTile(c);
+				if (ob != null)
+				{
+					int x = System.Int32.Parse(line[1]);
+					int y = System.Int32.Parse(line[2]);
+					string name = line[3];
+					Vector3 pos;
+					pos = new Vector3(x, -y, 0);
+					GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
+					ob2.name = name;
+					ob2.transform.parent = this.transform.FindChild("Objects");
+				}
+
+			}
+			
 			i++;		
 		}
+
+		return i - objects;
+
 	}
 
 	public void resetObjects() {
-		GameObject container = GameObject.Find("Objects");
-		Destroy (container);
-		GameObject Objects = new GameObject ();
-		Objects.transform.parent = this.transform;
+		GameObject objects = GameObject.Find ("Objects");
+		int x = objects.transform.childCount;
+		for (int i = 0; i< x; i++) {
+			Destroy (objects.transform.GetChild(i).gameObject);
+		}
 
-		addObjects ();
+		addObjects();
 	}
 
 }
