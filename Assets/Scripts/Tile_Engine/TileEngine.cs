@@ -160,7 +160,7 @@ public class TileEngine : MonoBehaviour {
 	}
 
 	bool checkWin() {
-		GameObject[] go = GameObject.FindGameObjectsWithTag("switch");
+		GameObject[] go = GameObject.FindGameObjectsWithTag("Switch");
 		for (int i=0; i<go.Length; i++) {
 			if (!go[i].GetComponent<Switch>().triggered) {
 				return false;

@@ -65,6 +65,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &113664
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 476404}
+  m_Layer: 0
+  m_Name: Backgrounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &114280
 GameObject:
   m_ObjectHideFlags: 1
@@ -144,6 +159,21 @@ GameObject:
   - 224: {fileID: 22407896}
   m_Layer: 5
   m_Name: SideFrame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &120206
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 491508}
+  m_Layer: 0
+  m_Name: Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,7 +914,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 476404}
+  - {fileID: 491508}
   m_Father: {fileID: 443984}
   m_RootOrder: 1
 --- !u!4 &470592
@@ -899,6 +931,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443984}
   m_RootOrder: 3
+--- !u!4 &476404
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 466694}
+  m_RootOrder: 0
+--- !u!4 &491508
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 466694}
+  m_RootOrder: 1
 --- !u!4 &495992
 Transform:
   m_ObjectHideFlags: 1
@@ -1684,7 +1740,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 122838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba98818f3fb65804c8afbb28f4dcd87d, type: 3}
+  m_Script: {fileID: 11500000, guid: cf9e10c11340e6b4ca06ceddad706480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floor1: {fileID: 193116, guid: 0cc8d0e0b0dcffe40bd309e357ad0282, type: 2}
@@ -1709,6 +1765,8 @@ MonoBehaviour:
   door: {fileID: 0}
   reward: {fileID: 0}
   map: {fileID: 4900000, guid: f331f9f9e9723ec4eb5cbb5d7a169463, type: 3}
+  win: 0
+  inventory: []
 --- !u!114 &11424556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2037,6 +2095,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11450238}
         m_MethodName: isClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 11423892}
+        m_MethodName: resetObjects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
