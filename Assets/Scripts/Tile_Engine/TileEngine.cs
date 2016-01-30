@@ -120,8 +120,8 @@ public class TileEngine : MonoBehaviour {
 			}
 		}
 
-		//if (win)
-			//Debug.Log ("won");
+		if (win)
+			Debug.Log ("won");
 	}
 
 	GameObject getTile(char c) {
