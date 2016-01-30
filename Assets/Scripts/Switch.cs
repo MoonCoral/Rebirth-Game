@@ -17,6 +17,10 @@ public class Switch : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		triggered = false;
 		spriteRend.sprite = norm;
+		AudioSource audio = gameObject.GetComponent<AudioSource> ();
+		if (!audio.isPlaying) {
+			audio.Play();
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
