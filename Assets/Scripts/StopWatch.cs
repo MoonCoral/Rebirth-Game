@@ -58,8 +58,8 @@ public class StopWatch : MonoBehaviour
             }
             time -= Time.deltaTime;
         } else {
-			shortHand.transform.eulerAngles = new Vector3(0, 0, temple.SecondsLeft()/4);
-			longHand.transform.eulerAngles = new Vector3(0, 0, (360*(temple.SecondsLeft()/120))+90);
+			shortHand.transform.eulerAngles = new Vector3(0, 0, temple.SecondsLeft()/(temple.InitialTime/4));
+			longHand.transform.eulerAngles = new Vector3(0, 0, (360*(temple.SecondsLeft()/temple.InitialTime))+90);
 		}
     }
 
