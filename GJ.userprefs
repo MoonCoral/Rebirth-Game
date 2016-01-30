@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StopWatch.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Tile_Engine\TileEngine.cs" Line="260" Column="48" />
+      <File FileName="Assets\Scripts\StopWatch.cs" Line="43" Column="38" />
+      <File FileName="Assets\Scripts\MovingBlock.cs" Line="48" Column="2" />
+      <File FileName="Assets\Scripts\Hourglass.cs" Line="22" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

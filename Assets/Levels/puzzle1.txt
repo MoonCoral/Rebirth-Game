@@ -10,7 +10,7 @@ wfffffbffffffw
 wffffffffbbffw
 wwwwwwdwwwwwww
 - Objects
-p 8 6 Player
+p 6 9 Player
 r 5 7 Reward
 m 2 2 move1
 m 7 2 move2
