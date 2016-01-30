@@ -172,3 +172,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &2116028803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2116028805}
+  - 114: {fileID: 2116028804}
+  m_Layer: 0
+  m_Name: MapImporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2116028804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116028803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba98818f3fb65804c8afbb28f4dcd87d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floor1: {fileID: 193116, guid: 0cc8d0e0b0dcffe40bd309e357ad0282, type: 2}
+  pillar2: {fileID: 168620, guid: be880b867fc3c924f87ed74eb894fb49, type: 2}
+  stairsComp: {fileID: 149190, guid: 02462d51c2d92f74ea84419b85f8e14f, type: 2}
+  stairsLeft: {fileID: 129640, guid: e47b03b3ce80e7541b648d62a977ad9c, type: 2}
+  stairsMid: {fileID: 136274, guid: a0b1a3f0c2c30d147be556dd132ae1d7, type: 2}
+  stairsRight: {fileID: 107580, guid: 1b258b78318ef0143a110d78749783f2, type: 2}
+  Switch: {fileID: 153828, guid: 5743bdfdb82c8d94aac4393e39c4fdb8, type: 2}
+  wall1Broken: {fileID: 191856, guid: 161967c5fb064c44798c0a5f42170ec5, type: 2}
+  wall1Ceiling: {fileID: 107974, guid: 8f2fc5afdf2c64f42ba4722c0d36f6fc, type: 2}
+  wall1Floor: {fileID: 190044, guid: 1f8510e335fdaf24eadc85be3cecd4be, type: 2}
+  wall1: {fileID: 161018, guid: 84af4b3bd7846a6448db18362b069893, type: 2}
+  wall2Broken: {fileID: 179060, guid: 40378447df72b734eaf1ba3601ee180b, type: 2}
+  wall2Ceiling: {fileID: 150358, guid: 756ccaa807401a249bcd5cf023c45a87, type: 2}
+  wall2Floor: {fileID: 125484, guid: 9714b571586385c48a6a4d525df6359c, type: 2}
+  wall2: {fileID: 142544, guid: 129c88e9eb7b5df46832fdbfb09846c2, type: 2}
+  wallSide: {fileID: 195254, guid: e76d4e31c8000744aa7fa2d1e2dd19e3, type: 2}
+  wallSide2: {fileID: 128376, guid: aac64d041c1ace0418b12d9b2a7346aa, type: 2}
+  wallV2: {fileID: 134924, guid: ead075f7a9b209847b4035372d0ece97, type: 2}
+  moveable: {fileID: 168140, guid: 94a91d46ac0e36e4cab2be636ff61dda, type: 2}
+  door: {fileID: 0}
+  player: {fileID: 183456, guid: 21a614912b3e76545ae747dc9098f270, type: 2}
+  reward: {fileID: 0}
+  map: {fileID: 4900000, guid: cea055c7c2f9fe440afd0763b381e5a5, type: 3}
+--- !u!4 &2116028805
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116028803}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1

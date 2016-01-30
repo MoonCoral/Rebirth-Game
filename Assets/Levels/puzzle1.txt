@@ -1,17 +1,21 @@
 wwwwwwwwwwwwww
 wbffffffffbbbw
-wffbsffffffbbw
-wfffffffbsfbbw
+wffbfffffffbbw
+wfffffffbffbbw
 wfffbbbffffbbw
-wfffffbffbffsw
+wfffffbffbfffw
 wfffffbffffbbw
 wffffffffffffw
-wfsfffbffffffw
+wfffffbffffffw
 wffffffffbbffw
 wwwwwwdwwwwwww
-
-m 1 1
-m 1 6
-m 5 9
-r 3 6
-p 8 6
+- Objects
+p 8 6 Player
+r 5 7 Reward
+m 2 2 move1
+m 7 2 move2
+m 10 6 move3
+s 4 2 switch1
+s 9 3 switch2
+s 12 5 switch3
+s 2 8 switch4
