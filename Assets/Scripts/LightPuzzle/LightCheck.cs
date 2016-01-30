@@ -6,19 +6,19 @@ public class LightCheck : MonoBehaviour {
 	public GameObject nextMirror = null;
 	public double angleVariance = 10;
 
-	private double minAngle, maxAngle;
+	private double minAngle, maxAngle, normal;
 
 	// Use this for initialization
 	void Start () {
 		if (nextMirror == null) {
 			// if this object is the target/light sink.
-			transform.rotation = getAngle(transform.position, previousMirror.transform.position);
+			transform.rotation = getRotation(transform.position, previousMirror.transform.position);
 
 			minAngle = transform.rotation.eulerAngles.z - angleVariance;
 			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
 		} else if (previousMirror == null) {
 			// if this object is the light source.
-			transform.rotation = getAngle(transform.position, nextMirror.transform.position);
+			transform.rotation = getRotation(transform.position, nextMirror.transform.position);
 
 			minAngle = transform.rotation.eulerAngles.z - angleVariance;
 			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
@@ -28,18 +28,15 @@ public class LightCheck : MonoBehaviour {
 			Vector2 toPrev = previousMirror.transform.position - transform.position;
 			Vector2 toNext = nextMirror.transform.position - transform.position;
 			double angle = Vector2.Angle(toPrev, toNext);
-			double angleToPrev = Vector2.Angle(transform.up, toPrev);
-			double angleToNext = Vector2.Angle(transform.up, toNext);
+			double angleToPrev = (getVectorAngle(toPrev) + 360) % 360;
+			double angleToNext = (getVectorAngle(toNext) + 360) % 360;
+			if(angleToPrev <= angleToNext) normal = angleToPrev + angle/2 - 90;
+			else normal = angleToPrev - angle/2 - 90;
 
-			if(angleToPrev <= angleToNext) angle = angleToPrev + angle/2;
-			else angle = angleToPrev - angle/2;
-
-			minAngle = angle - angleVariance;
-			maxAngle = angle + angleVariance;
-
-			//Debug.Log(angle);
-			//Debug.Log(angleToPrev);
-			//Debug.Log(angleToNext);
+			minAngle = normal - angleVariance;
+			maxAngle = normal + angleVariance;
+			if(minAngle < 0) minAngle += 360;
+			if(maxAngle < 0) maxAngle += 360;
 		}
 	}
 	
@@ -50,7 +47,15 @@ public class LightCheck : MonoBehaviour {
 	/*
 	 * check that this mirror is within tolerance.
 	 */
-	public bool inTolerance() { return transform.rotation.eulerAngles.z >= minAngle && transform.rotation.eulerAngles.z <= maxAngle; }
+	public bool inTolerance()
+	{
+		if(normal >= angleVariance && normal <= 360 - angleVariance)
+			return transform.rotation.eulerAngles.z >= minAngle && transform.rotation.eulerAngles.z <= maxAngle &&
+					transform.rotation.eulerAngles.z >= 0 && transform.rotation.eulerAngles.z <= 360;
+		else
+			return transform.rotation.eulerAngles.z >= minAngle || transform.rotation.eulerAngles.z <= maxAngle &&
+				transform.rotation.eulerAngles.z >= 0 && transform.rotation.eulerAngles.z <= 360;
+	}
 
 	/*
 	 * check that this and all prier mirrors are within tolerance angle to reflect light from source.
@@ -61,9 +66,14 @@ public class LightCheck : MonoBehaviour {
 		else return inTolerance();
 	}
 
-	private Quaternion getAngle(Vector3 sourcePos, Vector3 targetPos) {
-		Vector3 dir = targetPos - sourcePos;
-		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-		return Quaternion.Euler(0f, 0f, angle - 90);
+	private float getAngle(Vector2 sourcePos, Vector2 targetPos) {
+		Vector2 dir = targetPos - sourcePos;
+		return getVectorAngle(dir);
 	}
+
+	private Quaternion getRotation(Vector2 sourcePos, Vector2 targetPos) {
+		return Quaternion.Euler (0f, 0f, getAngle (sourcePos, targetPos) - 90);
+	}
+
+	private float getVectorAngle(Vector2 target) { return Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg; }
 }
