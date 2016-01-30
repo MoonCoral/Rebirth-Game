@@ -22,7 +22,7 @@ public class Overlay : MonoBehaviour
 	    panel = GameObject.Find("Panel");
 	}
 
-    public void Inroduction()
+    public void Introduction()
     {
         panel.SetActive(false);
         overlayText.SetActive(true);

@@ -70,7 +70,7 @@ public class Temple : MonoBehaviour {
 	public void Intro()
 	{
 		Debug.Log ("Intro");
-		overlay.Inroduction();
+		overlay.Introduction();
 		state = 1;
 	}
 

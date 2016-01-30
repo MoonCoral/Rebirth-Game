@@ -260,14 +260,20 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11404008, guid: 958ed4cc45b3fc748bd9fb158348bdf2, type: 2}
+      propertyPath: m_Text
+      value: 'You have died
+
+        due to your own
+
+        stupidity!
+
+
+        You have two minutes to revive yourself!'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 958ed4cc45b3fc748bd9fb158348bdf2, type: 2}
   m_IsPrefabParent: 0
---- !u!212 &736712869 stripped
-SpriteRenderer:
-  m_PrefabParentObject: {fileID: 21219750, guid: 2eb1094be4805b046aca8b2c5c872fbd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1663953355}
 --- !u!1 &867416286
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,11 +510,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459602, guid: 690d9460b9f2cd84b9d2ce4785a50e47, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -1278
+      value: -1256
       objectReference: {fileID: 0}
     - target: {fileID: 22459602, guid: 690d9460b9f2cd84b9d2ce4785a50e47, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 517
+      value: 502
       objectReference: {fileID: 0}
     - target: {fileID: 22459602, guid: 690d9460b9f2cd84b9d2ce4785a50e47, type: 2}
       propertyPath: m_SizeDelta.x
@@ -607,7 +613,11 @@ Prefab:
     - target: {fileID: 11464104, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
       propertyPath: renderer
       value: 
-      objectReference: {fileID: 736712869}
+      objectReference: {fileID: 0}
+    - target: {fileID: 499628, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11461472, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
