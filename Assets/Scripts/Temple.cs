@@ -11,12 +11,17 @@ public class Temple : MonoBehaviour {
 	private Player player;
 	private Overlay overlay;
 	
-	void Awake ()
+	void Awake()
 	{
 		player = FindObjectOfType<Player>();
 	    overlay = FindObjectOfType<Overlay>();
-		Restart();
+		
 	}
+
+    void Start()
+    {
+        Restart();
+    }
 
 	void Update ()
 	{
@@ -27,7 +32,12 @@ public class Temple : MonoBehaviour {
 			Failure();
 		}
 
-		//if if if
+        /*
+		if ( win)
+	    {
+	        Success();
+	    }
+        */
 	}
 
 	public void StartTime()

@@ -75,4 +75,9 @@ public class Player : MonoBehaviour
     {
         playerControl = toggle;
     }
+
+    public void SetPosition(Vector3 position)
+    {
+        transform.position = position;
+    }
 }
