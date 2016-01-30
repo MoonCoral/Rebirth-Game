@@ -7,14 +7,12 @@ public class Temple : MonoBehaviour {
 	private float time;
 	private bool elapsing;
 
-	public Player player;
-	public Overlay overlay;
+	public Player Player;
+	public Overlay Overlay;
 	
 	void Awake ()
 	{
-		Init();
-
-		Intro ();
+		Restart();
 	}
 
 	void Update ()
@@ -43,7 +41,7 @@ public class Temple : MonoBehaviour {
 
 	public float SecondsLeft()
 	{
-	    if ( elapsing )
+	    if ( !elapsing )
 	    {
 	        return time;
 	    }
@@ -60,27 +58,50 @@ public class Temple : MonoBehaviour {
 	public void Init()
 	{
 		state = 0;
-		time = 120.0f;
+		time = 10.0f;
 		elapsing = false;
 	}
 
 	public void Intro()
 	{
 		Debug.Log ("Intro");
+        Overlay.Inroduction();
 		state = 1;
 	}
 
 	public void MainGame()
 	{
+        Debug.Log("Start");
+        state = 2;
+        Overlay.MainGame();
 		StartTime();
-		Debug.Log("Start");
-		state = 2;
 	}
 
 	public void Failure()
 	{
 		Debug.Log ("Game Over");
+        Overlay.GameOver();
 		state = 3;
 	}
+
+    public void Succes()
+    {
+        Debug.Log("Succes");
+        Overlay.Success();
+        state = 3;
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
+    }
+
+    public void Restart()
+    {
+        Debug.Log("Restart");
+        Init();
+        Intro();
+    }
 
 }

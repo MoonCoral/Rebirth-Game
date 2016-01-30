@@ -23,7 +23,6 @@ public class Hourglass : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(temple.SecondsLeft());
 		topSandImage.fillAmount = temple.SecondsLeft()/120;
 		bottomSandImage.fillAmount = (120-temple.SecondsLeft())/120;
 	}
