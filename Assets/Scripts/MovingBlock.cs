@@ -6,9 +6,7 @@ public class MovingBlock : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			Debug.Log ("Please Move");
 			if (Input.GetButtonUp ("Action")) {
-				Debug.Log ("Please");
 
 				double x = getDirection(other.gameObject);
 
