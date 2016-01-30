@@ -11,6 +11,7 @@ public class Overlay : MonoBehaviour
     private GameObject restartButton;
     private GameObject pauseButton;
     private GameObject panel;
+    private GameObject shadowPanel;
 
 	// Use this for initialization
 	void Awake () {
@@ -20,6 +21,7 @@ public class Overlay : MonoBehaviour
         restartButton = GameObject.Find("Restart Button");
 	    pauseButton = GameObject.Find("Pause Button");
 	    panel = GameObject.Find("Panel");
+	    shadowPanel = GameObject.Find("Shadow Panel");
         
         overlayText.SetActive(false);
         startButton.SetActive(false);
@@ -27,10 +29,12 @@ public class Overlay : MonoBehaviour
         restartButton.SetActive(false);
         pauseButton.SetActive(false);
         panel.SetActive(false);
+        shadowPanel.SetActive(false);
 	}
 
     public void Introduction()
     {
+        shadowPanel.SetActive(true);
         overlayText.SetActive(true);
         overlayText.GetComponentInChildren<Text>().text = "You have died\ndue to your own\nstupidity!\n\nYou have two minutes to revive yourself!";
         startButton.SetActive(true);
@@ -42,6 +46,7 @@ public class Overlay : MonoBehaviour
     public void MainGame()
     {
         overlayText.SetActive(false);
+        shadowPanel.SetActive(false);
         startButton.SetActive(false);
         pauseButton.SetActive(true);
         pauseButton.GetComponentInChildren<Text>().text = "Pause";
