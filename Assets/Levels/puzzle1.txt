@@ -1,11 +1,17 @@
 wwwwwwwwwwwwww
 wbffffffffbbbw
-wfmbsffmfffbbw
+wffbsffffffbbw
 wfffffffbsfbbw
-wfffbbbrfffbbw
+wfffbbbffffbbw
 wfffffbffbffsw
-wfffffbfffmbbw
+wfffffbffffbbw
 wffffffffffffw
 wfsfffbffffffw
 wffffffffbbffw
 wwwwwwdwwwwwww
+
+m 1 1
+m 1 6
+m 5 9
+r 3 6
+p 8 6
