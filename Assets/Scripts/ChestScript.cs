@@ -5,10 +5,13 @@ public class ChestScript : MonoBehaviour {
 
 	public Sprite open;
 	bool openned;
+	GameObject[] stuff;
+	TileEngine te;
 
 	// Use this for initialization
 	void Start () {
 		openned = false;	
+
 	}
 	
 	// Update is called once per frame
