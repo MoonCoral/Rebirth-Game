@@ -6,20 +6,19 @@ public class Temple : MonoBehaviour {
 	private int state;
 	private float time;
 	private bool elapsing;
-
-	public Player player;
-	public Overlay overlay;
 	
 	void Awake ()
 	{
-		Init();
+		state = 0;
+		time = 120.0f;
+		elapsing = false;
 
 		Intro ();
 	}
 
 	void Update ()
 	{
-		if (Time.realtimeSinceStartup >= time && elapsing)
+		if (Time.realtimeSinceStartup >= time)
 		{
 			StopTime();
 			Failure();
@@ -44,25 +43,15 @@ public class Temple : MonoBehaviour {
 		return time - Time.realtimeSinceStartup;
 	}
 
-    public void Init()
-	{
-		state = 0;
-		time = 120.0f;
-		elapsing = false;
-	}
-
-    public void Intro()
+	private void Intro()
 	{
 		Debug.Log ("Intro");
+		//maybe called from somewhere else
+		StartTime ();
+		Debug.Log ("Start");
 	}
 
-	public void MainGame()
-	{
-		StartTime();
-		Debug.Log("Start");
-	}
-
-    public void Failure()
+	private void Failure()
 	{
 		Debug.Log ("Game Over");
 	}
