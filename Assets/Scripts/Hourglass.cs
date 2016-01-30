@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Hourglass : MonoBehaviour {
 
-	private GameObject timer;
 	private GameObject topSand;
 	private GameObject bottomSand;
 	private Image topSandImage;
@@ -13,8 +12,6 @@ public class Hourglass : MonoBehaviour {
 	public Temple temple;
 
 	void Awake() {
-		timer = GameObject.Find("Hourglass");
-
 		topSand = GameObject.Find("TopSand");
 		bottomSand = GameObject.Find("BottomSand");
 		topSandImage = topSand.GetComponent<Image>();

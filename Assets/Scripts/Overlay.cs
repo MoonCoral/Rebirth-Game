@@ -9,6 +9,8 @@ public class Overlay : MonoBehaviour
     private GameObject startButton;
     private GameObject exitButton;
     private GameObject restartButton;
+    private GameObject pauseButton;
+    private GameObject panel;
 
 	// Use this for initialization
 	void Awake () {
@@ -16,20 +18,25 @@ public class Overlay : MonoBehaviour
 	    startButton = GameObject.Find("Start Button");
         exitButton = GameObject.Find("Exit Button");
         restartButton = GameObject.Find("Restart Button");
+	    pauseButton = GameObject.Find("Pause Button");
+	    panel = GameObject.Find("Panel");
 	}
 
     public void Inroduction()
     {
+        panel.SetActive(false);
         overlayText.SetActive(true);
         startButton.SetActive(true);
         exitButton.SetActive(false);
         restartButton.SetActive(false);
+        pauseButton.SetActive(false);
     }
 
     public void MainGame()
     {
         overlayText.SetActive(false);
         startButton.SetActive(false);
+        pauseButton.SetActive(true);
     }
 
     public void EndGame()
@@ -37,6 +44,7 @@ public class Overlay : MonoBehaviour
         overlayText.SetActive(true);
         exitButton.SetActive(true);
         restartButton.SetActive(true);
+        pauseButton.SetActive(false);
     }
 
     public void GameOver()
@@ -49,5 +57,21 @@ public class Overlay : MonoBehaviour
     {
         EndGame();
         overlayText.GetComponentInChildren<Text>().text = "You have Succeded!";
+    }
+
+    public void Pause(bool toggle)
+    {
+        panel.SetActive(toggle);
+        exitButton.SetActive(toggle);
+        restartButton.SetActive(toggle);
+
+        if (toggle)
+        {
+            pauseButton.GetComponentInChildren<Text>().text = "Unpause";
+        }
+        else
+        {
+            pauseButton.GetComponentInChildren<Text>().text = "Pause";
+        }
     }
 }
