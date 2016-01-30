@@ -3,13 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class Hourglass : MonoBehaviour {
-
+	public Temple temple;
 	private GameObject topSand;
 	private GameObject bottomSand;
 	private Image topSandImage;
 	private Image bottomSandImage;
-
-	public Temple temple;
 
 	void Awake() {
 		topSand = GameObject.Find("TopSand");

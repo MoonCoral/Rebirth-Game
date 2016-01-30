@@ -11,7 +11,7 @@ public class StopWatch : MonoBehaviour {
 	private Image shortHandImage;
 	private GameObject longHand;
 	private Image longHandImage;
-	private float startTime = 2;
+	private float startTime = 2.5f;
 	private float time = 0;
 
 	void Awake() {
@@ -29,8 +29,22 @@ public class StopWatch : MonoBehaviour {
 
 	void Update() {
 		if (time>0.0) {
-			shortHand.transform.Rotate (Vector3.forward * -1);
-			longHand.transform.Rotate (Vector3.forward * 2);
+			if (time<0.5){
+				shortHand.transform.Rotate (Vector3.forward * -1);
+				longHand.transform.Rotate (Vector3.forward * 2);
+			} else if (time<1) {
+				shortHand.transform.Rotate (Vector3.forward * -2);
+				longHand.transform.Rotate (Vector3.forward * 4);
+			} else if (time<1.5) {
+				shortHand.transform.Rotate (Vector3.forward * -4);
+				longHand.transform.Rotate (Vector3.forward * 8);
+			} else if (time<2) {
+				shortHand.transform.Rotate (Vector3.forward * -8);
+				longHand.transform.Rotate (Vector3.forward * 16);
+			} else if (time<2.5) {
+				shortHand.transform.Rotate (Vector3.forward * -16);
+				longHand.transform.Rotate (Vector3.forward * 32);
+			}
 			time-=Time.deltaTime;
 		}
 	}
