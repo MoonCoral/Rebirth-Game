@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rend = this.GetComponent<SpriteRenderer> ();
+		rend.sprite = down;
 	}
 	
 	// Update is called once per frame
