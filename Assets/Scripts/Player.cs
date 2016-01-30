@@ -5,16 +5,18 @@ using UnityEngine.Networking;
 public class Player : MonoBehaviour
 {
 
-	public Animator anim;
+	public Animator anim_controller;
 
     public float speed = 1;
     public bool playerControl = false;	
 	public GameObject cam;
 
+
+
 	// Use this for initialization
 	void Awake ()
 	{
-		anim = this.GetComponent<Animator> ();
+		anim_controller = this.GetComponent<Animator> ();
 		cam = GameObject.Find ("Main Camera");
 	}
 	
@@ -34,34 +36,34 @@ public class Player : MonoBehaviour
 			transform.position = temp;
 						
 			if (Input.GetAxis("Horizontal") > 0) {
-				anim.SetBool("right", true);
-				anim.SetBool("left", false);
-				anim.SetBool("up", false);
-				anim.SetBool("down", false);
+				anim_controller.SetBool("right", true);
+				anim_controller.SetBool("left", false);
+				anim_controller.SetBool("up", false);
+				anim_controller.SetBool("down", false);
 			}
             else if (Input.GetAxis("Horizontal") < 0) {
-				anim.SetBool("right", false);
-				anim.SetBool("left", true);
-				anim.SetBool("up", false);
-				anim.SetBool("down", false);
+				anim_controller.SetBool("right", false);
+				anim_controller.SetBool("left", true);
+				anim_controller.SetBool("up", false);
+				anim_controller.SetBool("down", false);
 			}
             else if (Input.GetAxis("Vertical") > 0) {
-				anim.SetBool("right", false);
-				anim.SetBool("left", false);
-				anim.SetBool("up", true);
-				anim.SetBool("down", false);
+				anim_controller.SetBool("right", false);
+				anim_controller.SetBool("left", false);
+				anim_controller.SetBool("up", true);
+				anim_controller.SetBool("down", false);
 			}
             else if (Input.GetAxis("Vertical") < 0) {
-				anim.SetBool("right", false);
-				anim.SetBool("left", false);
-				anim.SetBool("up", false);
-				anim.SetBool("down", true);
+				anim_controller.SetBool("right", false);
+				anim_controller.SetBool("left", false);
+				anim_controller.SetBool("up", false);
+				anim_controller.SetBool("down", true);
+			
 			} else {
-				anim.SetBool("right", false);
-				anim.SetBool("left", false);
-				anim.SetBool("up", false);
-				anim.SetBool("down", false);
-
+				anim_controller.SetBool("right", false);
+				anim_controller.SetBool("left", false);
+				anim_controller.SetBool("up", false);
+				anim_controller.SetBool("down", false);
 			}
 
         }
@@ -75,8 +77,8 @@ public class Player : MonoBehaviour
     {
         playerControl = toggle;
     }
-
-    public void SetPosition(Vector3 position)
+	
+	public void SetPosition(Vector3 position)
     {
         transform.position = position;
     }

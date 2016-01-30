@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01529dfb6ce372346b3c0943fb648666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim_controller: {fileID: 0}
   speed: .100000001
   playerControl: 1
   cam: {fileID: 0}

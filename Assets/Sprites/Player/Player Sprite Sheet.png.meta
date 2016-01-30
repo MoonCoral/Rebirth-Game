@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: 15d5d59a4340fcb4a9e5ef932ad9d25d
-timeCreated: 1454149331
+guid: 771c447686b479244aeadce24eeaf680
+timeCreated: 1454106889
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player Sprite Down
-    21300002: Player Left
-    21300004: Player Right
-    21300006: Player Sprite Up
-    21300008: Player Down
-    21300010: Player Up
+    21300000: Player Sprite Sheet_0
+    21300002: Player Sprite Sheet_1
+    21300004: Player Sprite Sheet_2
+    21300006: Player Sprite Sheet_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,7 +53,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Player Down
+    - name: Player Sprite Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -63,9 +61,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player Left
+    - name: Player Sprite Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -73,9 +71,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player Right
+    - name: Player Sprite Sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -83,9 +81,9 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Player Up
+    - name: Player Sprite Sheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -93,7 +91,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
