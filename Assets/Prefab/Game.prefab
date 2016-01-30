@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01529dfb6ce372346b3c0943fb648666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim_controller: {fileID: 0}
   speed: .100000001
   playerControl: 1
   cam: {fileID: 0}
@@ -1693,7 +1693,7 @@ MonoBehaviour:
   stairsLeft: {fileID: 129640, guid: e47b03b3ce80e7541b648d62a977ad9c, type: 2}
   stairsMid: {fileID: 136274, guid: a0b1a3f0c2c30d147be556dd132ae1d7, type: 2}
   stairsRight: {fileID: 107580, guid: 1b258b78318ef0143a110d78749783f2, type: 2}
-  Switch: {fileID: 119368, guid: 5743bdfdb82c8d94aac4393e39c4fdb8, type: 2}
+  Switch: {fileID: 153828, guid: 5743bdfdb82c8d94aac4393e39c4fdb8, type: 2}
   wall1Broken: {fileID: 191856, guid: 161967c5fb064c44798c0a5f42170ec5, type: 2}
   wall1Ceiling: {fileID: 107974, guid: 8f2fc5afdf2c64f42ba4722c0d36f6fc, type: 2}
   wall1Floor: {fileID: 190044, guid: 1f8510e335fdaf24eadc85be3cecd4be, type: 2}
