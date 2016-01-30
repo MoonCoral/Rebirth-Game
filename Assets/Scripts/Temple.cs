@@ -58,7 +58,7 @@ public class Temple : MonoBehaviour {
 	public void Init()
 	{
 		state = 0;
-		time = 10.0f;
+		time = 120.0f;
 		elapsing = false;
 	}
 
