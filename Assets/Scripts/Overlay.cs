@@ -37,6 +37,7 @@ public class Overlay : MonoBehaviour
         overlayText.SetActive(false);
         startButton.SetActive(false);
         pauseButton.SetActive(true);
+        pauseButton.GetComponentInChildren<Text>().text = "Pause";
     }
 
     public void EndGame()

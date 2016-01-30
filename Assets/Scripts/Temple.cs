@@ -14,7 +14,7 @@ public class Temple : MonoBehaviour {
 	void Awake ()
 	{
 		player = FindObjectOfType<Player>();
-		overlay = FindObjectOfType<Overlay>();
+	    overlay = FindObjectOfType<Overlay>();
 		Restart();
 	}
 
@@ -64,6 +64,7 @@ public class Temple : MonoBehaviour {
 		time = 120.0f;
 		elapsing = false;
 		paused = false;
+        player.SetPlayerControl(false);
 	}
 
 	public void Intro()
@@ -78,12 +79,14 @@ public class Temple : MonoBehaviour {
 		Debug.Log("Start");
 		state = 2;
 		overlay.MainGame();
+        player.SetPlayerControl(true);
 		StartTime();
 	}
 
 	public void Failure()
 	{
 		Debug.Log ("Game Over");
+        player.SetPlayerControl(false);
 		overlay.GameOver();
 		state = 3;
 	}
@@ -91,6 +94,7 @@ public class Temple : MonoBehaviour {
 	public void Succes()
 	{
 		Debug.Log("Succes");
+        player.SetPlayerControl(false);
 		overlay.Success();
 		state = 3;
 	}
@@ -114,6 +118,7 @@ public class Temple : MonoBehaviour {
 		{
 			Debug.Log("Unpause");
 			overlay.Pause(false);
+            player.SetPlayerControl(true);
 			StartTime();
 			paused = false;
 		}
@@ -121,6 +126,7 @@ public class Temple : MonoBehaviour {
 		{
 			Debug.Log("Pause");
 			StopTime();
+            player.SetPlayerControl(false);
 			overlay.Pause(true);
 			paused = true;
 		}
