@@ -1008,7 +1008,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1652,6 +1652,7 @@ MonoBehaviour:
   tile19: {fileID: 164634, guid: ddd334c899bc14e4ab239b2741bce6e5, type: 2}
   onOffLight: {fileID: 116314, guid: 7b369d9ef5793f64d94a2e28b9a4b88f, type: 2}
   fakeSwitch: {fileID: 140970, guid: 28f65a9634178e5468a5b14b2ddc960a, type: 2}
+  mirror: {fileID: 0}
   map0: {fileID: 4900000, guid: 738193ba93814344c82a015d1c113db1, type: 3}
   map1: {fileID: 4900000, guid: 004c24e6ddd996949b02b707aa8669f2, type: 3}
   map2: {fileID: 4900000, guid: a1fee80f6c5d65a43b06a78ce8753223, type: 3}
@@ -1792,7 +1793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d27906a59b2ba4e8bedf25f8f17054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialTime: 300
+  InitialTime: 120
 --- !u!114 &11432262
 MonoBehaviour:
   m_ObjectHideFlags: 1
