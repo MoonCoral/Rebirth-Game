@@ -1,12 +1,28 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using System.Collections;
 
-public class PitScript : MonoBehaviour {
+public class PitScript : MonoBehaviour
+{
+
+    private TileEngine tileEngine;
+
+    void Awake()
+    {
+        tileEngine = FindObjectOfType<TileEngine>();
+    }
 
 	void OnTriggerStay2D(Collider2D other) {
 
 		if (other.gameObject.tag == "Player") {
-			other.transform.position = new Vector3(24, -23, -1);				
+		    if (tileEngine.playerRoom() == 2)
+		    {
+                other.transform.position = new Vector3(29, -19, -1);				
+		    }
+		    else
+		    {
+                other.transform.position = new Vector3(21, -28, -1);				
+		    }			
 		}
 		else if (other.gameObject.name.Equals("move")) {
 			BoxCollider2D[] cols  = other.gameObject.GetComponents<BoxCollider2D> ();
