@@ -4,14 +4,25 @@ using System.Collections;
 public class DoorController : MonoBehaviour {
 
 	Animator anim;
-	public bool opened = false;
+	bool opened = false;
 	BoxCollider2D col;
 
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator>();
 	}
-	
+
+	public void toggle()
+	{
+		opened = !opened;
+		//PLAY THE SOUND
+		AudioSource audio = gameObject.GetComponent<AudioSource>();
+		if (!audio.isPlaying)
+		{
+			audio.PlayOneShot(audio.clip);
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (opened) {
@@ -24,27 +35,15 @@ public class DoorController : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			opened=true;
+			toggle ();
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerExit2D(Collider2D other)
+	{
 		if (other.gameObject.tag == "Player") {
-			AudioSource audio = gameObject.GetComponent<AudioSource>();
-			if (!audio.isPlaying)
-			{
-				audio.PlayOneShot(audio.clip);
-			}
+			toggle ();
 		}
 	}
-
-	void OnTriggerLeave2D(Collider2D other) {
-		if (other.gameObject.tag == "Player") {
-			AudioSource audio = gameObject.GetComponent<AudioSource>();
-			if (!audio.isPlaying)
-			{
-				audio.PlayOneShot(audio.clip);
-			};
-		}
-	}
+		
 }
