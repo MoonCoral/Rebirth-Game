@@ -152,7 +152,8 @@ public class TileEngine : MonoBehaviour {
         {
 			getReward[playerRoom()] = true;
             Debug.Log("chest unlocked");
-			audioSource.PlayOneShot ();
+			if(!audioSource.isPlaying)
+				audioSource.Play ();
 
 		}
 
