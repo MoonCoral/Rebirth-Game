@@ -5,7 +5,7 @@ using System.Collections;
 public class LightCheck : MonoBehaviour {
 	public GameObject previousMirror = null;
 	public GameObject nextMirror = null;
-	public double angleVariance = 10;
+	public double angleVariance = 30;
 
 	private int setup;
 	private double minAngle, maxAngle, normal;
@@ -61,6 +61,9 @@ public class LightCheck : MonoBehaviour {
                 Debug.Log("Previous!");
                 this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
                 setup++;
+
+                GetComponentInChildren<ParticleSystem>().enableEmission = true;
+                GetComponentInChildren<ParticleSystem>().startLifetime = 6;
             }
         }
 
@@ -71,6 +74,7 @@ public class LightCheck : MonoBehaviour {
                 Debug.Log("Next!");
                 this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
                 setup++;
+                this.gameObject.AddComponent<TestLightSwitch>();
             }
         }
 	}

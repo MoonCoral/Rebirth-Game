@@ -5,8 +5,9 @@ public class TestLightSwitch : MonoBehaviour {
 	public GameObject lightSink = null;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start()
+	{
+	    lightSink = this.gameObject;
 	}
 	
 	// Update is called once per frame

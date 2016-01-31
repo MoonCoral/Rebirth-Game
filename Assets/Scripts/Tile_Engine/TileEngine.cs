@@ -149,9 +149,9 @@ public class TileEngine : MonoBehaviour {
 
 		//check rules 
 		if (!getReward[playerRoom()] && checkSwitches ())
-        {
+		{
 			getReward[playerRoom()] = true;
-            Debug.Log("chest unlocked");
+			Debug.Log("chest unlocked");
 			if(!audioSource.isPlaying)
 				audioSource.Play ();
 
@@ -181,9 +181,9 @@ public class TileEngine : MonoBehaviour {
 	GameObject getTile(char c) {
 
 		switch (c) {
-        case 'a' :
-		    return fakeSwitch;
-            break;
+		case 'a' :
+			return fakeSwitch;
+			break;
 		case 'w':
 			return wall1;
 			break;
@@ -196,9 +196,9 @@ public class TileEngine : MonoBehaviour {
 		case 'm' : 
 			return moveable;
 			break;
-        case 'n':
-            return mirror;
-            break;
+		case 'n':
+			return mirror;
+			break;
 		case 's' :
 			return Switch;
 			break;
@@ -410,7 +410,7 @@ public class TileEngine : MonoBehaviour {
 				Vector3 pos;
 				pos = new Vector3(x, -y, 0);
 				GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
-				ob2.name = name;
+				ob2.transform.name = name;
 				ob2.transform.parent = this.transform.FindChild(objects);
 			}
 
@@ -424,9 +424,9 @@ public class TileEngine : MonoBehaviour {
 	Vector4 getCo(string[] line) {
 
 		return new Vector4 (float.Parse (line [0]),
-		                    -float.Parse (line [1]),
-		                    float.Parse (line [2]),
-		                    -float.Parse (line [3]));
+							-float.Parse (line [1]),
+							float.Parse (line [2]),
+							-float.Parse (line [3]));
 
 	}
 
