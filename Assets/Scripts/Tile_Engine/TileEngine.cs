@@ -227,13 +227,24 @@ public class TileEngine : MonoBehaviour {
 	}
 	
 	public bool checkSwitches() {
-		GameObject[] go = GameObject.FindGameObjectsWithTag("Switch");
-		for (int i=0; i<go.Length; i++) {
-			if (!go[i].GetComponent<Switch>().triggered) {
-				return false;
+
+		if (playerRoom () != 0) {
+
+			GameObject[] switches = GameObject.FindGameObjectsWithTag ("Switch");
+
+			for (int i=0; i< switches.Length; i++) {
+				if ( switches[i].transform.IsChildOf(GameObject.Find("Objects" + playerRoom ()).transform) )
+				{
+					if (!switches[i].GetComponent<Switch>().triggered) {
+						return false;
+					}
+				}
 			}
+			return true;
+
+		} else {
+			return false;
 		}
-		return true;
 	}
 
 	void create(string obName, string condition) {
