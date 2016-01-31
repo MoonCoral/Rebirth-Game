@@ -20,11 +20,16 @@ public class pitTrapScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (sw.GetComponent<Switch> ().triggered == true) {
-			triggered = true;
-			this.GetComponent<SpriteRenderer>().sprite = pit;
-			this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
-		}	
+		char n = this.name[4];
+		sw = GameObject.Find ("switchT" + n);
+
+		if (sw != null) {
+			if (sw.GetComponent<Switch> ().triggered == true) {
+				triggered = true;
+				this.GetComponent<SpriteRenderer> ().sprite = pit;
+				this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
+			}	
+		}
 	}
 
 

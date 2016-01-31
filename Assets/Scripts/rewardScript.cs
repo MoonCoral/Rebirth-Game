@@ -16,8 +16,11 @@ public class rewardScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		collected = roomChest.GetComponent<ChestScript>().openned;
+		roomChest = this.transform.parent.transform.FindChild ("Chest").gameObject;
 
+		if (roomChest != null) {
+			collected = roomChest.GetComponent<ChestScript>().openned;
+		}
 
 	
 	}
