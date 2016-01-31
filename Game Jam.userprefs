@@ -1,10 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Tile_Engine\TileEngine.cs">
     <Files>
-      <File FileName="Assets\Scripts\Overlay.cs" Line="118" Column="20" />
-      <File FileName="Assets\Scripts\Temple.cs" Line="121" Column="22" />
-      <File FileName="Assets\Scripts\Tile_Engine\TileEngine.cs" Line="1019" Column="1" />
+      <File FileName="Assets\Scripts\Temple.cs" Line="168" Column="1" />
+      <File FileName="Assets\Scripts\Overlay.cs" Line="70" Column="52" />
+      <File FileName="Assets\Scripts\Tile_Engine\TileEngine.cs" Line="157" Column="28" />
+      <File FileName="Assets\Scripts\BigButton.cs" Line="15" Column="38" />
+      <File FileName="Assets\Scripts\StopWatch.cs" Line="31" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
