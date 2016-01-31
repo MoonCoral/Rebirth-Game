@@ -4,7 +4,7 @@ c 16 7 Chest
 m 7 8 move
 m 10 8 move
 m 14 10 move
-s 4 2 switchT1
+a 4 2 switchT1
 s 15 7 switch1
 s 9 10 switch2
 s 10 10 switch3
