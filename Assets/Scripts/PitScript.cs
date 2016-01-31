@@ -6,14 +6,17 @@ public class PitScript : MonoBehaviour
 {
 
     private TileEngine tileEngine;
+	AudioSource audio;
 
     void Awake()
     {
         tileEngine = FindObjectOfType<TileEngine>();
+		audio = this.GetComponent<AudioSource> ();
     }
 
 	void OnTriggerStay2D(Collider2D other) {
-
+		if (!audio.isPlaying)
+			audio.PlayOneShot;
 		if (other.gameObject.tag == "Player") {
 		    if (tileEngine.playerRoom() == 2)
 		    {
