@@ -22,6 +22,7 @@ public class TileEngine : MonoBehaviour {
 
 	public bool[] getReward;
 	GameObject[] inventory;
+	AudioSource audioSource;
 	public int capacity;
 	
 	private Dictionary<string, Dictionary<GameObject, Vector3>> objectList;
@@ -30,6 +31,8 @@ public class TileEngine : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+
+		audioSource = this.gameObject.GetComponent<AudioSource> ();
 
 		getReward = new bool[] {false, false, false, false, false};
 		inventory = new GameObject[4]; // 4 = user inventory capacity
@@ -149,6 +152,8 @@ public class TileEngine : MonoBehaviour {
         {
 			getReward[playerRoom()] = true;
             Debug.Log("chest unlocked");
+			audioSource.PlayOneShot ();
+
 		}
 
 		if (playerRoom () != 0) {
