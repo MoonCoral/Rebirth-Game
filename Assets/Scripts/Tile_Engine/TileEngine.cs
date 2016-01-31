@@ -327,7 +327,12 @@ public class TileEngine : MonoBehaviour {
 	
 	public bool checkSwitches() {
 
-		if (playerRoom () != 0) {
+	    if (playerRoom() == 3)
+	    {
+	        return GetComponentInChildren<TestLightSwitch>().solved;
+	    }
+
+		else if (playerRoom () != 0) {
 
 			GameObject[] switches = GameObject.FindGameObjectsWithTag ("Switch");
 

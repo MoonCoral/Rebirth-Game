@@ -112,6 +112,8 @@ public class LightCheck : MonoBehaviour {
 			maxAngle = normal + angleVariance;
 			if (minAngle < 0) minAngle += 360;
 			if (maxAngle < 0) maxAngle += 360;
+
+            Debug.Log(this.name + ": " + minAngle + " : " + maxAngle);
 		}
 	}
 	
