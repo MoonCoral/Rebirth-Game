@@ -117,6 +117,8 @@ MonoBehaviour:
   previousMirror: {fileID: 0}
   nextMirror: {fileID: 0}
   angleVariance: 10
+  EmiterSprite: {fileID: 21300000, guid: 0fef7056165e12944a364c2f6a791c86, type: 3}
+  SinkSprite: {fileID: 21300000, guid: 09bb75affc5520d4b8068cc4a95941f1, type: 3}
 --- !u!198 &19842406
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1316,6 +1318,16 @@ Prefab:
       propertyPath: CollisionModule.dampen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EmiterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fef7056165e12944a364c2f6a791c86,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: SinkSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09bb75affc5520d4b8068cc4a95941f1,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166174}

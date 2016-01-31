@@ -7,6 +7,8 @@ public class LightCheck : MonoBehaviour {
 	public GameObject nextMirror = null;
 	public double angleVariance = 30;
 
+    public Sprite EmiterSprite, SinkSprite;
+
 	private int setup;
 	private double minAngle, maxAngle, normal;
 
@@ -64,6 +66,8 @@ public class LightCheck : MonoBehaviour {
 
                 GetComponentInChildren<ParticleSystem>().enableEmission = true;
                 GetComponentInChildren<ParticleSystem>().startLifetime = 6;
+                GetComponent<SpriteRenderer>().sprite = EmiterSprite;
+                GetComponent<Rigidbody2D>().isKinematic = true;
             }
         }
 
@@ -75,6 +79,8 @@ public class LightCheck : MonoBehaviour {
                 this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
                 setup++;
                 this.gameObject.AddComponent<TestLightSwitch>();
+                GetComponent<SpriteRenderer>().sprite = SinkSprite;
+                GetComponent<Rigidbody2D>().isKinematic = true;
             }
         }
 	}
