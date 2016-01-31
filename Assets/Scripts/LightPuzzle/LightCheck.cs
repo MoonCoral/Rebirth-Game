@@ -5,7 +5,7 @@ using System.Collections;
 public class LightCheck : MonoBehaviour {
 	public GameObject previousMirror = null;
 	public GameObject nextMirror = null;
-	public double angleVariance = 30;
+	public double angleVariance = 5;
 
     public Sprite EmiterSprite, SinkSprite;
 
