@@ -25,8 +25,6 @@ public class TileEngine : MonoBehaviour {
 	private GameObject[] skip;
 	private Dictionary<string, string[]> rules; 
 
-	public int curLoc;
-	
 	// Use this for initialization
 	void Awake () {
 
@@ -141,8 +139,6 @@ public class TileEngine : MonoBehaviour {
 
 	void Update () {
 
-		curLoc = playerRoom ();
-
 		//check rules 
 		if (checkSwitches ())
 			getReward = true;
@@ -151,10 +147,7 @@ public class TileEngine : MonoBehaviour {
 				win = true;
 		}
 
-		string ruleSet;
-		Vector3 playerPos = player.GetPosition();
-		//implement finding in which room the player is
-		ruleSet = "Rules1";
+		string ruleSet = "Rules"+playerRoom();
 
 		for (int i = 0; i<rules[ruleSet].Length; i++) {
 			if (rules[ruleSet][i] != null) {
@@ -238,21 +231,6 @@ public class TileEngine : MonoBehaviour {
 		return true;
 	}
 
-	bool checkWin(String condition) {
-		/*string[] conditions = condition.Split ('&');
-		for (int i = 0; i<conditions.Length; i++) {
-			if (conditions[i].StartsWith("have")) {
-				string obj = conditions[i].Split(' ')[1];
-				foreach (KeyValuePair<GameObject, Vector3> entry in objectList) {
-					if (entry.Key.name.Equals(obj)) {
-						if (!Array.Exists (inventory, element => element.Equals(entry.Key))) return false;
-					}
-				}
-			}
-		}	*/	
-		return true;
-	}
-
 	void create(string obName, string condition) {
 		/*string[] conditions = condition.Split ('&');
 		for (int i = 0; i<conditions.Length; i++) {
@@ -271,10 +249,7 @@ public class TileEngine : MonoBehaviour {
 			}
 		}*/
 
-		string ruleSet;
-		Vector3 playerPos = player.GetPosition();
-		//implement finding in which room the player is
-		ruleSet = "Rules1";
+		string ruleSet = "Rules"+playerRoom();
 
 		if (checkWin()) {
 			foreach (KeyValuePair<GameObject, Vector3> entry in objectList[ruleSet]) {
@@ -345,7 +320,6 @@ public class TileEngine : MonoBehaviour {
 		Vector3 pos = player.GetPosition ();
 		string[] line = map1.text.Split ('\n')[1].Split (' ');
 		Vector4 room = getCo (line);
-		Debug.Log ("POS: "+pos.ToString()+" Area: "+room.ToString());
 
 		if (room.x <= pos.x && pos.x <= room.z) {
 			if (room.y > pos.y && pos.y > room.w)
@@ -373,10 +347,7 @@ public class TileEngine : MonoBehaviour {
 
 	public void resetObjects() {
 
-
-
-
-		string name = "Objects"+curLoc;
+		string name = "Objects"+playerRoom();
 		GameObject objects = GameObject.Find (name);
 		int x = objects.transform.childCount;
 		for (int i = 0; i< x; i++) {
