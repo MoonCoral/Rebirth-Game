@@ -1,9 +1,9 @@
 - Objects1
-16 0 29 10
+15 0 28 10
 c 5 7 Chest
-m 2 2 move1
-m 7 2 move2
-m 10 6 move3
+m 2 2 move
+m 7 2 move
+m 10 6 move
 s 4 2 switch1
 s 9 3 switch2
 s 12 5 switch3

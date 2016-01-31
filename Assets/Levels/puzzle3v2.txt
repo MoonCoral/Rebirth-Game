@@ -1,5 +1,5 @@
 - Objects3
-0 15 12 25 Offset
+0 14 12 24 Offset
 c 6 5 Chest
 l 6 2 mirror1
 l 3 3 mirror2

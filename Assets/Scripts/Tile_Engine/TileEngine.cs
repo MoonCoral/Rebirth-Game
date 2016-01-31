@@ -7,7 +7,10 @@ public class TileEngine : MonoBehaviour {
 
 	public GameObject floor1, pillar2, stairsComp,stairsLeft,stairsMid,stairsRight,
 	Switch, wall1Broken,wall1Ceiling, wall1Floor,wall1,wall2Broken,wall2Ceiling,
-	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward, chest, pit1, corpse;
+	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward, chest, pit1, corpse,
+	center, northCarpet, southCarpet, westCarpet, eastCarpet, tile0, tile1, tile2, tile3,
+	tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14,
+	tile15, tile16, tile17, tile18, tile19;
 
 	private Player player;
 
@@ -201,6 +204,84 @@ public class TileEngine : MonoBehaviour {
 			break;
 		case 'z' :
 			return corpse;
+			break;
+		case 'x' :
+			return stairsMid;
+			break;
+		case 'h' :
+			return center;
+			break;
+		case 'q' :
+			return northCarpet;
+			break;
+		case 'e' :
+			return eastCarpet;
+			break;
+		case 'y' :
+			return westCarpet;
+			break;
+		case 'u' :
+			return southCarpet;
+			break;
+		case '0' :
+			return tile0;
+			break;
+		case '1' :
+			return tile1;
+			break;
+		case '2' :
+			return tile2;
+			break;
+		case '3' :
+			return tile3;
+			break;
+		case '4' :
+			return tile4;
+			break;
+		case '5' :
+			return tile5;
+			break;
+		case '6' :
+			return tile6;
+			break;
+		case '7' :
+			return tile7;
+			break;
+		case '8' :
+			return tile8;
+			break;
+		case '9' :
+			return tile9;
+			break;
+		case '<' :
+			return tile10;
+			break;
+		case '%' :
+			return tile11;
+			break;
+		case '>' :
+			return tile12;
+			break;
+		case '?' :
+			return tile13;
+			break;
+		case '!' :
+			return tile14;
+			break;
+		case '&' :
+			return tile15;
+			break;
+		case '*' :
+			return tile16;
+			break;
+		case '#' :
+			return tile17;
+			break;
+		case '=' :
+			return tile18;
+			break;
+		case '+' :
+			return tile19;
 			break;
 		}
 
