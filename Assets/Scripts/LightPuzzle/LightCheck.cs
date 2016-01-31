@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using UnityEngine;
 using System.Collections;
 
 public class LightCheck : MonoBehaviour {
@@ -6,42 +7,116 @@ public class LightCheck : MonoBehaviour {
 	public GameObject nextMirror = null;
 	public double angleVariance = 10;
 
+	private int setup;
 	private double minAngle, maxAngle, normal;
+
+	void Awake()
+	{
+		setup = 0;
+
+		if (previousMirror == null)
+		{
+			if (this.name == "mirror1")
+			{
+				this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
+				setup++;
+			}
+		}
+
+		if (nextMirror != null)
+		{
+			if (this.name == "mirror5")
+			{
+				this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
+				setup++;
+			}
+		}
+	}
+
+	public void SetPrevious(LightCheck previousLightCheck)
+	{
+		previousMirror = previousLightCheck.gameObject;
+
+		StringBuilder n = new StringBuilder(this.name);
+
+		n[6]++;
+
+		Transform next = this.transform.parent.FindChild(n.ToString());
+
+		if (next != null)
+		{
+			next.gameObject.GetComponent<LightCheck>().SetPrevious(this);
+			Debug.Log(previousLightCheck.name + " -> " + this.name);
+		}
+		setup++;
+	}
+
+	public void SetNext(LightCheck nextLightCheck)
+	{
+		nextMirror = nextLightCheck.gameObject;
+
+		StringBuilder n = new StringBuilder(this.name);
+
+		n[6]--;
+
+		Transform next = this.transform.parent.FindChild(n.ToString());
+
+		if (next != null)
+		{
+			next.gameObject.GetComponent<LightCheck>().SetNext(this);
+			Debug.Log(nextLightCheck.name + " <- " + this.name);
+		}
+		setup++;
+	}
 
 	// Use this for initialization
 	void Start () {
-		if (nextMirror == null) {
+		
+	}
+
+	private void delayedStart()
+	{
+		if (nextMirror == null)
+		{
 			// if this object is the target/light sink.
 			transform.rotation = getRotation(transform.position, previousMirror.transform.position);
 
 			minAngle = transform.rotation.eulerAngles.z - angleVariance;
 			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
-		} else if (previousMirror == null) {
+		}
+		else if (previousMirror == null)
+		{
 			// if this object is the light source.
 			transform.rotation = getRotation(transform.position, nextMirror.transform.position);
 
 			minAngle = transform.rotation.eulerAngles.z - angleVariance;
 			maxAngle = transform.rotation.eulerAngles.z + angleVariance;
 		}
-		else {
+		else
+		{
 			// if this object is not the light source or sink.
 			Vector2 toPrev = previousMirror.transform.position - transform.position;
 			Vector2 toNext = nextMirror.transform.position - transform.position;
 			double angle = Vector2.Angle(toPrev, toNext);
 			double angleToPrev = (getVectorAngle(toPrev) + 360) % 360;
 			double angleToNext = (getVectorAngle(toNext) + 360) % 360;
-			if(angleToPrev <= angleToNext) normal = angleToPrev + angle/2 - 90;
-			else normal = angleToPrev - angle/2 - 90;
+			if (angleToPrev <= angleToNext) normal = angleToPrev + angle / 2 - 90;
+			else normal = angleToPrev - angle / 2 - 90;
 
 			minAngle = normal - angleVariance;
 			maxAngle = normal + angleVariance;
-			if(minAngle < 0) minAngle += 360;
-			if(maxAngle < 0) maxAngle += 360;
+			if (minAngle < 0) minAngle += 360;
+			if (maxAngle < 0) maxAngle += 360;
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (setup == 2)
+		{
+			delayedStart();
+			setup++;
+		}
 	}
 
 	/*

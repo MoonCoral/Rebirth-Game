@@ -145,7 +145,7 @@ public class TileEngine : MonoBehaviour {
 	void Update () {
 
 		//check rules 
-		if (checkSwitches ())
+		if (!getReward[playerRoom()] && checkSwitches ())
         {
 			getReward[playerRoom()] = true;
             Debug.Log("chest unlocked");
