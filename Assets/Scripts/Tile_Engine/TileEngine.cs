@@ -157,6 +157,8 @@ public class TileEngine : MonoBehaviour {
 		text3.SetActive (true);
 		yield return new WaitForSeconds (1);
 		text.SetActive (false);
+		text2.SetActive (false);
+		text3.SetActive (false);
 		text.GetComponent<Text> ().text = orig;
 		text2.GetComponent<Text> ().text = orig;
 		text3.GetComponent<Text> ().text = orig;
