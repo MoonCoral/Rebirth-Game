@@ -15,11 +15,11 @@
                wfffff>fffffw
 wwwwwwwwwwwww  wfffff?fffffw wwwwwwwwww
 wfbbfffffffbw  wfffff!fffffw wfffbbfffw  
-wfffbfffffffww wffffqqqffffw wffbsbfffwwww  
-wffffffffffffwwwfffyhhhefffwwwffffffbffffw    
-wbbbfffffffbff01234yhhhe56789ffffffffffffwww    
-wwfffffffffbfwwwfffyhhhefffwwwfkffbkfffffffw       
- wwffffffffffw wffffuuuffffw wfkfffffffffffwwww
+wfffbfffffffww wfffffffffffw wffbsbfffwwww  
+wffffffffffffwwwfffffffffffwwwffffffbffffw    
+wbbbfffffffbff01234fffff56789ffffffffffffwww    
+wwfffffffffbfwwwfffffffffffwwwfkffbkfffffffw       
+ wwffffffffffw wfffffffffffw wfkfffffffffffwwww
   wfffbfffffbw wfffff&fffffw wwwfffffffffffbffw     
   wbffbbfffbfw wfffff*ffpzfw   wfffkffffffkfffw   
   wwwffffffffw wfffff#fffffw   wwwwfffffffkkbww
