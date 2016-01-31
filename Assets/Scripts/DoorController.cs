@@ -29,7 +29,6 @@ public class DoorController : MonoBehaviour {
 		} else {
 			anim.SetBool ("opened", false);
 		}
-		opened = false;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
