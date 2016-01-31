@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class TileEngine : MonoBehaviour {
 
@@ -23,6 +24,9 @@ public class TileEngine : MonoBehaviour {
 	public bool[] getReward;
 	GameObject[] inventory;
 	public int capacity;
+	public GameObject text;
+	public GameObject text2;
+	public GameObject text3;
 	
 	private Dictionary<string, Dictionary<GameObject, Vector3>> objectList;
 	private GameObject[] skip;
@@ -30,6 +34,7 @@ public class TileEngine : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		
 		getReward = new bool[] {false, false, false, false, false};
 		inventory = new GameObject[4]; // 4 = user inventory capacity
 
@@ -141,6 +146,22 @@ public class TileEngine : MonoBehaviour {
 
 	}
 
+	IEnumerator ChestOpenText()
+	{
+		String orig = text.GetComponent<Text> ().text;
+		text.GetComponent<Text> ().text = "Chest Unlocked.";
+		text2.GetComponent<Text> ().text = "Chest Unlocked.";
+		text3.GetComponent<Text> ().text = "Chest Unlocked.";
+		text.SetActive (true);
+		text2.SetActive (true);
+		text3.SetActive (true);
+		yield return new WaitForSeconds (1);
+		text.SetActive (false);
+		text.GetComponent<Text> ().text = orig;
+		text2.GetComponent<Text> ().text = orig;
+		text3.GetComponent<Text> ().text = orig;
+	}
+
 	void Update () {
 
 		//check rules 
@@ -148,6 +169,7 @@ public class TileEngine : MonoBehaviour {
 		{
 			getReward[playerRoom()] = true;
 			Debug.Log("chest unlocked");
+			StartCoroutine (ChestOpenText ());
 			AudioSource audio = gameObject.GetComponent<AudioSource>();
 			if (!audio.isPlaying)
 			{
