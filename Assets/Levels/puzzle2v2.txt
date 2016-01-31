@@ -11,6 +11,13 @@ s 10 10 switch3
 r 5 5 Reward
 d 0 4 door
 t 4 3 trap1
+k 2 5 pit1
+k 2 6 pit2
+k 6 5 pit3
+k 6 8 pit4
+k 13 8 pit5
+k 13 9 pit6
+k 14 9 pit7
 - Rules2
 start : no Reward
 create Reward : switch2 & switch3 & switch4
