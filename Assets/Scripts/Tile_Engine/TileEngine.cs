@@ -11,7 +11,7 @@ public class TileEngine : MonoBehaviour {
 
 	private Player player;
 
-	public TextAsset map1, map2, map3, mapBG;
+	public TextAsset map1, map2, map3,map4, mapBG;
 
 	string[] mapData;
 
@@ -147,17 +147,21 @@ public class TileEngine : MonoBehaviour {
 				win = true;
 		}
 
-		string ruleSet = "Rules"+playerRoom();
+		if (playerRoom () != 0) {
 
-		for (int i = 0; i<rules[ruleSet].Length; i++) {
-			if (rules[ruleSet][i] != null) {
-				string[] parts = rules[ruleSet][i].Split(':');
-				if (parts[0].Equals ("win")) {
-					if (checkWin (parts[1])) win = true;
-				} else {
-					if (parts[0].StartsWith ("create")) {
-						string[] result = parts[0].Split(' ');
-						create(result[1], parts[1]);
+			string ruleSet = "Rules" + playerRoom ();
+
+			for (int i = 0; i<rules[ruleSet].Length; i++) {
+				if (rules [ruleSet] [i] != null) {
+					string[] parts = rules [ruleSet] [i].Split (':');
+					if (parts [0].Equals ("win")) {
+						if (checkWin ())
+							win = true;
+					} else {
+						if (parts [0].StartsWith ("create")) {
+							string[] result = parts [0].Split (' ');
+							create (result [1], parts [1]);
+						}
 					}
 				}
 			}
@@ -354,7 +358,25 @@ public class TileEngine : MonoBehaviour {
 			Destroy (objects.transform.GetChild(i).gameObject);
 		}
 
-		addObjects(mapData);
+		switch (playerRoom ()) {
+		case 1:
+			addObjects(map1.text.Split ('\n'));
+			break;
+		case 2:
+			addObjects(map2.text.Split ('\n'));
+			break;
+		case 3:
+			addObjects(map3.text.Split ('\n'));
+			break;
+		/*
+		case 4:
+			addObjects(map4.text.Split ('\n'));
+			break;
+		*/
+		default:
+			break;
+			
+		}
 	}
 
 	public GameObject[] getInventory() {
