@@ -15,7 +15,6 @@ public class DoorController : MonoBehaviour {
 	public void toggle()
 	{
 		opened = !opened;
-		//PLAY THE SOUND
 		AudioSource audio = gameObject.GetComponent<AudioSource>();
 		if (!audio.isPlaying)
 		{
@@ -33,7 +32,7 @@ public class DoorController : MonoBehaviour {
 		opened = false;
 	}
 
-	void OnTriggerStay2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
 			toggle ();
 		}
