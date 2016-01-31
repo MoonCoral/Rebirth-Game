@@ -27,7 +27,7 @@ public class ChestScript : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			if (Input.GetButtonUp ("Action")) {
 
-				if (!openned && te.getReward) {
+				if (!openned && te.getReward[te.playerRoom()]) {
 
 					//transfer contents from chest to player inventory
 					te.getInventory()[0] = stuff[0];

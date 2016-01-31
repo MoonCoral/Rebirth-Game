@@ -4,10 +4,15 @@ using System.Collections;
 public class BigButton : MonoBehaviour {
 
 	public bool top, bottom, left, right;
+
+    private Temple temple;
+
 	GameObject t, b, l ,r;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+	    temple = FindObjectOfType<Temple>();
 
 		t = this.transform.parent.FindChild ("northCarpet").gameObject;
 		b = this.transform.parent.FindChild ("southCarpet").gameObject;
@@ -32,7 +37,7 @@ public class BigButton : MonoBehaviour {
 
 			if (top && bottom
 			    && left && right)
-				Debug.Log("Super Win");
+				temple.Succes();
 
 		}
 

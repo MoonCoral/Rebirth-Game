@@ -20,7 +20,7 @@ public class TileEngine : MonoBehaviour {
 
 	public bool win;
 
-	public bool getReward;
+	public bool[] getReward;
 	GameObject[] inventory;
 	public int capacity;
 	
@@ -31,7 +31,7 @@ public class TileEngine : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-		getReward = false;
+		getReward = new bool[] {false, false, false, false};
 		inventory = new GameObject[4]; // 4 = user inventory capacity
 
 		player = FindObjectOfType<Player>();
@@ -146,10 +146,9 @@ public class TileEngine : MonoBehaviour {
 
 		//check rules 
 		if (checkSwitches ())
-			getReward = true;
-		if (getReward) {
-			if (checkWin ())
-				win = true;
+        {
+			getReward[playerRoom()] = true;
+            Debug.Log("chest unlocked");
 		}
 
 		if (playerRoom () != 0) {
@@ -171,9 +170,6 @@ public class TileEngine : MonoBehaviour {
 				}
 			}
 		}
-
-		if (win)
-			Debug.Log ("won");
 	}
 
 	GameObject getTile(char c) {
