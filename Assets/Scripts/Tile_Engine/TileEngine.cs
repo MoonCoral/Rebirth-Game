@@ -31,7 +31,7 @@ public class TileEngine : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-		getReward = new bool[] {false, false, false, false};
+		getReward = new bool[] {false, false, false, false, false};
 		inventory = new GameObject[4]; // 4 = user inventory capacity
 
 		player = FindObjectOfType<Player>();

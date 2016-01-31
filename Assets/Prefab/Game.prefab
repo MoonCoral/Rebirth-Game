@@ -1626,10 +1626,10 @@ MonoBehaviour:
   trap: {fileID: 160784, guid: e979461a2e459d1499b2d134e12298b7, type: 2}
   corpse: {fileID: 181006, guid: f0228f1ad08355f428ae04c099bc8539, type: 2}
   center: {fileID: 178414, guid: f9d7b14be2283554498755efbd4e6eec, type: 2}
-  northCarpet: {fileID: 139720, guid: 1747ef19fcf8d1f439ed657938582f13, type: 2}
-  southCarpet: {fileID: 122414, guid: 8fb1d7fb56a696644b9f0bff02214091, type: 2}
-  westCarpet: {fileID: 189632, guid: 24b5910f2b651204ba5ced9ab809ce83, type: 2}
-  eastCarpet: {fileID: 106398, guid: 8f06973cfe9ab1b489d77b89110718f9, type: 2}
+  northCarpet: {fileID: 139720, guid: c83ed208618f7ca4a83820985c470b53, type: 2}
+  southCarpet: {fileID: 122414, guid: 8170a9b1d1732c74c87823ea34ea7e98, type: 2}
+  westCarpet: {fileID: 189632, guid: b6377bbac236ab0458caa5964e1559be, type: 2}
+  eastCarpet: {fileID: 106398, guid: ddc634006a1179844833aae08b356b69, type: 2}
   tile0: {fileID: 126014, guid: e4212f1fa4929164990ba8d825ab9a81, type: 2}
   tile1: {fileID: 112864, guid: f4fbd89765b78b84eafcfda70bbc98d4, type: 2}
   tile2: {fileID: 151792, guid: 91d4893fad840a54990a9a3591907805, type: 2}
@@ -1651,6 +1651,7 @@ MonoBehaviour:
   tile18: {fileID: 117806, guid: bff9a164d70b4e4408ebc3b053f083eb, type: 2}
   tile19: {fileID: 164634, guid: ddd334c899bc14e4ab239b2741bce6e5, type: 2}
   onOffLight: {fileID: 116314, guid: 7b369d9ef5793f64d94a2e28b9a4b88f, type: 2}
+  fakeSwitch: {fileID: 140970, guid: 28f65a9634178e5468a5b14b2ddc960a, type: 2}
   map0: {fileID: 4900000, guid: 738193ba93814344c82a015d1c113db1, type: 3}
   map1: {fileID: 4900000, guid: 004c24e6ddd996949b02b707aa8669f2, type: 3}
   map2: {fileID: 4900000, guid: a1fee80f6c5d65a43b06a78ce8753223, type: 3}
@@ -1658,7 +1659,7 @@ MonoBehaviour:
   map4: {fileID: 4900000, guid: 6e8564c911a0c0347846879f370fd426, type: 3}
   mapBG: {fileID: 4900000, guid: b2db1f9c26f1e1f438076c62d396189d, type: 3}
   win: 0
-  getReward: 0
+  getReward: 
   capacity: 0
 --- !u!114 &11424556
 MonoBehaviour:
