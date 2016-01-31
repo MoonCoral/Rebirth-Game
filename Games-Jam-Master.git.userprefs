@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\hideSkull.cs">
+    <Files>
+      <File FileName="Assets\Scripts\rewardScript.cs" Line="20" Column="1" />
+      <File FileName="Assets\Scripts\ChestScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Levels\puzzle1v2.txt" Line="1" Column="1" />
+      <File FileName="Assets\Levels\puzzle2v2.txt" Line="1" Column="1" />
+      <File FileName="Assets\Levels\puzzle3v2.txt" Line="1" Column="1" />
+      <File FileName="Assets\Levels\puzzle4.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tile_Engine\TileEngine.cs" Line="293" Column="11" />
+      <File FileName="Assets\Scripts\hideSkull.cs" Line="21" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
