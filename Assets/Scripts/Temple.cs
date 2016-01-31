@@ -121,7 +121,9 @@ public class Temple : MonoBehaviour
 	{
 		Debug.Log("Succes");
         player.SetPlayerControl(false);
-		overlay.Success();
+		if (state < 3) {
+			overlay.Success ();
+		}
 		state = 3;
 	}
 
