@@ -111,6 +111,10 @@ public class Temple : MonoBehaviour
 		state = 3;
 	}
 
+	public void Credits() {
+		overlay.Credits();
+	}
+
 	public void ExitGame()
 	{
 		Debug.Log("Exit");
