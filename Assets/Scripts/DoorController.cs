@@ -10,17 +10,41 @@ public class DoorController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator>();
-		col = this.gameObject.GetComponent<BoxCollider2D> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (opened) {
 			anim.SetBool ("opened", true);
-			col.enabled = false;
 		} else {
 			anim.SetBool ("opened", false);
-			col.enabled = true;
+		}
+		opened = false;
+	}
+
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.tag == "Player") {
+			opened=true;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Player") {
+			AudioSource audio = gameObject.GetComponent<AudioSource>();
+			if (!audio.isPlaying)
+			{
+				audio.PlayOneShot(audio.clip);
+			}
+		}
+	}
+
+	void OnTriggerLeave2D(Collider2D other) {
+		if (other.gameObject.tag == "Player") {
+			AudioSource audio = gameObject.GetComponent<AudioSource>();
+			if (!audio.isPlaying)
+			{
+				audio.PlayOneShot(audio.clip);
+			};
 		}
 	}
 }
