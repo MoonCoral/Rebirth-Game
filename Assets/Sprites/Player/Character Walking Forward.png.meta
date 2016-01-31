@@ -25,7 +25,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -34,7 +34,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
@@ -45,11 +45,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 32
   alphaIsTransparency: 1
@@ -67,6 +68,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 13}
+        - {x: -9, y: 11}
+        - {x: -10, y: 10}
+        - {x: -10, y: -9}
+        - {x: -9, y: -11}
+        - {x: 7, y: -11}
+        - {x: 9, y: -7}
+        - {x: 9, y: 9}
+        - {x: 6, y: 13}
     - name: Character Walking Forward_1
       rect:
         serializedVersion: 2
@@ -77,6 +88,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 12}
+        - {x: -10, y: 8}
+        - {x: -10, y: -10}
+        - {x: -8, y: -11}
+        - {x: 10, y: -11}
+        - {x: 10, y: 5}
+        - {x: 7, y: 12}
     - name: Character Walking Forward_2
       rect:
         serializedVersion: 2
@@ -87,6 +106,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 13}
+        - {x: -10, y: 12}
+        - {x: -10, y: -5}
+        - {x: -8, y: -10}
+        - {x: 8, y: -10}
+        - {x: 10, y: -3}
+        - {x: 10, y: 5}
+        - {x: 6, y: 13}
     - name: Character Walking Forward_3
       rect:
         serializedVersion: 2
@@ -97,6 +125,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: -9}
+        - {x: -7, y: -10}
+        - {x: 3, y: -10}
+        - {x: 9, y: -7}
+        - {x: 9, y: 10}
+        - {x: 7, y: 13}
+        - {x: -5, y: 13}
+        - {x: -9, y: 6}
     - name: Character Walking Forward_4
       rect:
         serializedVersion: 2
@@ -107,6 +144,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 12}
+        - {x: -10, y: 11}
+        - {x: -10, y: -11}
+        - {x: 9, y: -11}
+        - {x: 9, y: 4}
+        - {x: 6, y: 12}
     - name: Character Walking Forward_5
       rect:
         serializedVersion: 2
@@ -117,6 +161,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 13}
+        - {x: -5, y: 13}
+        - {x: -10, y: 5}
+        - {x: -10, y: -5}
+        - {x: -7, y: -9}
+        - {x: -1, y: -10}
+        - {x: 7, y: -10}
+        - {x: 10, y: -6}
+        - {x: 10, y: 5}
+        - {x: 8, y: 10}
     - name: Character Walking Forward_6
       rect:
         serializedVersion: 2
@@ -127,6 +182,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 13}
+        - {x: -5, y: 13}
+        - {x: -10, y: 7}
+        - {x: -10, y: -9}
+        - {x: -1, y: -10}
+        - {x: 7, y: -10}
+        - {x: 10, y: -6}
+        - {x: 10, y: 9}
+        - {x: 9, y: 12}
     - name: Character Walking Forward_7
       rect:
         serializedVersion: 2
@@ -137,6 +202,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 13}
+        - {x: -4, y: 13}
+        - {x: -9, y: 6}
+        - {x: -9, y: -8}
+        - {x: -6, y: -9}
+        - {x: -1, y: -10}
+        - {x: 4, y: -10}
+        - {x: 9, y: -8}
+        - {x: 9, y: 6}
+        - {x: 7, y: 10}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
