@@ -12,6 +12,7 @@ public class Overlay : MonoBehaviour
     private GameObject pauseButton;
     private GameObject panel;
     private GameObject shadowPanel;
+	private GameObject titleText;
 
 	// Use this for initialization
 	void Awake () {
@@ -21,7 +22,8 @@ public class Overlay : MonoBehaviour
         restartButton = GameObject.Find("Restart Button");
 	    pauseButton = GameObject.Find("Pause Button");
 	    panel = GameObject.Find("Panel");
-	    shadowPanel = GameObject.Find("Shadow Panel");
+		shadowPanel = GameObject.Find("Shadow Panel");
+		titleText = GameObject.Find("Title Text");
         
         overlayText.SetActive(false);
         startButton.SetActive(false);
@@ -30,6 +32,7 @@ public class Overlay : MonoBehaviour
         pauseButton.SetActive(false);
         panel.SetActive(false);
         shadowPanel.SetActive(false);
+		titleText.SetActive(false);
 	}
 
     public void Introduction()
@@ -37,7 +40,9 @@ public class Overlay : MonoBehaviour
         shadowPanel.SetActive(true);
         overlayText.SetActive(true);
         overlayText.GetComponentInChildren<Text>().text = "Chip, you have died...\n You have five minutes to revive yourself!";
-        startButton.SetActive(true);
+		titleText.SetActive(true);
+		titleText.GetComponentInChildren<Text>().text = "REBIRTH";
+		startButton.SetActive(true);
         exitButton.SetActive(false);
         restartButton.SetActive(false);
         pauseButton.SetActive(false);
@@ -47,6 +52,7 @@ public class Overlay : MonoBehaviour
     {
         overlayText.SetActive(false);
         shadowPanel.SetActive(false);
+		titleText.SetActive(false);
         startButton.SetActive(false);
         pauseButton.SetActive(true);
         pauseButton.GetComponentInChildren<Text>().text = "Pause";
@@ -56,6 +62,7 @@ public class Overlay : MonoBehaviour
     {
         overlayText.SetActive(true);
         exitButton.SetActive(true);
+		titleText.SetActive(true);
         restartButton.SetActive(true);
         pauseButton.SetActive(false);
     }
@@ -69,7 +76,7 @@ public class Overlay : MonoBehaviour
     public void Success()
     {
         EndGame();
-        overlayText.GetComponentInChildren<Text>().text = "You have Succeded!";
+        overlayText.GetComponentInChildren<Text>().text = "You have rejoined the world of the living!";
     }
 
     public void Pause(bool toggle)
