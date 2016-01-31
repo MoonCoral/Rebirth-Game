@@ -1,41 +1,41 @@
-                wwwwwwwwwwwwww
-                wbffffffffbbbw
-                wffbfffffffbbw
-                wfffffffbffbbw
-                wfffbbbffffbbw
-                wfffffbffbfffw
-                wfffffbffffbbw
-                wffffffffffffw
-                wfffffbffffffw
-                wffffffffbbffw
-                wwwwwwfwwwwwww
-wwwwwwwwwwwww        wfw       wwwwwwwwww
-wfbbfffffffbw        wfw       wfffbbfffw
-wfffbfffffffww  wwwwwwfwwwwww  wffbfbfffwwww
-wffffffffffffwwwwfffffffffffwwwwffffffbffffw
-wbbbfffffffbfffffffffffffffffffffffffffffffwww
-wwfffffffffbfwwwwfffffffffffwwwwfkffbkfffffffw
- wwffffffffffw  wfffffffffffw  wfkfffffffffffwwww
-  wfffbfffffbw  wfffffffffffw  wwwfffffffffffbffw
-  wbffbbfffbfw  wfffffffffffw    wfffkffffffkfffw
-  wwwffffffffw  wfffffpfffffw    wwwwfffffffkkbww
-    wwwwwwwwww  wfffffffffffw       wffbffbffffw
-                wfffffffffffw       wfffbffffffw
-                wfffffffffffw       wffffffbbffw
-                wfffffffffffw       wwwwwwwwwwww
-                wwwfwwwwwwwww
-                  wfw
-                  wfw
-                wwwfwwwwwwwwww
-                wfffbfkffbffkw
-                wkffbffffbfffw
-                wffbfffffkfffw
-                wffkfffffbfffw
-                wfffffbffffkfw
-                wfbfbbfkkffffw
-                wffbffffffbbbw
-                wfffffffffbffw
-                wffffkffbbfkfw
-                wffbbfffffkfkw
-                wffffffffffffw
-                wwwwwwwwwwwwww
+               wwwwwwwwwwwwww
+               wbffffffffbbbw
+               wffbfffffffbbw
+               wfffffffbffbbw
+               wfffbbbffffbbw
+               wfffffbffbfffw
+               wfffffbffffbbw
+               wffffffffffffw
+               wfffffbffffffw
+               wffffffffbbffw
+               wwwwwwfwwwwwww
+                    wxw     
+                    w<w     
+               wwwwww%wwwwww
+               wfffff>fffffw
+wwwwwwwwwwwww  wfffff?fffffw wwwwwwwwww
+wfbbfffffffbw  wfffff!fffffw wfffbbfffw  
+wfffbfffffffww wffffqqqffffw wffbsbfffwwww  
+wffffffffffffwwwfffyhhhefffwwwffffffbffffw    
+wbbbfffffffbff01234yhhhe56789ffffffffffffwww    
+wwfffffffffbfwwwfffyhhhefffwwwfkffbkfffffffw       
+ wwffffffffffw wffffuuuffffw wfkfffffffffffwwww
+  wfffbfffffbw wfffff&fffffw wwwfffffffffffbffw     
+  wbffbbfffbfw wfffff*ffpzfw   wfffkffffffkfffw   
+  wwwffffffffw wfffff#fffffw   wwwwfffffffkkbww
+    wwwwwwwwww wwwwww=wwwwww      wffbffbffffw 
+                    w+w           wfffbffffffw
+                    wfw           wffffffbbffw
+                  wwwfwwwwwwwwww  wwwwwwwwwwww
+		  wfffbfkffbffkw
+		  wkffbffffbfffw
+		  wffbfffffkfffw
+		  wffkfffffbfffw
+		  wfffffbffffkfw
+		  wfbfbbfkkffffw
+		  wffbffffffbbbw
+		  wfffffffffbffw
+		  wffffkffbbfkfw
+		  wffbbfffffkfkw
+		  wffffffffffffw
+		  wwwwwwwwwwwwww

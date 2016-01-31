@@ -1,5 +1,5 @@
 - Objects2
-31 11 48 24 Offset
+29 15 46 28 Offset
 c 16 7 Chest
 m 7 8 move1
 m 10 8 move2
@@ -9,7 +9,7 @@ s 15 7 switch2
 s 9 10 switch3
 s 10 10 switch4
 t 4 3 trap
-d 0 4 door
+r 5 5 Reward
 - Rules2
 start : no Reward
 create Reward : switch2 & switch3 & switch4
