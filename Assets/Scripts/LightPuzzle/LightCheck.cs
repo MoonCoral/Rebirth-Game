@@ -30,7 +30,6 @@ public class LightCheck : MonoBehaviour {
 		if (next != null)
 		{
 			next.gameObject.GetComponent<LightCheck>().SetPrevious(this);
-			Debug.Log(previousLightCheck.name + " -> " + this.name);
 		}
 		setup++;
 	}
@@ -48,7 +47,6 @@ public class LightCheck : MonoBehaviour {
 		if (next != null)
 		{
 			next.gameObject.GetComponent<LightCheck>().SetNext(this);
-			Debug.Log(nextLightCheck.name + " <- " + this.name);
 		}
 		setup++;
 	}
@@ -60,7 +58,6 @@ public class LightCheck : MonoBehaviour {
         {
             if (this.name == "mirror1")
             {
-                Debug.Log("Previous!");
                 this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
                 setup++;
 
@@ -75,7 +72,6 @@ public class LightCheck : MonoBehaviour {
         {
             if (this.name == "mirror5")
             {
-                Debug.Log("Next!");
                 this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
                 setup++;
                 this.gameObject.AddComponent<TestLightSwitch>();
