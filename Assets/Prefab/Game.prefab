@@ -883,10 +883,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4d527148941194c4ab4e76ce4f8fb01d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -1364,6 +1364,9 @@ MonoBehaviour:
   win: 0
   getReward: 
   capacity: 0
+  text: {fileID: 114184}
+  text2: {fileID: 126570}
+  text3: {fileID: 186882}
 --- !u!114 &11424556
 MonoBehaviour:
   m_ObjectHideFlags: 1
