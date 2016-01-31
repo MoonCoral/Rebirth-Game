@@ -197,6 +197,9 @@ public class TileEngine : MonoBehaviour {
 		case 'd' :
 			return door;
 			break;
+		case 'r' :
+			return reward;
+			break;
 		case 'c' :
 			return chest;
 			break;
@@ -419,7 +422,7 @@ public class TileEngine : MonoBehaviour {
 
 	}
 
-	int playerRoom() {
+	public int playerRoom() {
 
 		Vector3 pos = player.GetPosition ();
 		string[] line = map1.text.Split ('\n')[1].Split (' ');

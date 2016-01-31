@@ -1,6 +1,7 @@
 - Objects1
 15 0 28 10
 c 5 7 Chest
+r 1 1 Reward
 m 2 2 move
 m 7 2 move
 m 10 6 move

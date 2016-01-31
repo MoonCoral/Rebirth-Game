@@ -12,8 +12,8 @@ public class Temple : MonoBehaviour
 	private bool paused;
 
 	private Player player;
-	private Overlay overlay;
-	
+	private Overlay overlay;	
+
 	void Awake()
 	{
 		player = FindObjectOfType<Player>();

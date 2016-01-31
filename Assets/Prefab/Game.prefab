@@ -1620,7 +1620,7 @@ MonoBehaviour:
   wallV2: {fileID: 134924, guid: ead075f7a9b209847b4035372d0ece97, type: 2}
   moveable: {fileID: 168140, guid: 94a91d46ac0e36e4cab2be636ff61dda, type: 2}
   door: {fileID: 160616, guid: 3a47f456ac5e044ddb899f408136ab9e, type: 2}
-  reward: {fileID: 182508, guid: 85e27098cf8961b4b9bd8fdcd3414ef1, type: 2}
+  reward: {fileID: 125596, guid: e7b27fa49f278ef49aa283654e815aa8, type: 2}
   chest: {fileID: 180996, guid: b176d2e95e59150488eee658474fec56, type: 2}
   pit1: {fileID: 142644, guid: cfeca1fa522c84466b55b187a5b321be, type: 2}
   trap: {fileID: 160784, guid: e979461a2e459d1499b2d134e12298b7, type: 2}

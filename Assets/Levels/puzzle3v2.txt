@@ -1,6 +1,7 @@
 - Objects3
 0 14 12 24 Offset
 c 6 5 Chest
+r 1 1 Reward
 l 6 2 mirror1
 l 3 3 mirror2
 l 10 3 mirror3

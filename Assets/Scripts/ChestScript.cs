@@ -4,7 +4,7 @@ using System.Collections;
 public class ChestScript : MonoBehaviour {
 
 	public Sprite open;
-	bool openned;
+	public bool openned;
 	GameObject[] stuff;
 	TileEngine te;
 	int capacity;
