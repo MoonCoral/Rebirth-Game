@@ -16,7 +16,7 @@ public class PitScript : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!audio.isPlaying)
-			audio.PlayOneShot;
+			audio.Play();
 		if (other.gameObject.tag == "Player") {
 		    if (tileEngine.playerRoom() == 2)
 		    {
