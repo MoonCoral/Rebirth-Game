@@ -142,6 +142,10 @@ Prefab:
       propertyPath: nextMirror
       value: 
       objectReference: {fileID: 1255240915}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
   m_IsPrefabParent: 0
@@ -196,6 +200,14 @@ Prefab:
       propertyPath: nextMirror
       value: 
       objectReference: {fileID: 882921198}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
   m_IsPrefabParent: 0
@@ -249,6 +261,10 @@ Prefab:
     - target: {fileID: 5097980, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
@@ -315,6 +331,34 @@ Prefab:
     - target: {fileID: 6156836, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
       propertyPath: m_Size.y
       value: .228767395
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156836, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 4.9999299
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: CollisionModule.dampen
+      value: 4.99999987e-06
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3.29999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 19842406, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
+      propertyPath: EmissionModule.rate.scalar
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a4fd68f465bea440828cc41366b09e6, type: 2}
