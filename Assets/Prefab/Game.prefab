@@ -749,6 +749,7 @@ GameObject:
   - 92: {fileID: 9227562}
   - 124: {fileID: 12494094}
   - 81: {fileID: 8102858}
+  - 108: {fileID: 10848236}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1258,6 +1259,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &10848236
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177532}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 8
+  m_Range: 25
+  m_SpotAngle: 100
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11400922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1590,6 +1623,35 @@ MonoBehaviour:
   reward: {fileID: 182508, guid: 85e27098cf8961b4b9bd8fdcd3414ef1, type: 2}
   chest: {fileID: 180996, guid: b176d2e95e59150488eee658474fec56, type: 2}
   pit1: {fileID: 142644, guid: cfeca1fa522c84466b55b187a5b321be, type: 2}
+  trap: {fileID: 160784, guid: e979461a2e459d1499b2d134e12298b7, type: 2}
+  corpse: {fileID: 181006, guid: f0228f1ad08355f428ae04c099bc8539, type: 2}
+  center: {fileID: 178414, guid: f9d7b14be2283554498755efbd4e6eec, type: 2}
+  northCarpet: {fileID: 139720, guid: 1747ef19fcf8d1f439ed657938582f13, type: 2}
+  southCarpet: {fileID: 122414, guid: 8fb1d7fb56a696644b9f0bff02214091, type: 2}
+  westCarpet: {fileID: 189632, guid: 24b5910f2b651204ba5ced9ab809ce83, type: 2}
+  eastCarpet: {fileID: 106398, guid: 8f06973cfe9ab1b489d77b89110718f9, type: 2}
+  tile0: {fileID: 126014, guid: e4212f1fa4929164990ba8d825ab9a81, type: 2}
+  tile1: {fileID: 112864, guid: f4fbd89765b78b84eafcfda70bbc98d4, type: 2}
+  tile2: {fileID: 151792, guid: 91d4893fad840a54990a9a3591907805, type: 2}
+  tile3: {fileID: 104856, guid: 8f3c0ad789215e343ba0cd64f973b971, type: 2}
+  tile4: {fileID: 170228, guid: 5784c0ddeb263a447959a0bd186b8fdb, type: 2}
+  tile5: {fileID: 166580, guid: 959503d270f14f44f8c32dd7885d3812, type: 2}
+  tile6: {fileID: 177256, guid: 57997df91ef97694281d68231598b4a3, type: 2}
+  tile7: {fileID: 112058, guid: 3de71b6e04ae83b458be4b5ca3c9991a, type: 2}
+  tile8: {fileID: 115506, guid: 9f06c037d462d5a49b17afd6c718a388, type: 2}
+  tile9: {fileID: 108684, guid: 40bfe3c14457c714a9fdc6ad4e643690, type: 2}
+  tile10: {fileID: 148010, guid: 161bea145e3cddd4f9b274fb8828e72f, type: 2}
+  tile11: {fileID: 105840, guid: d516180c0857f024aa2e0ca22c8fecc6, type: 2}
+  tile12: {fileID: 166852, guid: 885398d5169b2974e970b7ec3062c015, type: 2}
+  tile13: {fileID: 130230, guid: bec99b51cf1176f4782bf89eccd45cdd, type: 2}
+  tile14: {fileID: 167874, guid: 8d721f2a5e89dbf47a34e254de32ec66, type: 2}
+  tile15: {fileID: 178722, guid: cf78edb39d0a5fe43a2a594e2eb5a2d9, type: 2}
+  tile16: {fileID: 176352, guid: 97201410ea3332343ada1c5595ccde2f, type: 2}
+  tile17: {fileID: 197520, guid: 3fb621cd6412012428225e91cbec2655, type: 2}
+  tile18: {fileID: 117806, guid: bff9a164d70b4e4408ebc3b053f083eb, type: 2}
+  tile19: {fileID: 164634, guid: ddd334c899bc14e4ab239b2741bce6e5, type: 2}
+  onOffLight: {fileID: 116314, guid: 7b369d9ef5793f64d94a2e28b9a4b88f, type: 2}
+  map0: {fileID: 4900000, guid: 738193ba93814344c82a015d1c113db1, type: 3}
   map1: {fileID: 4900000, guid: 004c24e6ddd996949b02b707aa8669f2, type: 3}
   map2: {fileID: 4900000, guid: a1fee80f6c5d65a43b06a78ce8753223, type: 3}
   map3: {fileID: 4900000, guid: f4cc61456235eab498f005a0bde66560, type: 3}

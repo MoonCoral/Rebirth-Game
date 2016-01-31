@@ -7,14 +7,14 @@ public class TileEngine : MonoBehaviour {
 
 	public GameObject floor1, pillar2, stairsComp,stairsLeft,stairsMid,stairsRight,
 	Switch, wall1Broken,wall1Ceiling, wall1Floor,wall1,wall2Broken,wall2Ceiling,
-	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward, chest, pit1, corpse,
+	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward, chest, pit1, trap, corpse,
 	center, northCarpet, southCarpet, westCarpet, eastCarpet, tile0, tile1, tile2, tile3,
 	tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14,
-	tile15, tile16, tile17, tile18, tile19;
+	tile15, tile16, tile17, tile18, tile19, onOffLight;
 
 	private Player player;
 
-	public TextAsset map1, map2, map3,map4, mapBG;
+	public TextAsset map0, map1, map2, map3,map4, mapBG;
 
 	string[] mapData;
 
@@ -65,7 +65,7 @@ public class TileEngine : MonoBehaviour {
 				}
 
 				if (tile != null) {	
-					Vector3 pos = new Vector3 (j,-i,10);
+					Vector3 pos = new Vector3 (j,-i,0.3f);
 					GameObject test = (GameObject)Instantiate(tile, pos, transform.rotation);
 					test.transform.parent = transform.FindChild("Background");
 				}
@@ -75,6 +75,7 @@ public class TileEngine : MonoBehaviour {
 
 
 		//Add in the Objects
+		CreateRoom (map0.text.Split ('\n'));
 		CreateRoom (map1.text.Split ('\n'));
 		CreateRoom (map2.text.Split ('\n'));
 		CreateRoom (map3.text.Split ('\n'));
@@ -202,6 +203,9 @@ public class TileEngine : MonoBehaviour {
 		case 'k' :
 			return pit1;
 			break;
+		case 't' :
+			return trap;
+			break;
 		case 'z' :
 			return corpse;
 			break;
@@ -282,6 +286,9 @@ public class TileEngine : MonoBehaviour {
 			break;
 		case '+' :
 			return tile19;
+			break;
+		case 'l' :
+			return onOffLight;
 			break;
 		}
 
@@ -459,6 +466,9 @@ public class TileEngine : MonoBehaviour {
 		}
 
 		switch (playerRoom ()) {
+		case 0:
+			addObjects(map0.text.Split ('\n'));
+			break;
 		case 1:
 			addObjects(map1.text.Split ('\n'));
 			break;
