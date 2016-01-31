@@ -82,4 +82,9 @@ public class Player : MonoBehaviour
     {
         transform.position = position;
     }
+
+	public Vector3 GetPosition()
+	{
+		return transform.position;
+	}
 }

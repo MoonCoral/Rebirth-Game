@@ -8,18 +8,18 @@
                 wffffffffffffw
                 wfffffbffffffw
                 wffffffffbbffw
-                wwwwwwdwwwwwww
+                wwwwwwfwwwwwww
 wwwwwwwwwwwww        wfw       wwwwwwwwww
 wfbbfffffffbw        wfw       wfffbbfffw
 wfffbfffffffww  wwwwwwfwwwwww  wffbsbfffwwww
 wffffffffffffwwwwfffffffffffwwwwffffffbffffw
-wbbbfffffffbfdfffffffffffffffffdfffffffffffwww
+wbbbfffffffbfffffffffffffffffffffffffffffffwww
 wwfffffffffbfwwwwfffffffffffwwwwfkffbkfffffffw
  wwffffffffffw  wfffffffffffw  wfkfffffffffffwwww
-  wfffbfffffbw  wfffffffffffw  wwwfffffffffffbsfw
+  wfffbfffffbw  wfffffffffffw  wwwfffffffffffbffw
   wbffbbfffbfw  wfffffffffffw    wfffkffffffkfffw
-  wwwffffffffw  wfffffffffffw    wwwwfffffffkkbww
-    wwwwwwwwww  wfffffffffffw       wffbssbffffw
+  wwwffffffffw  wfffffpfffffw    wwwwfffffffkkbww
+    wwwwwwwwww  wfffffffffffw       wffbffbffffw
                 wfffffffffffw       wfffbffffffw
                 wfffffffffffw       wffffffbbffw
                 wfffffffffffw       wwwwwwwwwwww

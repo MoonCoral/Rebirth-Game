@@ -136,7 +136,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .136245698, g: .139870062, b: .661764741, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -147,7 +147,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -171,7 +171,49 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
+--- !u!1001 &2112180707
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.48646283
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .21067971
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470426, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2116028803
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,32 +238,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 2116028803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba98818f3fb65804c8afbb28f4dcd87d, type: 3}
+  m_Script: {fileID: 11500000, guid: cf9e10c11340e6b4ca06ceddad706480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   floor1: {fileID: 193116, guid: 0cc8d0e0b0dcffe40bd309e357ad0282, type: 2}
-  pillar2: {fileID: 168620, guid: be880b867fc3c924f87ed74eb894fb49, type: 2}
-  stairsComp: {fileID: 149190, guid: 02462d51c2d92f74ea84419b85f8e14f, type: 2}
-  stairsLeft: {fileID: 129640, guid: e47b03b3ce80e7541b648d62a977ad9c, type: 2}
-  stairsMid: {fileID: 136274, guid: a0b1a3f0c2c30d147be556dd132ae1d7, type: 2}
-  stairsRight: {fileID: 107580, guid: 1b258b78318ef0143a110d78749783f2, type: 2}
+  pillar2: {fileID: 0}
+  stairsComp: {fileID: 0}
+  stairsLeft: {fileID: 0}
+  stairsMid: {fileID: 0}
+  stairsRight: {fileID: 0}
   Switch: {fileID: 153828, guid: 5743bdfdb82c8d94aac4393e39c4fdb8, type: 2}
-  wall1Broken: {fileID: 191856, guid: 161967c5fb064c44798c0a5f42170ec5, type: 2}
-  wall1Ceiling: {fileID: 107974, guid: 8f2fc5afdf2c64f42ba4722c0d36f6fc, type: 2}
-  wall1Floor: {fileID: 190044, guid: 1f8510e335fdaf24eadc85be3cecd4be, type: 2}
+  wall1Broken: {fileID: 0}
+  wall1Ceiling: {fileID: 0}
+  wall1Floor: {fileID: 0}
   wall1: {fileID: 161018, guid: 84af4b3bd7846a6448db18362b069893, type: 2}
-  wall2Broken: {fileID: 179060, guid: 40378447df72b734eaf1ba3601ee180b, type: 2}
-  wall2Ceiling: {fileID: 150358, guid: 756ccaa807401a249bcd5cf023c45a87, type: 2}
-  wall2Floor: {fileID: 125484, guid: 9714b571586385c48a6a4d525df6359c, type: 2}
-  wall2: {fileID: 142544, guid: 129c88e9eb7b5df46832fdbfb09846c2, type: 2}
-  wallSide: {fileID: 195254, guid: e76d4e31c8000744aa7fa2d1e2dd19e3, type: 2}
-  wallSide2: {fileID: 128376, guid: aac64d041c1ace0418b12d9b2a7346aa, type: 2}
-  wallV2: {fileID: 134924, guid: ead075f7a9b209847b4035372d0ece97, type: 2}
+  wall2Broken: {fileID: 0}
+  wall2Ceiling: {fileID: 0}
+  wall2Floor: {fileID: 0}
+  wall2: {fileID: 134924, guid: ead075f7a9b209847b4035372d0ece97, type: 2}
+  wallSide: {fileID: 0}
+  wallSide2: {fileID: 0}
+  wallV2: {fileID: 0}
   moveable: {fileID: 168140, guid: 94a91d46ac0e36e4cab2be636ff61dda, type: 2}
-  door: {fileID: 0}
-  player: {fileID: 120048, guid: 2eb1094be4805b046aca8b2c5c872fbd, type: 2}
-  reward: {fileID: 0}
-  map: {fileID: 4900000, guid: cea055c7c2f9fe440afd0763b381e5a5, type: 3}
+  door: {fileID: 160616, guid: 3a47f456ac5e044ddb899f408136ab9e, type: 2}
+  reward: {fileID: 182508, guid: 85e27098cf8961b4b9bd8fdcd3414ef1, type: 2}
+  chest: {fileID: 180996, guid: b176d2e95e59150488eee658474fec56, type: 2}
+  pit1: {fileID: 142644, guid: cfeca1fa522c84466b55b187a5b321be, type: 2}
+  map1: {fileID: 4900000, guid: 004c24e6ddd996949b02b707aa8669f2, type: 3}
+  map2: {fileID: 4900000, guid: a1fee80f6c5d65a43b06a78ce8753223, type: 3}
+  map3: {fileID: 4900000, guid: f4cc61456235eab498f005a0bde66560, type: 3}
+  mapBG: {fileID: 4900000, guid: b2db1f9c26f1e1f438076c62d396189d, type: 3}
+  win: 0
+  getReward: 0
+  capacity: 0
 --- !u!4 &2116028805
 Transform:
   m_ObjectHideFlags: 0
@@ -233,4 +282,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
