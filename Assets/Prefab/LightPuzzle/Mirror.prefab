@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   previousMirror: {fileID: 0}
   nextMirror: {fileID: 0}
-  angleVariance: 10
+  angleVariance: 5
   EmiterSprite: {fileID: 21300000, guid: 3baa96cde7ae1974ba65c62f2352d955, type: 3}
   SinkSprite: {fileID: 21300000, guid: 356febbd9a08cce4b967657f24cc9556, type: 3}
 --- !u!198 &19842406
@@ -1328,6 +1328,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 356febbd9a08cce4b967657f24cc9556,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: angleVariance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166174}
