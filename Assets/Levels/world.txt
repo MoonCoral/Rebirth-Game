@@ -11,7 +11,7 @@
                 wwwwwwfwwwwwww
 wwwwwwwwwwwww        wfw       wwwwwwwwww
 wfbbfffffffbw        wfw       wfffbbfffw
-wfffbfffffffww  wwwwwwfwwwwww  wffbsbfffwwww
+wfffbfffffffww  wwwwwwfwwwwww  wffbfbfffwwww
 wffffffffffffwwwwfffffffffffwwwwffffffbffffw
 wbbbfffffffbfffffffffffffffffffffffffffffffwww
 wwfffffffffbfwwwwfffffffffffwwwwfkffbkfffffffw
@@ -27,15 +27,15 @@ wwfffffffffbfwwwwfffffffffffwwwwfkffbkfffffffw
                   wfw
                   wfw
                 wwwfwwwwwwwwww
-		wfffbfkffbffkw
-		wkffbffffbfffw
-		wffbfffffkfffw
-		wffkfffffbfffw
-		wfffffbffffkfw
-		wfbfbbfkkffffw
-		wffbffffffbbbw
-		wfffffffffbffw
-		wffffkffbbfkfw
-		wffbbfffffkfkw
-		wffffffffffffw
-		wwwwwwwwwwwwww
+                wfffbfkffbffkw
+                wkffbffffbfffw
+                wffbfffffkfffw
+                wffkfffffbfffw
+                wfffffbffffkfw
+                wfbfbbfkkffffw
+                wffbffffffbbbw
+                wfffffffffbffw
+                wffffkffbbfkfw
+                wffbbfffffkfkw
+                wffffffffffffw
+                wwwwwwwwwwwwww

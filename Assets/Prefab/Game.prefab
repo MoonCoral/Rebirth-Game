@@ -688,6 +688,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &174750
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22447750}
+  - 222: {fileID: 22288888}
+  - 114: {fileID: 11435188}
+  m_Layer: 5
+  m_Name: Title Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &176220
 GameObject:
   m_ObjectHideFlags: 1
@@ -1001,7 +1018,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1569,12 +1586,18 @@ MonoBehaviour:
   wallSide2: {fileID: 128376, guid: aac64d041c1ace0418b12d9b2a7346aa, type: 2}
   wallV2: {fileID: 134924, guid: ead075f7a9b209847b4035372d0ece97, type: 2}
   moveable: {fileID: 168140, guid: 94a91d46ac0e36e4cab2be636ff61dda, type: 2}
-  door: {fileID: 0}
-  reward: {fileID: 0}
+  door: {fileID: 160616, guid: 3a47f456ac5e044ddb899f408136ab9e, type: 2}
+  reward: {fileID: 182508, guid: 85e27098cf8961b4b9bd8fdcd3414ef1, type: 2}
+  chest: {fileID: 180996, guid: b176d2e95e59150488eee658474fec56, type: 2}
   pit1: {fileID: 142644, guid: cfeca1fa522c84466b55b187a5b321be, type: 2}
-  map: {fileID: 4900000, guid: f2df6d7817b7f754a8281af8aa3da5da, type: 3}
+  map1: {fileID: 4900000, guid: 004c24e6ddd996949b02b707aa8669f2, type: 3}
+  map2: {fileID: 4900000, guid: a1fee80f6c5d65a43b06a78ce8753223, type: 3}
+  map3: {fileID: 4900000, guid: f4cc61456235eab498f005a0bde66560, type: 3}
+  map4: {fileID: 4900000, guid: 6e8564c911a0c0347846879f370fd426, type: 3}
+  mapBG: {fileID: 4900000, guid: b2db1f9c26f1e1f438076c62d396189d, type: 3}
   win: 0
-  inventory: []
+  getReward: 0
+  capacity: 0
 --- !u!114 &11424556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1609,7 +1632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: c6354d9b1e6cb3b46afc393f10a9fe63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16d09a866ccd34747873d74f1b592c8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1749,6 +1772,32 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11435188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 0066ff6a00110e642930253f066f2ec9, type: 3}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Title
 --- !u!114 &11436792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1946,7 +1995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .760784388, g: .760784388, b: .760784388, a: .501960814}
-  m_Sprite: {fileID: 21300000, guid: c6354d9b1e6cb3b46afc393f10a9fe63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16d09a866ccd34747873d74f1b592c8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2239,7 +2288,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .752941191, g: .752941191, b: .752941191, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 0066ff6a00110e642930253f066f2ec9, type: 3}
+    m_Font: {fileID: 12800000, guid: 7d0160c8730d29746bb0a40f598bafe7, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -2662,6 +2711,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145056}
+--- !u!222 &22288888
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174750}
 --- !u!222 &22289810
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2716,7 +2771,7 @@ RectTransform:
   - {fileID: 22462036}
   - {fileID: 22426962}
   m_Father: {fileID: 22469256}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_AnchorMin: {x: .5, y: 0}
   m_AnchorMax: {x: .5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
@@ -3080,6 +3135,23 @@ RectTransform:
   m_AnchoredPosition: {x: -525.200012, y: -240.399994}
   m_SizeDelta: {x: 59.5999985, y: 44}
   m_Pivot: {x: .5, y: .5}
+--- !u!224 &22447750
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22469256}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: 1}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 5, y: -445}
+  m_SizeDelta: {x: 800, y: 400}
+  m_Pivot: {x: .5, y: .5}
 --- !u!224 &22449220
 RectTransform:
   m_ObjectHideFlags: 1
@@ -3126,7 +3198,7 @@ RectTransform:
   m_Children:
   - {fileID: 22457344}
   m_Father: {fileID: 22469256}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 628, y: 163}
@@ -3300,10 +3372,11 @@ RectTransform:
   - {fileID: 22422054}
   - {fileID: 22478864}
   - {fileID: 22403428}
-  - {fileID: 22401342}
-  - {fileID: 22471208}
+  - {fileID: 22447750}
   - {fileID: 22453866}
+  - {fileID: 22401342}
   - {fileID: 22470706}
+  - {fileID: 22471208}
   m_Father: {fileID: 443984}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
@@ -3341,7 +3414,7 @@ RectTransform:
   m_Children:
   - {fileID: 22498992}
   m_Father: {fileID: 22469256}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_AnchorMin: {x: .5, y: 0}
   m_AnchorMax: {x: .5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}

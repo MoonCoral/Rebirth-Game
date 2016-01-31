@@ -75,6 +75,7 @@ public class TileEngine : MonoBehaviour {
 		CreateRoom (map1.text.Split ('\n'));
 		CreateRoom (map2.text.Split ('\n'));
 		CreateRoom (map3.text.Split ('\n'));
+		CreateRoom (map4.text.Split ('\n'));
 
 	}
 
@@ -344,6 +345,13 @@ public class TileEngine : MonoBehaviour {
 				return 3;
 		}
 
+		line = map4.text.Split ('\n')[1].Split (' ');
+		room = getCo(line);
+		if (room.x <= pos.x && pos.x <= room.z) {
+			if (room.y > pos.y && pos.y > room.w)
+				return 4;
+		}
+
 		return 0;
 
 	
@@ -352,7 +360,7 @@ public class TileEngine : MonoBehaviour {
 	public void resetObjects() {
 
 		string name = "Objects"+playerRoom();
-		GameObject objects = GameObject.Find (name);
+		GameObject objects = GameObject.Find(name);
 		int x = objects.transform.childCount;
 		for (int i = 0; i< x; i++) {
 			Destroy (objects.transform.GetChild(i).gameObject);
@@ -368,11 +376,11 @@ public class TileEngine : MonoBehaviour {
 		case 3:
 			addObjects(map3.text.Split ('\n'));
 			break;
-		/*
+		
 		case 4:
 			addObjects(map4.text.Split ('\n'));
 			break;
-		*/
+		
 		default:
 			break;
 			
