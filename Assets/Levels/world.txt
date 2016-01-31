@@ -12,16 +12,16 @@
                     wxw     
                     w<w     
                wwwwww%wwwwww
-               wfffff>fffffw
-wwwwwwwwwwwww  wfffff?fffffw wwwwwwwwww
-wfbbfffffffbw  wfffff!fffffw wfffbbfffw  
-wfffbfffffffww wfffffffffffw wffbsbfffwwww  
-wffffffffffffwwwfffffffffffwwwfff ffbffffw    
-wbbbfffffffbff01234fffff56789ffffffffffffwww    
-wwfffffffffbfwwwfffffffffffwwwfkffbkfffffffw       
+    wwwww      wfffff>fffffw
+ wwwwfffwwwww  wfffff?fffffw wwwwwwwwww
+ wffffffffffw  wfffff!fffffw wfffbbfffw  
+ wffffffffffww wfffffffffffw wffbsbfffwwww  
+ wffffbffffffwwwfffffffffffwwwfff ffbffffw    
+ wbbfffffbfbff01234fffff56789ffffffffffffwww    
+ wfffffffffbfwwwfffffffffffwwwfkffbkfffffffw       
  wwffffffffffw wfffffffffffw wfkfffffffffffwwww
   wfffbfffffbw wfffff&fffffw wwwfffffffffffbffw     
-  wbffbbfffbfw wfffff*ffpffw   wfffkffffffkfffw   
+  wbffbffffbfw wfffff*ffpffw   wfffkffffffkfffw   
   wwwffffffffw wfffff#fffffw   wwwwfffffffkkbww
     wwwwwwwwww wwwwww=wwwwww      wffbffbffffw 
                     w+w           wfffbffffffw

@@ -10,7 +10,7 @@ public class TileEngine : MonoBehaviour {
 	wall2Floor,wall2,wallSide,wallSide2,wallV2, moveable, door, reward, chest, pit1, trap, corpse,
 	center, northCarpet, southCarpet, westCarpet, eastCarpet, tile0, tile1, tile2, tile3,
 	tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14,
-	tile15, tile16, tile17, tile18, tile19, onOffLight, fakeSwitch;
+	tile15, tile16, tile17, tile18, tile19, onOffLight, fakeSwitch, mirror;
 
 	private Player player;
 
@@ -190,6 +190,9 @@ public class TileEngine : MonoBehaviour {
 		case 'm' : 
 			return moveable;
 			break;
+        case 'n':
+            return mirror;
+            break;
 		case 's' :
 			return Switch;
 			break;
