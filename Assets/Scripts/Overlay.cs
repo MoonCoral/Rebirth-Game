@@ -36,7 +36,7 @@ public class Overlay : MonoBehaviour
     {
         shadowPanel.SetActive(true);
         overlayText.SetActive(true);
-        overlayText.GetComponentInChildren<Text>().text = "You have died\ndue to your own\nstupidity!\n\nYou have two minutes to revive yourself!";
+        overlayText.GetComponentInChildren<Text>().text = "Chip, you have died...\n You have five minutes to revive yourself!";
         startButton.SetActive(true);
         exitButton.SetActive(false);
         restartButton.SetActive(false);
