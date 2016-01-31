@@ -12,25 +12,7 @@ public class LightCheck : MonoBehaviour {
 
 	void Awake()
 	{
-		setup = 0;
-
-		if (previousMirror == null)
-		{
-			if (this.name == "mirror1")
-			{
-				this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
-				setup++;
-			}
-		}
-
-		if (nextMirror != null)
-		{
-			if (this.name == "mirror5")
-			{
-				this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
-				setup++;
-			}
-		}
+	    setup = 0;
 	}
 
 	public void SetPrevious(LightCheck previousLightCheck)
@@ -71,7 +53,26 @@ public class LightCheck : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+        if (previousMirror == null)
+        {
+            if (this.name == "mirror1")
+            {
+                Debug.Log("Previous!");
+                this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
+                setup++;
+            }
+        }
+
+        if (nextMirror == null)
+        {
+            if (this.name == "mirror5")
+            {
+                Debug.Log("Next!");
+                this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
+                setup++;
+            }
+        }
 	}
 
 	private void delayedStart()
