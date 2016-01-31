@@ -1254,8 +1254,8 @@ MonoBehaviour:
   door: {fileID: 160616, guid: 3a47f456ac5e044ddb899f408136ab9e, type: 2}
   reward: {fileID: 125596, guid: e7b27fa49f278ef49aa283654e815aa8, type: 2}
   chest: {fileID: 180996, guid: b176d2e95e59150488eee658474fec56, type: 2}
-  pit1: {fileID: 142644, guid: cfeca1fa522c84466b55b187a5b321be, type: 2}
-  trap: {fileID: 160784, guid: e979461a2e459d1499b2d134e12298b7, type: 2}
+  pit1: {fileID: 128970, guid: cfeca1fa522c84466b55b187a5b321be, type: 2}
+  trap: {fileID: 108918, guid: e979461a2e459d1499b2d134e12298b7, type: 2}
   corpse: {fileID: 181006, guid: f0228f1ad08355f428ae04c099bc8539, type: 2}
   center: {fileID: 178414, guid: f9d7b14be2283554498755efbd4e6eec, type: 2}
   northCarpet: {fileID: 139720, guid: c83ed208618f7ca4a83820985c470b53, type: 2}
@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d27906a59b2ba4e8bedf25f8f17054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialTime: 120
+  InitialTime: 300
 --- !u!114 &11435188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2679,7 +2679,7 @@ RectTransform:
   m_GameObject: {fileID: 146584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 22469256}
   m_RootOrder: 0
