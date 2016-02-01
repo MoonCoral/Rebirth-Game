@@ -1,23 +1,13 @@
-wwwwwwwwwwwww
-wfbbfffffffbw
-wfffbfffffffww
-wffffffffffffw
-wbbbfffffffbfd
-wwfffffffffbfw
- wwffffffffffw
-  wfffbfffffbw
-  wbffbbfffbfw
-  wwwffffffffw
-    wwwwwwwwww
-- Objects
-p 12 5 Player
-r 6 5 Reward
-l 6 2 mirror1
-l 3 3 mirror2
-l 10 3 mirror3
-l 4 7 mirror4
-l 8 8 mirror5
+- Objects3
+0 14 12 24 Offset
+c 6 5 Chest
+r 1 1 Reward
+n 6 2 mirror3
+n 3 3 mirror5
+n 10 3 mirror1
+n 4 7 mirror2
+n 8 8 mirror4
 d 13 5 door
-- Rules
+- Rules3
 start : no Reward
 win : have Reward
