@@ -35,6 +35,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &194924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 432610}
+  - 65: {fileID: 6539560}
+  m_Layer: 0
+  m_Name: BackCollider
+  m_TagString: LightSink
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &432610
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 489954}
+  m_RootOrder: 1
 --- !u!4 &473536
 Transform:
   m_ObjectHideFlags: 1
@@ -58,6 +86,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 1, z: 1}
   m_Children:
   - {fileID: 473536}
+  - {fileID: 432610}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5041042
@@ -86,9 +115,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .00104272366, y: -.0319694281}
+  m_Offset: {x: -.000182151794, y: -.0319695473}
   serializedVersion: 2
-  m_Size: {x: .77063024, y: .179510117}
+  m_Size: {x: .768180192, y: .179510117}
 --- !u!65 &6501846
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -101,6 +130,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .699294746, y: .146337032, z: 1}
   m_Center: {x: .00386755471, y: -.0202130079, z: 0}
+--- !u!65 &6539560
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .768478334, y: .0383882821, z: 1}
+  m_Center: {x: -.000612640404, y: -.107185841, z: 0}
 --- !u!114 &11464820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,7 +188,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: LightSink
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139310}

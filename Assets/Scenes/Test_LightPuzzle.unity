@@ -353,18 +353,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 139310, guid: ebe0e09497ddff348ae85dbb512fbbc1, type: 2}
-      propertyPath: m_Name
-      value: Mirror
-      objectReference: {fileID: 0}
-    - target: {fileID: 11464820, guid: ebe0e09497ddff348ae85dbb512fbbc1, type: 2}
-      propertyPath: nextMirror
-      value: 
-      objectReference: {fileID: 929886429}
     - target: {fileID: 11464820, guid: ebe0e09497ddff348ae85dbb512fbbc1, type: 2}
       propertyPath: previousMirror
       value: 
       objectReference: {fileID: 1309762959}
+    - target: {fileID: 11464820, guid: ebe0e09497ddff348ae85dbb512fbbc1, type: 2}
+      propertyPath: nextMirror
+      value: 
+      objectReference: {fileID: 929886429}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebe0e09497ddff348ae85dbb512fbbc1, type: 2}
   m_IsPrefabParent: 0

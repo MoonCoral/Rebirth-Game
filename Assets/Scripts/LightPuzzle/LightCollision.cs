@@ -23,11 +23,10 @@ public class LightCollision : MonoBehaviour {
 		for (int i = 0; i < count; i++) {
 			Vector3 pos = transform.TransformPoint(particals[i].position);
 
-			if((other.GetComponentInParent<LightCheck>() == null || other.transform.parent.tag == "LightSink") &&
+			if((other.GetComponentInParent<LightCheck>() == null || other.transform.parent.tag == "LightSink" || other.tag == "LightSink") &&
 			   		Vector2.Distance(bounds.ClosestPoint(pos), pos) <= 0.1f)
 			{ // if partical is within other's collider.
 				particals[i].lifetime = 0;
-				Debug.Log("kill partical: " + other.GetComponent<Collider>().bounds);
 			}
 		}
 		ps.SetParticles (particals, count);
