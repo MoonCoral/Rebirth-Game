@@ -13,8 +13,23 @@ public class LightCollision : MonoBehaviour {
 	
 	}
 
-	
 	void OnParticleCollision(GameObject other) {
-		Debug.Log (other.GetType());
+		//Debug.Log (other);
+		ParticleSystem ps = gameObject.GetComponent<ParticleSystem> ();
+		ParticleSystem.Particle[] particals = new ParticleSystem.Particle[ps.particleCount];
+		int count = ps.GetParticles(particals);
+		Bounds bounds = other.GetComponent<Collider> ().bounds;
+
+		for (int i = 0; i < count; i++) {
+			Vector3 pos = transform.TransformPoint(particals[i].position);
+
+			if((other.GetComponentInParent<LightCheck>() == null || other.transform.parent.tag == "LightSink") &&
+			   		Vector2.Distance(bounds.ClosestPoint(pos), pos) <= 0.1f)
+			{ // if partical is within other's collider.
+				particals[i].lifetime = 0;
+				Debug.Log("kill partical: " + other.GetComponent<Collider>().bounds);
+			}
+		}
+		ps.SetParticles (particals, count);
 	}
 }

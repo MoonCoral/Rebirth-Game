@@ -5,12 +5,11 @@ using System.Collections;
 public class LightCheck : MonoBehaviour {
 	public GameObject previousMirror = null;
 	public GameObject nextMirror = null;
-	public double angleVariance = 5;
-
-    public Sprite EmiterSprite, SinkSprite;
+	public double angleVariance = -1;
 
 	private int setup;
 	private double minAngle, maxAngle, normal;
+	private double defaultAngleVariance = 5;
 
 	void Awake()
 	{
@@ -56,33 +55,27 @@ public class LightCheck : MonoBehaviour {
 
         if (previousMirror == null)
         {
-            if (this.name == "mirror1")
+            if (this.name == "lightSource")
             {
                 this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
                 setup++;
-
-                GetComponentInChildren<ParticleSystem>().enableEmission = true;
-                GetComponentInChildren<ParticleSystem>().startLifetime = 6;
-                GetComponent<SpriteRenderer>().sprite = EmiterSprite;
-                GetComponent<Rigidbody2D>().isKinematic = true;
             }
         }
 
         if (nextMirror == null)
         {
-            if (this.name == "mirror5")
+            if (this.name == "lightSink")
             {
                 this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
                 setup++;
-                this.gameObject.AddComponent<TestLightSwitch>();
-                GetComponent<SpriteRenderer>().sprite = SinkSprite;
-                GetComponent<Rigidbody2D>().isKinematic = true;
             }
         }
 	}
 
 	private void delayedStart()
 	{
+		if (angleVariance < 0) angleVariance = defaultAngleVariance;
+
 		if (nextMirror == null)
 		{
 			// if this object is the target/light sink.
