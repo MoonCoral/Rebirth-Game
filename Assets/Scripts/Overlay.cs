@@ -8,6 +8,10 @@ public class Overlay : MonoBehaviour
     private GameObject overlayText;
 	private GameObject overlayText2;
 	private GameObject overlayText3;
+	private GameObject messageText;
+	private GameObject messageText2;
+	private GameObject messageText3;
+	private GameObject nameText;
     private GameObject startButton;
     private GameObject exitButton;
     private GameObject restartButton;
@@ -19,12 +23,18 @@ public class Overlay : MonoBehaviour
 	private GameObject startPanel;
 
 	private string overlayString;
+	private string messageString;
+	private string nameString;
 
 	// Use this for initialization
 	void Awake () {
         overlayText = GameObject.Find("Overlay Text");
 		overlayText2 = GameObject.Find("Overlay Text 2");
 		overlayText3 = GameObject.Find("Overlay Text 3");
+		messageText = GameObject.Find("Message Text");
+		messageText2 = GameObject.Find("Message Text 2");
+		messageText3 = GameObject.Find("Message Text 3");
+		nameText = GameObject.Find("Name Text");
 		startButton = GameObject.Find("Start Button");
         exitButton = GameObject.Find("Exit Button");
         restartButton = GameObject.Find("Restart Button");
@@ -36,6 +46,7 @@ public class Overlay : MonoBehaviour
 		startPanel = GameObject.Find("Start Panel");
         
         overlayText.SetActive(false);
+		nameText.SetActive (false);
         startButton.SetActive(false);
         exitButton.SetActive(false);
         restartButton.SetActive(false);
@@ -46,9 +57,17 @@ public class Overlay : MonoBehaviour
 		titleText.SetActive(false);
 	}
 
+	public void IntroCutScene()
+	{
+		nameText.SetActive (true);
+		// add names and messages here
+		updateConversation ();
+	}
+
     public void Introduction()
     {
         shadowPanel.SetActive(true);
+		nameText.SetActive (false);
         overlayText.SetActive(true);
 		overlayString = "Chip, you have fallen to your death...\n\n" +
 			"You have been granted five minutes to revive yourself!\n\n" +
@@ -61,6 +80,7 @@ public class Overlay : MonoBehaviour
         restartButton.SetActive(false);
         pauseButton.SetActive(false);
 		updateOverlay ();
+		updateConversation ();
     }
 
 	public void updateOverlay() {
@@ -76,6 +96,22 @@ public class Overlay : MonoBehaviour
 		}
 	}
 
+	public void updateConversation() {
+		if (nameText.activeSelf) {
+			messageText.SetActive (true);
+			messageText2.SetActive (true);
+			messageText3.SetActive (true);
+			nameText.GetComponentInChildren<Text> ().text = nameString;
+			messageText.GetComponentInChildren<Text> ().text = messageString;
+			messageText2.GetComponentInChildren<Text> ().text = messageString;
+			messageText3.GetComponentInChildren<Text> ().text = messageString;
+		} else {
+			messageText.SetActive (false);
+			messageText2.SetActive (false);
+			messageText3.SetActive (false);
+		}
+	}
+
     public void MainGame()
     {
         overlayText.SetActive(false);
@@ -85,29 +121,36 @@ public class Overlay : MonoBehaviour
         startButton.SetActive(false);
         pauseButton.SetActive(true);
         pauseButton.GetComponentInChildren<Text>().text = "Pause";
+		nameString = "Chip";
+		messageString = "test";
+		nameText.SetActive (true);
 		updateOverlay ();
+		updateConversation ();
     }
 
     public void EndGame()
     {
         overlayText.SetActive(true);
+		nameText.SetActive (false);
         exitButton.SetActive(true);
 		titleText.SetActive(true);
         restartButton.SetActive(true);
         pauseButton.SetActive(false);
 		startPanel.SetActive (true);
 		updateOverlay ();
+		updateConversation ();
     }
 
     public void GameOver()
     {
 		overlayString = "You ran out of time!";
-		EndGame();;
+		EndGame();
     }
 
     public void Success()
     {
 		continueButton.SetActive(true);
+		nameText.SetActive (false);
 		overlayText.SetActive(true);
 		pauseButton.SetActive(false);
 		startPanel.SetActive (true);
@@ -116,6 +159,7 @@ public class Overlay : MonoBehaviour
 			"Your story is yet to unfold...\n\n" +
         	"Will you forever live in the shadow of your father?";
 		updateOverlay ();
+		updateConversation ();
     }
 
 	public void Credits() {
@@ -147,4 +191,9 @@ public class Overlay : MonoBehaviour
         }
 		updateOverlay ();
     }
+
+	public void setConversationText(string name, string message) {
+		nameString = name;
+		messageString = message;
+	}
 }

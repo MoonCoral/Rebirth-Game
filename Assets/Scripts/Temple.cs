@@ -137,8 +137,6 @@ public class Temple : MonoBehaviour
 		Application.Quit();
 	}
 
-
-
 	public void Restart()
 	{
 		Application.LoadLevel(Application.loadedLevel);
