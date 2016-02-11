@@ -17,7 +17,7 @@ public class MapEngine : MonoBehaviour
         public readonly int Height;
         public readonly Dictionary<char, string> Legend;
         public readonly string Name;
-        public readonly List<string> Background;
+        public readonly List<string> Background; //change to char[][]
         public readonly List<string> Objects;
         public readonly List<string> Rules;
         public readonly List<Vector2> Doors;
@@ -49,7 +49,7 @@ public class MapEngine : MonoBehaviour
                         Legend.Add(legendData[j][0], legendData[j].Split(' ')[1]);
                     }
                 }
-                if (data[i].StartsWith("Doors"))
+                if (data[i].StartsWith("Entries"))
                 {
                     string[] doorsData = data[i].Split('\n');
 
@@ -59,6 +59,16 @@ public class MapEngine : MonoBehaviour
                         Doors.Add(new Vector2(float.Parse(line[0]), float.Parse(line[0])));
                     }
                 }
+				else if (data[i].StartsWith("Exits"))
+				{
+					string[] doorsData = data[i].Split('\n');
+					
+					for (int j = 1; j < doorsData.Length; j++)
+					{
+						string[] line = doorsData[j].Split(' ');
+						Doors.Add(new Vector2(float.Parse(line[0]), float.Parse(line[0])));
+					}
+				}
                 else if (data[i].StartsWith("Background"))
                 {
                     string[] backgroundData = data[i].Split('\n');
@@ -99,6 +109,21 @@ public class MapEngine : MonoBehaviour
             }
         }
 
+		public void RotateCounterClockwise(int amount)
+		{
+			Debug.Log ("Not implemented!");
+		}
+
+		public void FlipHorizontal()
+		{
+			Debug.Log ("Not implemented!");
+		}
+
+		public void FlipVertical()
+		{
+			Debug.Log ("Not implemented!");
+		}
+
     }
 
     public TextAsset LevelData;
@@ -114,6 +139,7 @@ public class MapEngine : MonoBehaviour
     private List<string> usedRooms; 
     private Dictionary<string, Room> rooms;
     private Dictionary<Vector4, string> roomPositions;
+	private Dictionary<string, Vector4> roomLocations;
 
     private Dictionary<string, string> levelInfo; 
 
@@ -125,9 +151,12 @@ public class MapEngine : MonoBehaviour
 
     public void LoadLevel()
     {
+		Debug.Log("1!");
+		
         rooms = new Dictionary<string, Room>();
         roomNames = new List<string>();
         roomPositions = new Dictionary<Vector4, string>();
+		roomLocations = new Dictionary<string, Vector4>();
         levelInfo = new Dictionary<string, string>();
         usedRooms = new List<string>();
 
@@ -136,9 +165,12 @@ public class MapEngine : MonoBehaviour
         string[] data = LevelData.text.Split(new string[] { "\n- " }, StringSplitOptions.RemoveEmptyEntries);
 
         Name = data[0];
+		
+		Debug.Log(Name+data.Length);
 
-        for (int i = 1; i<data.Length; i++)
+        for (int i = 1; i < data.Length; i++)
         {
+			Debug.Log(data[i]);
             if (data[i].StartsWith("Legend"))
             {
                 string[] legendData = data[i].Split('\n');
@@ -160,10 +192,13 @@ public class MapEngine : MonoBehaviour
             }
             else if (data[i].StartsWith("Level"))
             {
+				Debug.Log("LevelDat");
+				
                 string[] levelData = data[i].Split('\n');
 
                 for (int j = 1; j<levelData.Length; j++)
                 {
+					Debug.Log("LevelDat "+levelData[j]);
                     levelInfo.Add(levelData[j].Split(' ')[0], levelData[j].Split(' ')[1]);
                 }
             }
@@ -182,27 +217,101 @@ public class MapEngine : MonoBehaviour
 
     public void CreateMap()
     {
-        int random = randomRange(0, rooms.Count);
+		int random = randomRange (0, rooms.Count);
 
-        while (usedRooms.Count < int.Parse(levelInfo["RoomNumber"]))
-        {
-            if (!usedRooms.Contains(roomNames[random]))
-            {
-                usedRooms.Add(roomNames[random]);
-            }
-        }
+		int roomNumber = int.Parse (levelInfo ["RoomNumber"]);
 
+		while (usedRooms.Count < roomNumber) {
+			if (!usedRooms.Contains (roomNames [random])) {
+				usedRooms.Add (roomNames [random]);
+			}
+		}
+
+		for (int i = 0; i < roomNumber; i++) {
+			CreateRoom(i*20 , i*20, usedRooms[i]);
+		}
+
+		for (int x = 0; x < Width; x++)
+		{
+			for (int y = 0; y < Height; y++)
+			{
+				GameObject tile;
+
+				if (background[x][y].Equals('p')) {
+					Player.SetPosition(new Vector3 (x, -y, -1));
+					tile = (GameObject)Resources.Load(Legend['f']);
+				} else {
+					tile = (GameObject)Resources.Load(Legend[background[x][y]]);
+				}
+				
+				if (tile != null) {	
+					Vector3 pos = new Vector3 (x,-y,0.3f);
+					GameObject test = (GameObject)Instantiate(tile, pos, transform.rotation);
+					test.transform.parent = transform.FindChild("Background");
+				}
+			}
+		}
 
     }
 
-    public void CreateRoom()
-    {
+	public void CreateRoom(int x, int y, string roomName)
+	{
+		Room room = rooms[roomName];
 
-    }
+		for (int i = x; i < room.Width + x; i++) {
+			for (int j = y; j < room.Height + y; j++) {
+				background[i][j] = room.Background[i][j];
+			}
+		}
+
+		roomPositions.Add(new Vector4 (x, y, room.Width + x, room.Height + y), room.Name);
+		roomLocations.Add(room.Name, new Vector4 (x, y, room.Width + x, room.Height + y));
+	}
+
+	public void LoadRoom(string roomName)
+	{
+		int X = (int)roomLocations [roomName].x;
+		int Y = (int)roomLocations [roomName].y;
+
+		Room room = rooms[roomName];
+
+		if (!this.transform.FindChild (roomName)) {
+			GameObject roomObject = new GameObject ();
+			roomObject.name = roomName;
+			roomObject.transform.parent = this.transform;
+		}
+
+		
+		for (int i = 0; i < room.Objects.Count; i++) {
+
+			string[] line = room.Objects[i].Split(' ');
+			
+			GameObject ob = (GameObject)Resources.Load(Legend[line[0][0]]);
+			if (ob != null)
+			{
+				int x = System.Int32.Parse(line[1]) + X;
+				int y = System.Int32.Parse(line[2]) + Y;
+				string name = line[3];
+				Vector3 pos;
+				pos = new Vector3(x, -y, 0);
+				GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
+				ob2.transform.name = name;
+				ob2.transform.parent = this.transform.FindChild(roomName);
+			}
+					
+		}
+	}
 
     public void ReloadRoom()
     {
-        
+		string name = ActiveRoom();
+		GameObject room = GameObject.Find(name);
+		int x = room.transform.childCount;
+		for (int i = 0; i< x; i++) {
+			Destroy (room.transform.GetChild(i).gameObject);
+		}
+
+		LoadRoom (name);
     }
 
     public string ActiveRoom()
