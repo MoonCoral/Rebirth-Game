@@ -1,6 +1,6 @@
 Puzzle2
 - Legend
-t FakeSwitch
+t Objects/FakeSwitch
 - Background
 wwwwwwwwww        
 wfffbbfffw        

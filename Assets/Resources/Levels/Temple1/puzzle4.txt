@@ -1,7 +1,7 @@
 Puzzle4
 - Legend
-a FakeSwitch
-l darknessPrefab
+a Objects/FakeSwitch
+l Objects/darknessPrefab
 - Background
   wfw         
 wwwfwwwwwwwwww

@@ -1,8 +1,8 @@
 Puzzle3
 - Legend
-l Mirror
-a LightSource
-z LightSink
+l Objects/Mirror
+a Objects/LightSource
+z Objects/LightSink
 - Background
 wwwwwwwwwwwww 
 wfbbfffffffbw 

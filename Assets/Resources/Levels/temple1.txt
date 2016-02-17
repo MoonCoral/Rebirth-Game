@@ -1,20 +1,20 @@
 Level1
 - Legend
-w wall-1_32x32
-f floor-1_32x32
-b wall-1_32x32
-d door2_64x64
-s Switch
-m Moving_Block
-k pit-1_32x32
-c Chest-64x64
-r Reward
+w Tiles/wall-1_32x32
+f Tiles/floor-1_32x32
+b Tiles/wall-2_32x32
+d Objects/door2_64x64
+s Objects/Switch
+m Objects/Moving_Block
+k Objects/pit-1_32x32
+c Objects/Chest-64x64
+r Objects/Reward
 - Rooms
-Temple1/puzzle0
-Temple1/puzzle1
-Temple1/puzzle2
-Temple1/puzzle3
-Temple1/puzzle4
+Levels/Temple1/puzzle0
+Levels/Temple1/puzzle1
+Levels/Temple1/puzzle2
+Levels/Temple1/puzzle3
+Levels/Temple1/puzzle4
 - Level
 StartRoom Puzzle0
 StartRoomX 150
