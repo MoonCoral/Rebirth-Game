@@ -1,0 +1,18 @@
+Level2
+- Legend
+- Rooms
+Temple2/puzzle0
+Temple2/puzzle1
+Temple2/puzzle2
+Temple2/puzzle3
+Temple2/puzzle4
+- Level
+StartRoom Puzzle0
+StartRoomX 150
+StartRoomY 150
+RoomDistance 0
+Height 350
+Width 350
+RoomNumber 5
+- NotFinished
+Change as needed

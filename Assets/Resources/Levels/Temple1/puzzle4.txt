@@ -1,0 +1,28 @@
+Puzzle4
+- Legend
+a FakeSwitch
+l darknessPrefab
+- Background
+  wfw         
+wwwfwwwwwwwwww
+wfffbfkffbffkw
+wkffbffffbfffw
+wffbfffffkfffw
+wffkfffffbfffw
+wfffffbffffkfw
+wfbfbbfkkffffw
+wffbffffffbbbw
+wfffffffffbffw
+wffffkffbbfkfw
+wffbbfffffkfkw
+wffffffffffffw
+wwwwwwwwwwwwww
+- Objects
+c 11 2 Chest
+a 3 11 Lswitch2
+s 10 1 Switch1
+a 3 13 Lswitch1
+d 3 12 door
+l 1 1 light
+- Entries
+3 13 n

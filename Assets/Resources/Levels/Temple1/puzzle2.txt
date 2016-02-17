@@ -1,0 +1,31 @@
+Puzzle2
+- Legend
+t FakeSwitch
+- Background
+wwwwwwwwww        
+wfffbbfffw        
+wffbfbfffwwww     
+wffffffbffffw     
+ffffffffffffwww   
+wfkffbkfffffffw   
+wfkfffffffffffwwww
+wwwfffffffffffbffw
+  wfffkffffffkfffw
+  wwwwfffffffkkbww
+     wffbffbffffw 
+     wfffbffffffw 
+     wffffffbbffw 
+     wwwwwwwwwwww 
+- Objects
+r 16 10 Reward
+m 7 9 move1
+m 10 9 move2
+m 14 7 move3
+s 4 15 switch1
+s 7 2 switch2
+s 9 7 switch3
+s 10 7 switch4
+t 4 14 trap
+d 0 9 door
+- Entries
+0 9 w

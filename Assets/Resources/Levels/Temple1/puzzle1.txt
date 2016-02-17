@@ -1,0 +1,24 @@
+Puzzle1
+- Backgrounds
+wwwwwwwwwwwwww
+wbffffffffbbbw
+wffbfffffffbbw
+wfffffffbffbbw
+wfffbbbffffbbw
+wfffffbffbfffw
+wfffffbffffbbw
+wffffffffffffw
+wfffffbffffffw
+wffffffffbbffw
+wwwwwwfwwwwwww
+- Objects
+m 2 8 move1
+m 7 8 move2
+m 10 6 move3
+s 4 8 switch1
+s 9 7 switch2
+s 12 5 switch3
+s 2 2 switch4
+d 6 0 door
+- Entries
+6 0 s
