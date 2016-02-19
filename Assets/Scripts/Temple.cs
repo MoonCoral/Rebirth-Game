@@ -17,7 +17,8 @@ public class Temple : MonoBehaviour
 	void Awake()
 	{
 		player = FindObjectOfType<Player>();
-	    overlay = FindObjectOfType<Overlay>();
+        player.SetPlayerControl(false);
+        overlay = FindObjectOfType<Overlay>();
 	}
 
     void Start()

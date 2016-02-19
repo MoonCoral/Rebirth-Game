@@ -9,7 +9,8 @@ public class Spawn : MonoBehaviour {
 	    transform.position = new Vector3(transform.position.x, transform.position.y, -1.0f);
 
 	    Player player = FindObjectOfType<Player>();
-	    if (!player.playerControl)
+
+	    if (player.PositionInitialised())
 	    {
 	        player.transform.position = transform.position;
 	    }

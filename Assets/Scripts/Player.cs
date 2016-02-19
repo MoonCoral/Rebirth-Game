@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
 	public Animator anim_controller;
 
     public float speed = 1;
-    public bool playerControl = false;	
+    private bool playerControl;
+    private bool posInit;
 	public GameObject cam;
 
 
@@ -76,6 +77,19 @@ public class Player : MonoBehaviour
     public void SetPlayerControl(bool toggle)
     {
         playerControl = toggle;
+    }
+
+    public bool PositionInitialised()
+    {
+        if (posInit)
+        {
+            return false;
+        }
+        else
+        {
+            posInit = true;
+            return posInit;
+        }
     }
 	
 	public void SetPosition(Vector3 position)
