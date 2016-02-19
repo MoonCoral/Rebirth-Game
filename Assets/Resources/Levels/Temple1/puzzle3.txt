@@ -3,6 +3,7 @@ Puzzle3
 l Objects/Mirror
 a Objects/LightSource
 z Objects/LightSink
+h Objects/MirrorSolver
 - Background
 wwwwwwwwwwwww 
 wfbbfffffffbw 
@@ -16,7 +17,8 @@ wwfffffffffbfw
   wwwffffffffw
     wwwwwwwwww
 - Objects
-r 6 6 Reward
+h 0 0 MirrorSolver
+c 6 6 Chest
 l 6 9 mirror1
 z 3 8 mirror2
 a 10 8 mirror3

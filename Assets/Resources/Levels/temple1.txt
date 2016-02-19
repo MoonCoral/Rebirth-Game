@@ -6,9 +6,10 @@ b Tiles/wall-2_32x32
 d Objects/door2_64x64
 s Objects/Switch
 m Objects/Moving_Block
-k Objects/pit-1_32x32
+k Tiles/pit-1_32x32
 c Objects/Chest-64x64
 r Objects/Reward
+h Objects/SwitchSolver
 - Rooms
 Levels/Temple1/puzzle0
 Levels/Temple1/puzzle1
