@@ -55,7 +55,6 @@ public class MapEngine : MonoBehaviour
 
 		public Room(string path)
 		{
-            Debug.Log(path);
 			roomData = (TextAsset)Resources.Load(path, typeof(TextAsset));
 
 			string[] data = roomData.text.Split(new string[] {"\n- "}, StringSplitOptions.RemoveEmptyEntries);
@@ -175,7 +174,7 @@ public class MapEngine : MonoBehaviour
 
 		public void Transpose()
 		{
-		    for (int x = 0; x < size; x++)
+			for (int x = 0; x < size; x++)
 			{
 				for (int y = x; y < size; y++)
 				{ 
@@ -349,17 +348,6 @@ public class MapEngine : MonoBehaviour
 	{
 		LoadLevel();
 		CreateMap();
-
-		StringBuilder sb = new StringBuilder();
-
-		curRoom = "";
-	}
-
-	public string curRoom;
-
-	public void Update()
-	{
-		curRoom = ActiveRoom();
 	}
 
 	public void LoadLevel()
