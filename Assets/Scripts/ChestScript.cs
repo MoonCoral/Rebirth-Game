@@ -4,48 +4,51 @@ using System.Collections;
 public class ChestScript : MonoBehaviour {
 
 	public Sprite open;
-	public bool openned;
-	GameObject[] stuff;
-	TileEngine te;
-	int capacity;
+	public bool openned = false;
+	//GameObject[] stuff;
+	//int capacity;
+
+    private Altar1 altar;
 
 	// Use this for initialization
-	void Start () {
-		te = GameObject.Find ("MapImporter").GetComponent<TileEngine> ();
-		openned = false;	
-		capacity = 1;
-		stuff = new GameObject[capacity];
-		for (int i = 0; i<capacity; i++) {
-			stuff [i] = GameObject.FindGameObjectWithTag ("Reward");
-		}
+	void Start ()
+	{
+	    altar = FindObjectOfType<Altar1>();
+		//capacity = 1;
+		//stuff = new GameObject[capacity];
+		//for (int i = 0; i<capacity; i++) {
+		//	stuff [i] = GameObject.FindGameObjectWithTag ("Reward");
+		//}
 	}
 	
-	// Update is called once per frame
-
-
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
 			if (Input.GetButtonUp ("Action")) {
 
-				if (!openned && te.getReward[te.playerRoom()]) {
+				//if (!openned && te.getReward[te.playerRoom()]) {
 
-					//transfer contents from chest to player inventory
-					te.getInventory()[0] = stuff[0];
-					/*
-					if (capacity != 0) {
-						for (int i = 0; i < capacity; i++) {
-							te.inventory[te.inventory.Length + i] = stuff[i];
-							stuff[i] = null;
-						}
-						capacity = 0;
-					}*/
+				//	//transfer contents from chest to player inventory
+				//	te.getInventory()[0] = stuff[0];
+				//	/*
+				//	if (capacity != 0) {
+				//		for (int i = 0; i < capacity; i++) {
+				//			te.inventory[te.inventory.Length + i] = stuff[i];
+				//			stuff[i] = null;
+				//		}
+				//		capacity = 0;
+				//	}*/
 
-					openned = true;
-					this.gameObject.GetComponent<SpriteRenderer>().sprite = open;	
+				//	openned = true;
+				//	this.gameObject.GetComponent<SpriteRenderer>().sprite = open;	
 
-				}
-				
-			}			
+				//}
+
+			    if ( openned )
+			    {
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = open;
+                    altar.AddItem(gameObject);
+                }
+            }			
 		}
 	}
 }

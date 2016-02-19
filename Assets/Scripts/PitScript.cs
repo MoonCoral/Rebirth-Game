@@ -4,29 +4,25 @@ using System.Collections;
 public class PitScript : MonoBehaviour
 {
 
-    private TileEngine tileEngine;
+    private MapEngine mapEngine;
 	AudioSource audio;
 
     void Awake()
     {
-        tileEngine = FindObjectOfType<TileEngine>();
+        mapEngine = FindObjectOfType<MapEngine>();
 		audio = this.GetComponent<AudioSource> ();
     }
 
 	void OnTriggerStay2D(Collider2D other) {
 		if (!audio.isPlaying)
 			audio.Play();
-		if (other.gameObject.tag == "Player") {
-		    if (tileEngine.playerRoom() == 2)
-		    {
-                other.transform.position = new Vector3(29, -19, -1);				
-		    }
-		    else
-		    {
-                other.transform.position = new Vector3(21, -28, -1);				
-		    }			
-		}
-		else if (other.gameObject.name.Equals("move")) {
+		if (other.gameObject.tag == "Player")
+		{
+            Vector3 vec3 = transform.parent.parent.FindChild(mapEngine.ActiveRoom()).FindChild("PitSpawn").position;
+            other.transform.position = new Vector3(vec3.x, vec3.y, -1.0f);
+        }
+		else if (other.gameObject.name.StartsWith("move"))
+        {
 			BoxCollider2D[] cols  = other.gameObject.GetComponents<BoxCollider2D> ();
 			for (int i = 0; i < cols.Length; i++)
 				cols[i].enabled = false;

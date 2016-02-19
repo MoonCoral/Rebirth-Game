@@ -24,17 +24,6 @@ public class Temple : MonoBehaviour
     {
         Debug.Log("Restart");
 
-        for (int i = 1; i < 5; i++)
-            GameObject.Find("Objects" + i).transform.FindChild("Chest").GetComponent<ChestScript>().openned = false;
-
-        GameObject.Find("northCarpet").GetComponent<hideSkull>().collected = false;
-        GameObject.Find("southCarpet").GetComponent<hideTotem>().collected = false;
-        GameObject.Find("eastCarpet").GetComponent<hideKnife>().collected = false;
-        GameObject.Find("westCarpet").GetComponent<hideSerpent>().collected = false;
-
-        GameObject.Find("MapImporter").GetComponent<TileEngine>().getReward = new bool[] { false, false, false, false, false };
-
-
         Init();
         Intro();
     }

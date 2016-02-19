@@ -3,43 +3,23 @@ using System.Collections;
 
 public class BigButton : MonoBehaviour {
 
-	public bool top, bottom, left, right;
-
     private Temple temple;
 
-	GameObject t, b, l ,r;
-
-	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 	    temple = FindObjectOfType<Temple>();
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-		t = this.transform.parent.FindChild ("northCarpet").gameObject;
-		b = this.transform.parent.FindChild ("southCarpet").gameObject;
-		l = this.transform.parent.FindChild ("westCarpet").gameObject;
-		r = this.transform.parent.FindChild ("eastCarpet").gameObject;
-
-		top = t.GetComponent<hideSkull> ().collected;
-		bottom = b.GetComponent<hideTotem> ().collected;
-		left = l.GetComponent<hideSerpent> ().collected;
-		right = r.GetComponent<hideKnife> ().collected;
-	
 	}
 
-	void OnTriggerStay2D (Collider2D other) {
 
-		if (other.name.Equals("Player")) {
-
-			if (top && bottom
-			    && left && right)
-				temple.Succes();
-
+	void OnTriggerStay2D (Collider2D other)
+    {
+		if (other.name.Equals("Player"))
+		{
+		    Reward[] rewards = FindObjectsOfType<Reward>();
+		    if (rewards[0].Gathered() && rewards[1].Gathered() && rewards[2].Gathered() && rewards[3].Gathered())
+		    {
+                temple.Succes();
+            }
 		}
-
 	}
 }

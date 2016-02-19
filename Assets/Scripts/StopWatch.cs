@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -33,6 +34,7 @@ public class StopWatch : MonoBehaviour
         {
             audio.Play();
         }
+        FindObjectOfType<MapEngine>().ReloadRoom();
     }
 
     void Update() {

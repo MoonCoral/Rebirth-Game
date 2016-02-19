@@ -55,6 +55,7 @@ public class MapEngine : MonoBehaviour
 
 		public Room(string path)
 		{
+            Debug.Log(path);
 			roomData = (TextAsset)Resources.Load(path, typeof(TextAsset));
 
 			string[] data = roomData.text.Split(new string[] {"\n- "}, StringSplitOptions.RemoveEmptyEntries);
@@ -364,7 +365,7 @@ public class MapEngine : MonoBehaviour
 	public void LoadLevel()
 	{
 		rooms = new Dictionary<string, Room>();
-		rooms.Add("Outside", new Room("Outside"));
+		rooms.Add("Outside", new Room("Levels/Outside"));
 		roomNames = new List<string>();
 		roomPositions = new Dictionary<Vector4, string>();
 		roomLocations = new Dictionary<string, Vector4>();
@@ -583,9 +584,8 @@ public class MapEngine : MonoBehaviour
 
 		if (!transform.FindChild("Background"))
 		{
-			GameObject bg = new GameObject();
-			bg.name = "Background";
-			bg.transform.parent = transform;
+		    GameObject bg = new GameObject {name = "Background"};
+		    bg.transform.parent = transform;
 			bgTransform = bg.transform;
 		}
 		else
@@ -597,20 +597,14 @@ public class MapEngine : MonoBehaviour
 		{
 			for (int x = 0; x < Width; x++)
 			{
-				GameObject tile;
+			    char c = background[x][y];
 
-				char c = background[x][y];
-
-				if (c != ' ')
-				{
-					tile = Load(c, rooms[RoomAt(x, y)]);
-					if (tile != null)
-					{
-						Vector3 pos = new Vector3(x, y, 0.3f);
-						GameObject test = (GameObject) Instantiate(tile, pos, bgTransform.rotation);
-						test.transform.parent = bgTransform;
-					}
-				}
+			    if (c == ' ') continue;
+			    var tile = Load(c, rooms[RoomAt(x, y)]);
+			    if (tile == null) continue;
+			    Vector3 pos = new Vector3(x, y, 0.3f);
+			    GameObject test = (GameObject) Instantiate(tile, pos, bgTransform.rotation);
+			    test.transform.parent = bgTransform;
 			}
 		}
 	}
@@ -654,7 +648,7 @@ public class MapEngine : MonoBehaviour
 		roomPositions.Add(new Vector4 (x, y, room.GetWidth() + x, room.GetHeight() + y), room.Name);
 		roomLocations.Add(room.Name, new Vector4 (x, y, room.GetWidth() + x, room.GetHeight() + y));
 
-		Debug.Log("Created: "+room.Name+" at: "+ x+ ":"+ y+"::" +(room.GetWidth() + x )+ ":" + (room.GetHeight() + y));
+		//Debug.Log("Created: "+room.Name+" at: "+ x+ ":"+ y+"::" +(room.GetWidth() + x )+ ":" + (room.GetHeight() + y));
 
 	    for (int i = 0; i < room.Exits.Count; i++)
 	    {
@@ -680,22 +674,15 @@ public class MapEngine : MonoBehaviour
 		{
 		    char c = room.Objects[i].Prefab;
 			Vector3 pos = new Vector3(room.Objects[i].Position.x + X, room.Objects[i].Position.y + Y, 0);
+			GameObject ob = Load(room.Objects[i].Prefab, room);
 
-			if (c == 'p')
+			if (ob != null)
 			{
-				Player.SetPosition(new Vector3(pos.x, pos.y, -1));
+				GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
+				ob2.transform.name = room.Objects[i].Name; ;
+				ob2.transform.parent = this.transform.FindChild(roomName);
 			}
-			else
-			{
-				GameObject ob = Load(room.Objects[i].Prefab, room);
-				if (ob != null)
-				{
-					GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
-					ob2.transform.name = room.Objects[i].Name; ;
-					ob2.transform.parent = this.transform.FindChild(roomName);
-				}
-			}		
-		}
+	}
 	}
 
 	public void ReloadRoom()

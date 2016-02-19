@@ -10,27 +10,27 @@ public class pitTrapScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;	
+		gameObject.GetComponent<BoxCollider2D> ().enabled = false;	
 		triggered = false;
-		audio = this.gameObject.GetComponent<AudioSource> ();
-		char n = this.name[4];
-		sw = GameObject.Find ("switchT" + n);
-
+		audio = gameObject.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		char n = this.name[4];
-		sw = GameObject.Find ("switchT" + n);
-
-		if (sw != null) {
-			if (sw.GetComponent<Switch> ().triggered == true) {
-				triggered = true;
-				this.GetComponent<SpriteRenderer> ().sprite = pit;
-				this.gameObject.GetComponent<BoxCollider2D> ().enabled = true;
-			}	
-		}
+	    if (!triggered)
+	    {
+	        sw = GameObject.Find(name.Substring(0, 5));
+	        if (sw != null)
+	        {
+	            if (sw.GetComponent<Switch>().triggered)
+	            {
+	                triggered = true;
+	                GetComponent<SpriteRenderer>().sprite = pit;
+	                gameObject.GetComponent<BoxCollider2D>().enabled = true;
+	            }
+	        }
+	    }
 	}
 
 
@@ -39,7 +39,7 @@ public class pitTrapScript : MonoBehaviour {
 		if(!audio.isPlaying)
 		audio.Play ();
 		if (other.gameObject.tag == "Player") {
-			other.transform.position = new Vector3(24, -23, -1);				
+			other.transform.position = transform.parent.parent.Find("Puzzle0").Find("Spawn").position;				
 		}
 	}
 }
