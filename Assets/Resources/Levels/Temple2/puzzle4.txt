@@ -1,4 +1,4 @@
-Puzzle 4
+Puzzle4
 - Background
 wwwwwwwwwwwwww
 wffffffffffffw
@@ -23,7 +23,7 @@ s 3 3 permaSwitch3
 | 7 12 hook3
 | 3 6 hook4
 - Entries
-10 0 w
+0 10 w
 - Comments
 tile characters: > = slide tile to the right (->) until hitting a wall, pit or normal floor
 tile characters: v = slide tile downwards until hitting a wall, pit or normal floor

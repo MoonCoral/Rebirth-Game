@@ -1,4 +1,6 @@
-Puzzle 3
+Puzzle3
+- Legend
+p Objects/Spawn
 - Backgrounds
 wwwwfwwwwfwwwww
 wbffffbffffbffw
@@ -16,22 +18,24 @@ wfbffffbfffffbw
 wwwwfwwwwfwwwww
 - Objects
 Q 7 7 Clone
+p 4 1 Spawn
 - Entries
-6 14 e
-0 9 s
-13 9 n
-0 4 s
-13 4 n
-4 0 w
-10 0 w
+14 6 e
+9 0 s
+4 13 n
+0 4 w
+0 10 w
+9 13 n
+4 0 s
 - Exits
-6 14 e
-0 9 s
-13 9 n
-0 4 s
-13 4 n
-4 0 w
-10 0 w
+14 6 e
+9 0 s
+9 13 n
+0 4 w
+- Disabled
+0 10 w
+4 0 s
+4 13 n
 - Comments
 have to cross room without being seen by clone (use raycasts to check clone view)
 player can spawn at any door, all but 1 of the other doors will be locked

@@ -1,4 +1,4 @@
-Puzzle 0
+Puzzle0
 - Backgrounds
 wwwwwwwwwwwwwwwww
 wffffwkfffkwffffw
@@ -38,7 +38,10 @@ s 12 2 switch6
 s 14 3 switch7
 s 9 14 switch8
 - Exits
-0 8 s
+8 0 s
+- TempFix
+- Entries
+8 0 s
 - Comments
 bridges are initially pits. when a bridge is activated, the player can move over the pit
 (create block object and drop it into the bit). if the switch is not permanent, when

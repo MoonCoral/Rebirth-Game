@@ -1,4 +1,4 @@
-Puzzle 1
+Puzzle1
 - Backgrounds
 wwwwwwwwwwwwwwwwww
 wfffffbbfffffffffw
@@ -27,9 +27,9 @@ l 3 14 mirror3
 l 11 13 mirror4
 l 2 9 sink
 - Entries
-12 0 w
+0 12 w
 - Exits
-9 17 e
+17 9 e
 - Comments
 win condition: mirros in right position, switch pressed => chest opens, get reward
 can switch control to clone / clone mimics player movements

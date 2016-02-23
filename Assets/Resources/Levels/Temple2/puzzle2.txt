@@ -1,4 +1,4 @@
-Puzzle 2
+Puzzle2
 - Backgrounds
 wwwwwwwwwwwwwwwwwwww
 wfbbffffffkfffbbfffw
@@ -20,7 +20,7 @@ s 8 12 switchB
 s 6 7 trap1
 H 3 6 hint
 - Entries
-0 3 s
+3 0 s
 - Comments
 push switches in right order: R G B (for each switch check if previous was switched before enabling)
 if order messed up reset all switches
