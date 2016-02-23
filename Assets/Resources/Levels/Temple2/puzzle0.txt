@@ -1,4 +1,8 @@
 Puzzle0
+- Legend
+x Objects/BridgeFunc
+g Objects/PermaSwitch
+n Objects/Bridge
 - Backgrounds
 wwwwwwwwwwwwwwwww
 wffffwkfffkwffffw
@@ -10,7 +14,7 @@ wkkkkkfffffwffffw
 wffffkkknkkkffsfw
 wffffkfffffkffffw
 wffffkfffffkffffw
-wffsfnffQffnffffw
+wffffnfffffnffffw
 wffffkfffffkffffw
 wwwwwwwwfwwwwwwww
        wfw       
@@ -18,27 +22,26 @@ wwwwwwwwfwwwwwwww
        wfw       
        wfw       
 - Objects
-c 15 8 Chest
-Q 6 8 Clone
-h 12 8 BlockDestroy
+x 0 0 BridgeFunc
+c 8 15 Chest
+Q 8 6 Clone
+h 8 12 BlockDestroy
 g 14 14 switchPerma1
-g 7 8 switchPerma2
-n 6 5 bridge1
-n 9 8 bridge2
-n 6 11 bridge3
-n 12 11 bridge4
-n 13 8 bridge5
-n 12 5 bridge6
-s 6 9 switch1
-s 6 7 switch2
-s 6 14 switch3
-s 6 3 switch4
-s 8 2 switch5
-s 12 2 switch6
-s 14 3 switch7
-s 9 14 switch8
-- Exits
-8 0 s
+g 8 7 switchPerma2
+n 5 6 bridge1
+n 8 9 bridge2
+n 11 6 bridge3
+n 11 12 bridge4
+n 8 13 bridge5
+n 5 12 bridge6
+s 9 6 switch1
+s 7 6 switch2
+s 14 6 switch3
+s 3 6 switch4
+s 2 8 switch5
+s 2 12 switch6
+s 3 14 switch7
+s 14 9 switch8
 - TempFix
 - Entries
 8 0 s

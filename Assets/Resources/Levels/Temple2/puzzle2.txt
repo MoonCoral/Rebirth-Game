@@ -7,18 +7,18 @@ wffffffkffbbbbbffffw
 wfffffkskfbfsfbkfffw
 wffffffkffbfkkfskffw
 wbffffbbbbbffffffffw
-wbfQfffffffffffffffw
-wfffffffffffbfffcffw
+wbfffffffffffffffffw
+wfffffffffffbffffffw
 wffffbbbbbbbbffffffw
 wwwfwwwwwwwwwwwwwwww
 - Objects
 Q 3 3 Clone
-c 2 16 Chest
-s 5 15 switchR
-s 6 12 switchG
-s 8 12 switchB
-s 6 7 trap1
-H 3 6 hint
+c 16 2 Chest
+s 15 5 switchR
+s 12 6 switchG
+s 12 8 switchB
+s 7 6 trap1
+H 6 3 hint
 - Entries
 3 0 s
 - Comments

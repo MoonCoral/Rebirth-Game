@@ -19,14 +19,6 @@ wwwwfwwwwfwwwww
 - Objects
 Q 7 7 Clone
 p 4 1 Spawn
-- Entries
-14 6 e
-9 0 s
-4 13 n
-0 4 w
-0 10 w
-9 13 n
-4 0 s
 - Exits
 14 6 e
 9 0 s

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PitScript : MonoBehaviour
 {
-
+	public string name;
     private MapEngine mapEngine;
 	AudioSource audio;
 
@@ -11,6 +11,7 @@ public class PitScript : MonoBehaviour
     {
         mapEngine = FindObjectOfType<MapEngine>();
 		audio = this.GetComponent<AudioSource> ();
+		name = gameObject.name;
     }
 
 	void OnTriggerStay2D(Collider2D other) {

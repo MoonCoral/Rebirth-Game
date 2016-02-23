@@ -1,42 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &128970
+--- !u!1 &153828
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 442554}
-  - 212: {fileID: 21222546}
-  - 61: {fileID: 6119044}
-  - 114: {fileID: 11468068}
-  - 82: {fileID: 8215124}
+  - 4: {fileID: 412452}
+  - 212: {fileID: 21259932}
+  - 61: {fileID: 6164724}
+  - 82: {fileID: 8215582}
+  - 114: {fileID: 11461496}
   m_Layer: 0
-  m_Name: pit-1_32x32
-  m_TagString: Untagged
+  m_Name: PermaSwitch
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &442554
+--- !u!4 &412452
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128970}
+  m_GameObject: {fileID: 153828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517.52515, y: -259.29514, z: 0}
+  m_LocalPosition: {x: -1.123, y: -0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6119044
+--- !u!61 &6164724
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128970}
+  m_GameObject: {fileID: 153828}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -44,19 +44,19 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
---- !u!82 &8215124
+  m_Size: {x: 0.9, y: 0.9}
+--- !u!82 &8215582
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128970}
+  m_GameObject: {fileID: 153828}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d7e95d2ddbb184b5faa60ff75d0946df, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: c5dc2460164d8ed438f0d57996fc946a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -119,24 +119,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11468068
+--- !u!114 &11461496
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128970}
+  m_GameObject: {fileID: 153828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dae374b441a52f744a7c9c4fd6b499ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cb29b2c252933e4096c6c140649550f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
---- !u!212 &21222546
+  triggered: 0
+  norm: {fileID: 0}
+  pressed: {fileID: 0}
+--- !u!212 &21259932
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128970}
+  m_GameObject: {fileID: 153828}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -157,7 +160,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 080a7fd847be41544ac75e2c9caa2713, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e3a3f47a57a7904ab0677bd9f0d5b46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,8 +172,33 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3e3a3f47a57a7904ab0677bd9f0d5b46,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5dc2460164d8ed438f0d57996fc946a, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba1d928ec43173341a667916fc9d5ff6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Volume
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
@@ -180,7 +208,11 @@ Prefab:
       propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggered
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 128970}
+  m_RootGameObject: {fileID: 153828}
   m_IsPrefabParent: 1
