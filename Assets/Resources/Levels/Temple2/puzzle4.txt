@@ -1,32 +1,38 @@
 Puzzle 4
-- Backgrounds
-wwwwfwwwwfwwwww
-wbffffbffffbffw
-wffbbfffbbfffbw
-ffbfbfffffffbfw
-wfbfffbffbfbffw
-wffffbffffffffw
-wffffbffbfffbfw
-wbffffffbfbfbff
-wfffbffbffbfffw
-ffbffbffffbffbw
-wfbfffffffffffw
-wfffbbfffbbfbfw
-wfbffffbfffffbw
-wwwwfwwwwfwwwww
+- Background
+wwwwwwwwwwwwww
+wffffffffffffw
+fffffffffffffw
+wf>>>>kfffbvvw
+wf>>f>>kffbvvw
+wf>>f>>>kfbkfw
+wf>>>>f>>>bfvw
+w^ffvffffbffbw
+w^ffvvvffffffw
+w^fffffvfffffw
+w^ffffkkbbfffw
+w^fffffffffffw
+wwwwwwwwwwwwww
 - Objects
-Q 7 6 Clone
+Q 10 4 Clone
+s 8 4 permaSwitch1
+s 5 8 permaSwitch2
+s 3 3 permaSwitch3
+| 7 4 hook1
+| 6 6 hook2
+| 7 12 hook3
+| 3 6 hook4
 - Entries
-14 7 e
-9 13 s
-9 0 n
-4 13 s
-4 0 n
-0 9 w
-0 3 w
+10 0 w
 - Comments
-have to cross room without being seen by clone (use raycasts to check clone view)
-player can spawn at any door, all but 1 of the other doors will be locked
-if spotted by the clone => time penalty
-clone AI: randomly walk around the room. if spotting player, chase.
-cannot control clone
+tile characters: > = slide tile to the right (->) until hitting a wall, pit or normal floor
+tile characters: v = slide tile downwards until hitting a wall, pit or normal floor
+tile characters: ^ = slide tile upwards until hitting a wall, pit or normal floor 
+pits reset to start of the room
+player tethered to clone, max distance between them: 4 tiles (P--Q)
+win condition: all switches pressed (perma switches, stay on once pressed)
+hooks : only one character can stay on this tile; if occupied and another one comes accross, slides through to the next tile
+both characters (player and clone) can stand on the same switch tile
+if max tether size reached, characters can't move away from each other (even if affected by other forces => anchored)
+if win, unlock chest, get reward
+can switch control to clone

@@ -1,34 +1,33 @@
 Puzzle 2
 - Backgrounds
-wwwwwwwwwwwwwwwwww
-wfffffbbfffffffffw
-wfffffffffbbfffbfw
-ffffffbffffbfffbbw
-wffffbfffffffffbfw
-wbfffbfffffffffffw
-wbbfffffffffffffff
-wkkkkkkkkkkkkkkkkw
-wkkkkkkkkkkkkkkkkw
-wfbffffffffffffffw
-wffffffbbfffffffbw
-wffffffbffffffffbw
-wcfffffbbfffffffbw
-wfbbfffbbffffffbfw
-wffbfffbbffffffffw
-wwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wfbbffffffkfffbbfffw
+wfbfffffffffsffffffw
+wffffffkffbbbbbffffw
+wfffffkskfbfsfbkfffw
+wffffffkffbfkkfskffw
+wbffffbbbbbffffffffw
+wbfQfffffffffffffffw
+wfffffffffffbfffcffw
+wffffbbbbbbbbffffffw
+wwwfwwwwwwwwwwwwwwww
 - Objects
-Q 1 12 Clone
-c 15 5 Chest
-s 16 14 switch1
-l 3 2 source
-l 4 11 mirror1
-l 8 4 mirror2
-l 14 12 mirror3
-l 13 4 mirror4
-l 9 13 sink
+Q 3 3 Clone
+c 2 16 Chest
+s 5 15 switchR
+s 6 12 switchG
+s 8 12 switchB
+s 6 7 trap1
+H 3 6 hint
 - Entries
-0 3 w
-17 6 e
+0 3 s
 - Comments
-win condition: mirros in right position, switch pressed => chest opens, get reward
-can switch control to clone / clone mimics player movements
+push switches in right order: R G B (for each switch check if previous was switched before enabling)
+if order messed up reset all switches
+win condition: switch B valid press => open chest, get reward
+hint: tiles with hint on them (R -> G -> B). player cannot interact with them, walks over.
+trap creates pits all around the tile
+win unlocks chest
+clone has specific path: 2right, 1down, 6right, 2up, 3right, 2down, 1right, 1down, 2right, 7up, 11left, 1down, 3left, 4down, repeat
+clone carries lantern, vision restricted to 5x5 area around clone
+cannot control clone

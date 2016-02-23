@@ -1,11 +1,21 @@
 Level2
 - Legend
+w Tiles/wall-1_32x32
+f Tiles/floor-1_32x32
+b Tiles/wall-2_32x32
+d Objects/door2_64x64
+s Objects/Switch
+m Objects/Moving_Block
+k Tiles/pit-1_32x32
+c Objects/Chest-64x64
+r Objects/Reward
+h Objects/SwitchSolver
 - Rooms
-Temple2/puzzle0
-Temple2/puzzle1
-Temple2/puzzle2
-Temple2/puzzle3
-Temple2/puzzle4
+Levels/Temple2/puzzle0
+Levels/Temple2/puzzle1
+Levels/Temple2/puzzle2
+Levels/Temple2/puzzle3
+Levels/Temple2/puzzle4
 - Level
 StartRoom Puzzle0
 StartRoomX 150
