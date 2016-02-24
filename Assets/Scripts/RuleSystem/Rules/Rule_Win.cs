@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Rule_Win : Rule {
-	public override bool isThisRule (string line)
+	public override bool isThisRule (string key)
 	{
 		throw new System.NotImplementedException ();
 	}

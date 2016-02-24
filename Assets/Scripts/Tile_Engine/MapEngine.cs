@@ -650,12 +650,15 @@ public class MapEngine : MonoBehaviour
 		int Y = (int)roomLocations [roomName].y;
 
 		Room room = rooms[roomName];
+		GameObject roomObject;
 
 		if (!this.transform.FindChild (roomName)) {
-			GameObject roomObject = new GameObject ();
+			roomObject = new GameObject ();
 			roomObject.name = roomName;
 			roomObject.transform.parent = this.transform;
 		}
+		else
+			roomObject = this.transform.FindChild (roomName).gameObject;
 
 		
 		for (int i = 0; i < room.Objects.Count; i++)
@@ -671,6 +674,9 @@ public class MapEngine : MonoBehaviour
 				ob2.transform.parent = this.transform.FindChild(roomName);
 			}
 	}
+
+		// apply rules to the room.
+		RuleParser.implement(roomObject, room.Rules);
 	}
 
 	public void ReloadRoom()

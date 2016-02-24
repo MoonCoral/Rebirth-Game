@@ -6,73 +6,18 @@ public class LightCheck : MonoBehaviour {
 	public GameObject previousMirror = null;
 	public GameObject nextMirror = null;
 	public double angleVariance = -1;
-
-	private int setup;
+	
 	private double minAngle, maxAngle, normal;
 	private double defaultAngleVariance = 5;
 
-	void Awake()
+	void Start()
 	{
-	    setup = 0;
+		// if not setup by map engine.
+		if (nextMirror != null || previousMirror != null)
+			setup ();
 	}
 
-	public void SetPrevious(LightCheck previousLightCheck)
-	{
-		previousMirror = previousLightCheck.gameObject;
-
-		StringBuilder n = new StringBuilder(this.name);
-
-		n[6]++;
-
-		Transform next = this.transform.parent.FindChild(n.ToString());
-
-		if (next != null)
-		{
-			next.gameObject.GetComponent<LightCheck>().SetPrevious(this);
-		}
-		setup++;
-	}
-
-	public void SetNext(LightCheck nextLightCheck)
-	{
-		nextMirror = nextLightCheck.gameObject;
-
-		StringBuilder n = new StringBuilder(this.name);
-
-		n[6]--;
-
-		Transform next = this.transform.parent.FindChild(n.ToString());
-
-		if (next != null)
-		{
-			next.gameObject.GetComponent<LightCheck>().SetNext(this);
-		}
-		setup++;
-	}
-
-	// Use this for initialization
-	void Start () {
-
-        if (previousMirror == null)
-        {
-            if (this.name == "lightSource")
-            {
-                this.transform.parent.FindChild("mirror2").gameObject.GetComponent<LightCheck>().SetPrevious(this);
-                setup++;
-            }
-        }
-
-        if (nextMirror == null)
-        {
-            if (this.name == "lightSink")
-            {
-                this.transform.parent.FindChild("mirror4").gameObject.GetComponent<LightCheck>().SetNext(this);
-                setup++;
-            }
-        }
-	}
-
-	private void delayedStart()
+	public void setup()
 	{
 		if (angleVariance < 0) angleVariance = defaultAngleVariance;
 
@@ -114,11 +59,6 @@ public class LightCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (setup == 2)
-		{
-			delayedStart();
-			setup++;
-		}
 	}
 
 	/*

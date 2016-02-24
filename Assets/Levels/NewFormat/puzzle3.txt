@@ -25,3 +25,4 @@ d 13 5 door
 - Rules
 start : no Reward
 win : have Reward
+lightPath : lightSource, mirror2, mirror3, mirror4, lightSink
