@@ -3,6 +3,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Resources;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -43,10 +44,10 @@ public class MapEngine : MonoBehaviour
 
 		private int width;
 		private int height;
-		private int size; 
+		private readonly int size; 
 		public readonly Dictionary<char, string> Legend;
 		public readonly string Name;
-		private char[,] background;
+		private readonly char[,] background;
 		public readonly List<Objects> Objects;
 		public readonly List<Doors> Entries;
 		public readonly List<Doors> Exits;
@@ -646,37 +647,30 @@ public class MapEngine : MonoBehaviour
 
 	public void LoadRoom(string roomName)
 	{
-		int X = (int)roomLocations [roomName].x;
-		int Y = (int)roomLocations [roomName].y;
+		int x = (int)roomLocations [roomName].x;
+		int y = (int)roomLocations [roomName].y;
 
 		Room room = rooms[roomName];
-		GameObject roomObject;
 
-		if (!this.transform.FindChild (roomName)) {
-			roomObject = new GameObject ();
-			roomObject.name = roomName;
-			roomObject.transform.parent = this.transform;
-		}
-		else
-			roomObject = this.transform.FindChild (roomName).gameObject;
+        if (!transform.FindChild(roomName))
+        {
+            GameObject roomObject = new GameObject();
+            roomObject.name = roomName;
+            roomObject.transform.parent = transform;
+        }
 
-		
-		for (int i = 0; i < room.Objects.Count; i++)
-		{
-		    char c = room.Objects[i].Prefab;
-			Vector3 pos = new Vector3(room.Objects[i].Position.x + X, room.Objects[i].Position.y + Y, 0);
-			GameObject ob = Load(room.Objects[i].Prefab, room);
+        for (int i = 0; i < room.Objects.Count; i++)
+	    {
+	        Vector3 pos = new Vector3(room.Objects[i].Position.x + x, room.Objects[i].Position.y + y, 0);
+	        GameObject ob = Load(room.Objects[i].Prefab, room);
 
-			if (ob != null)
-			{
-				GameObject ob2 = (GameObject)Instantiate(ob, pos, transform.rotation);
-				ob2.transform.name = room.Objects[i].Name; ;
-				ob2.transform.parent = this.transform.FindChild(roomName);
-			}
-	}
-
-		// apply rules to the room.
-		RuleParser.implement(roomObject, room.Rules);
+	        if (ob != null)
+	        {
+	            GameObject ob2 = (GameObject) Instantiate(ob, pos, transform.rotation);
+	            ob2.transform.name = room.Objects[i].Name;
+	            ob2.transform.parent = transform.FindChild(roomName);
+	        }
+	    }
 	}
 
 	public void ReloadRoom()
@@ -711,4 +705,9 @@ public class MapEngine : MonoBehaviour
 
 		return "Outside";
 	}
+
+    public List<String> RoomRules(string name)
+    {
+        return rooms[name].Rules;
+    } 
 }

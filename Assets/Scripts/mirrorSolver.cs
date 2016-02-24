@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 public class mirrorSolver : MonoBehaviour {
@@ -9,6 +11,9 @@ public class mirrorSolver : MonoBehaviour {
     void Start()
     {
         chest = transform.parent.GetComponentInChildren<ChestScript>();
+
+        // apply rules to the room.
+        RuleParser.implement(transform.parent.gameObject, FindObjectOfType<MapEngine>().RoomRules(transform.parent.name));
     }
 
     void Update()
