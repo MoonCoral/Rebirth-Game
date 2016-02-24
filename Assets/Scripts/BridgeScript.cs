@@ -41,6 +41,7 @@ public class BridgeScript : MonoBehaviour
 			GameObject br = (GameObject) Instantiate(bridge, transform.position, transform.rotation);
 			br.transform.parent = gameObject.transform;
 			br.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+			this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 			activated = true;
 			deactivated = false;
 		}
