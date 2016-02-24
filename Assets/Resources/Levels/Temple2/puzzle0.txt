@@ -3,15 +3,16 @@ Puzzle0
 x Objects/BridgeFunc
 g Objects/PermaSwitch
 n Objects/Bridge
+h Objects/BlockDestroy
 - Backgrounds
 wwwwwwwwwwwwwwwww
 wffffwkfffkwffffw
 wffffwkfffkwffffw
 wffffwkknkkwffffw
-wffffnfwhwfnffffw
+wffffnfwfwfnffffw
 wfffkkfffffwwwwww
 wkkkkkfffffwffffw
-wffffkkknkkkffsfw
+wffffkkknkkkffffw
 wffffkfffffkffffw
 wffffkfffffkffffw
 wffffnfffffnffffw
