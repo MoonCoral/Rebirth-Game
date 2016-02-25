@@ -1,4 +1,6 @@
 Puzzle2
+- Legend
+h Objects/CloneLight
 - Backgrounds
 wwwwwwwwwwwwwwwwwwww
 wfbbffffffkfffbbfffw
@@ -12,6 +14,7 @@ wfffffffffffbffffffw
 wffffbbbbbbbbffffffw
 wwwfwwwwwwwwwwwwwwww
 - Objects
+h 0 0 CloneLight
 Q 3 3 Clone
 c 16 2 Chest
 s 15 5 switchR

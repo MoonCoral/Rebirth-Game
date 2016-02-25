@@ -1,11 +1,10 @@
 Level2
 - Legend
-w Tiles/wall-1_32x32
-f Tiles/floor-1_32x32
-b Tiles/wall-2_32x32
+w Tiles/wallT2
+f Tiles/floorT2
+b Tiles/blockT2
 d Objects/door2_64x64
 s Objects/Switch
-m Objects/Moving_Block
 k Tiles/pit-1_32x32
 c Objects/Chest-64x64
 r Objects/Reward

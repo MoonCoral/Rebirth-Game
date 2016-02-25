@@ -30,9 +30,8 @@ GameObject:
   - 58: {fileID: 5866984}
   - 58: {fileID: 5852292}
   - 58: {fileID: 5861936}
-  - 114: {fileID: 11404280}
   m_Layer: 0
-  m_Name: BlockDestroy
+  m_Name: blockT2
   m_TagString: Unpassable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,17 +144,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11404280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d9b1efb5e374394cb38f9d6c72fab8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &21272934
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db12141e7d26c814b9d3ad47d4ff5711, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c3c8c9d34e6f1f49a85211fd3e04f6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -208,7 +196,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: db12141e7d26c814b9d3ad47d4ff5711,
+      objectReference: {fileID: 21300000, guid: 3c3c8c9d34e6f1f49a85211fd3e04f6b,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
