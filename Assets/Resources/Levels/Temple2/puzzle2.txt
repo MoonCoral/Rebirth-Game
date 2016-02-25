@@ -1,13 +1,19 @@
 Puzzle2
 - Legend
 h Objects/CloneLight
+s Objects/RedSwitch
+g Objects/GreenSwitch
+j Objects/BlueSwitch
+t Objects/FakeSwitch
+y Objects/TrapPitT2
+l Objects/RGBSwitchSolver
 - Backgrounds
 wwwwwwwwwwwwwwwwwwww
 wfbbffffffkfffbbfffw
-wfbfffffffffsffffffw
-wffffffkffbbbbbffffw
-wfffffkskfbfsfbkfffw
-wffffffkffbfkkfskffw
+wfbffffffffffffffffw
+wffffff ffbbbbbffffw
+wfffff f fbfffbkfffw
+wffffff ffbfkkffkffw
 wbffffbbbbbffffffffw
 wbfffffffffffffffffw
 wfffffffffffbffffffw
@@ -15,13 +21,18 @@ wffffbbbbbbbbffffffw
 wwwfwwwwwwwwwwwwwwww
 - Objects
 h 0 0 CloneLight
+l 0 0 RGBSwitchSolver
 Q 3 3 Clone
 c 16 2 Chest
 s 15 5 switchR
-s 12 6 switchG
-s 12 8 switchB
-s 7 6 trap1
-H 6 3 hint
+g 12 6 switchG
+j 12 8 switchB
+t 7 6 trap1
+y 7 7 pit1
+y 7 5 pit2
+y 6 6 pit3
+y 8 6 pit4
+o 6 3 hint
 - Entries
 3 0 s
 - Comments
