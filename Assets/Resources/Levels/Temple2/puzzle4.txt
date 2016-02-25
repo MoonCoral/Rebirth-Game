@@ -1,4 +1,12 @@
 Puzzle4
+- Legend
+> Objects/TileSlideRight
+v Objects/TileSlideDown
+^ Objects/TileSlideUp
+h Objects/Hook
+y Objects/PermaSwitchSolver
+j Objects/CloneTether
+s Objects/PermaSwitch
 - Background
 wwwwwwwwwwwwww
 wffffffffffffw
@@ -14,14 +22,16 @@ w^ffffkkbbfffw
 w^fffffffffffw
 wwwwwwwwwwwwww
 - Objects
+j 0 0 CloneTether
+y 0 0 switchSolver
 Q 4 10 Clone
 s 4 8 permaSwitch1
 s 8 5 permaSwitch2
 s 3 3 permaSwitch3
-| 4 7 hook1
-| 6 6 hook2
-| 12 7 hook3
-| 6 3 hook4
+h 4 7 hook1
+h 6 6 hook2
+h 12 7 hook3
+h 6 3 hook4
 c 3 1 Chest
 - Entries
 0 10 w
