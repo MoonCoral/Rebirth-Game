@@ -44,7 +44,10 @@ public class MapEngine : MonoBehaviour
 
 		private int width;
 		private int height;
-		private readonly int size; 
+	    private int transposed;
+	    private int flipHorizontal;
+        private int flipVertical;
+        private readonly int size; 
 		public readonly Dictionary<char, string> Legend;
 		public readonly string Name;
 		private readonly char[,] background;
@@ -56,6 +59,10 @@ public class MapEngine : MonoBehaviour
 
 		public Room(string path)
 		{
+		    transposed = 0;
+		    flipHorizontal = 0;
+		    flipVertical = 0;
+
 			roomData = (TextAsset)Resources.Load(path, typeof(TextAsset));
 
 			string[] data = roomData.text.Split(new string[] {"\n- "}, StringSplitOptions.RemoveEmptyEntries);
@@ -175,6 +182,8 @@ public class MapEngine : MonoBehaviour
 
 		public void Transpose()
 		{
+		    transposed = 1-transposed;
+
 			for (int x = 0; x < size; x++)
 			{
 				for (int y = x; y < size; y++)
@@ -241,6 +250,8 @@ public class MapEngine : MonoBehaviour
 
 		public void FlipHorizontal()
 		{
+		    flipHorizontal = 1-flipHorizontal;
+
 			for (int x = 0; x < width; x++)
 			{
 				for (int y = 0; y < height/2; y++)
@@ -285,6 +296,8 @@ public class MapEngine : MonoBehaviour
 
 		public void FlipVertical()
 		{
+		    flipVertical = 1-flipVertical;
+
 			for (int x = 0; x < width/2; x++)
 			{
 				for (int y = 0; y < height; y++)
@@ -326,6 +339,11 @@ public class MapEngine : MonoBehaviour
 				Objects[i].Position.Set(width - Objects[i].Position.x - 1, Objects[i].Position.y);
 			}
 		}
+
+	    public int Orientation()
+	    {
+	        return flipHorizontal * 4 + flipVertical * 2 + transposed;
+	    }
 	}
 
 	public TextAsset LevelData;
@@ -709,5 +727,10 @@ public class MapEngine : MonoBehaviour
     public List<String> RoomRules(string name)
     {
         return rooms[name].Rules;
-    } 
+    }
+
+    public int RoomOrientation(string name)
+    {
+        return rooms[name].Orientation();
+    }
 }
