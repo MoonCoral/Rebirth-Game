@@ -445,13 +445,13 @@ public class MapEngine : MonoBehaviour
 			}
 		}
 
-		Stack<Doors> exits = new Stack<Doors>();
+	    Queue<Doors> exits = new Queue<Doors>();
 
 		CreateRoom(int.Parse(levelInfo["StartRoomX"]), int.Parse(levelInfo["StartRoomX"]), usedRooms[0]);
 
 		foreach (var exit in rooms[usedRooms[0]].Exits)
 		{
-			exits.Push(exit);
+			exits.Enqueue(exit);
 		}
 
 		for (int i = 1; i < roomNumber; i++)
@@ -459,7 +459,7 @@ public class MapEngine : MonoBehaviour
 			Room room = rooms[usedRooms[i]];
 			int door = Random.Range(0, room.Entries.Count);
 			Doors entry = room.Entries[door];
-			Doors exit = exits.Pop();
+			Doors exit = exits.Dequeue();
 
 			switch (exit.Direction)
 			{
@@ -547,34 +547,54 @@ public class MapEngine : MonoBehaviour
 						room.FlipHorizontal();
 					}
 					break;
-				}
+			}
 
-				int x = 0;
-				int y = 0;
+			int x = 0;
+			int y = 0;
 
-				if (exit.Direction == 'n')
-				{
-					x = (int)exit.Position.x - (int)entry.Position.x;
-					y = (int)exit.Position.y + int.Parse(levelInfo["RoomDistance"]) + (int)entry.Position.y + 1;
-				}
-				else if (exit.Direction == 'w')
-				{
-					x = (int)exit.Position.x - int.Parse(levelInfo["RoomDistance"]) - (int)entry.Position.x - 1;
-					y = (int)exit.Position.y - (int)entry.Position.y;
-				}
-				else if (exit.Direction == 's')
-				{
-					x = (int)exit.Position.x - (int)entry.Position.x;
-					y = (int)exit.Position.y - int.Parse(levelInfo["RoomDistance"]) - (int)entry.Position.y - 1;
-				}
-				else if (exit.Direction == 'e')
-				{
-					x = (int)exit.Position.x + int.Parse(levelInfo["RoomDistance"]) - (int)entry.Position.x + 1;
-					y = (int)exit.Position.y - (int)entry.Position.y;
-				}
+		    int adjustment = 0;
+		    int hack = 0;
 
-				CreateRoom(x , y, usedRooms[i]);
-		    }
+            //primitive
+		    do
+		    {
+		        //Debug.Log("Adjustment: " + adjustment);
+
+                if (exit.Direction == 'n')
+                {
+                    x = (int)exit.Position.x - (int)entry.Position.x;
+                    y = (int)exit.Position.y + int.Parse(levelInfo["RoomDistance"]) + adjustment - (int)entry.Position.y + 1;
+                }
+                else if (exit.Direction == 'w')
+                {
+                    x = (int)exit.Position.x - int.Parse(levelInfo["RoomDistance"]) - adjustment - (int)entry.Position.x - 1;
+                    y = (int)exit.Position.y - (int)entry.Position.y;
+                }
+                else if (exit.Direction == 's')
+                {
+                    x = (int)exit.Position.x - (int)entry.Position.x;
+                    y = (int)exit.Position.y - int.Parse(levelInfo["RoomDistance"]) - adjustment - (int)entry.Position.y - 1;
+                }
+                else if (exit.Direction == 'e')
+                {
+                    x = (int)exit.Position.x + int.Parse(levelInfo["RoomDistance"]) + adjustment - (int)entry.Position.x + 1;
+                    y = (int)exit.Position.y - (int)entry.Position.y;
+                }
+
+		        adjustment++;
+		        hack++;
+
+		    } while (hack < 10 && !CheckEmplacement(x, y, usedRooms[i]));
+
+            CreateRoom(x, y, usedRooms[i]);
+            CreateAdjustment(exit.Position, entry.Position + new Vector2(x, y));
+           
+            foreach (var newExit in rooms[usedRooms[i]].Exits)
+            {
+                exits.Enqueue(newExit);
+            }
+
+        }
 
 		CreateBackground();
 
@@ -584,6 +604,30 @@ public class MapEngine : MonoBehaviour
 		}
 
 	}
+
+    private void CreateAdjustment(Vector2 start, Vector2 end)
+    {
+        if ((int)start.x == (int)end.x)
+        {
+            int x = (int)start.x;
+            for (int y = (int)Math.Min(start.y, end.y) + 1; y < Math.Max(start.y, end.y); y++)
+            {
+                background[x+1][y] = 'w';
+                background[x][y] = 'f';
+                background[x-1][y] = 'w';
+            }
+        }
+        else
+        {
+            int y = (int)start.y;
+            for (int x = (int)Math.Min(start.x, end.x) + 1; x < Math.Max(start.x, end.x); x++)
+            {
+                background[x][y+1] = 'w';
+                background[x][y] = 'f';
+                background[x][y-1] = 'w';
+            }
+        }
+    }
 
 	private void CreateBackground()
 	{
@@ -636,6 +680,24 @@ public class MapEngine : MonoBehaviour
 		return null;
 	}
 
+    private bool CheckEmplacement(int x, int y, string roomName)
+    {
+        Vector4 target = new Vector4(x, y, rooms[roomName].GetWidth() + x, rooms[roomName].GetHeight() + y);
+
+        //Debug.Log("Target: " + target.ToString());
+
+        foreach (var room in roomPositions.Keys)
+        {
+            if (!(target.x >= room.z || target.z <= room.x || target.y >= room.w || target.w <= room.y ))
+            {
+                //Debug.Log("Room: " + room.ToString());
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 	public void CreateRoom(int x, int y, string roomName)
 	{
 		Room room = rooms[roomName];
@@ -652,8 +714,11 @@ public class MapEngine : MonoBehaviour
 			}
 		}
 
-		roomPositions.Add(new Vector4 (x, y, room.GetWidth() + x, room.GetHeight() + y), room.Name);
-		roomLocations.Add(room.Name, new Vector4 (x, y, room.GetWidth() + x, room.GetHeight() + y));
+	    Vector4 position = new Vector4(x, y, room.GetWidth() + x, room.GetHeight() + y);
+        //Debug.Log(roomPositions.Count + position.ToString());
+
+        roomPositions.Add(position, room.Name);
+		roomLocations.Add(room.Name, position);
 
 		//Debug.Log("Created: "+room.Name+" at: "+ x+ ":"+ y+"::" +(room.GetWidth() + x )+ ":" + (room.GetHeight() + y));
 

@@ -18,7 +18,7 @@ Levels/Temple2/puzzle4
 StartRoom Puzzle3
 StartRoomX 150
 StartRoomY 150
-RoomDistance 10
+RoomDistance 0
 Height 350
 Width 350
 RoomNumber 5
