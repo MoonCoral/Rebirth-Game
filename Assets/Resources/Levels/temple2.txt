@@ -8,7 +8,7 @@ s Objects/Switch
 k Tiles/pitT2
 c Objects/Chest-64x64
 r Objects/Reward
-Q Objects/ShadowPlayer
+Q Objects/Clone
 - Rooms
 Levels/Temple2/puzzle0
 Levels/Temple2/puzzle1

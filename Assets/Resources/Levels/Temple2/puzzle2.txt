@@ -7,6 +7,11 @@ j Objects/BlueSwitch
 t Objects/FakeSwitchT2
 y Objects/TrapPitT2
 l Objects/RGBSwitchSolver
+q Objects/CloneControl2
+N Objects/CloneNorth
+W Objects/CloneWest
+S Objects/CloneSouth
+E Objects/CloneEast
 - Backgrounds
 wwwwwwwwwwwwwwwwwwww
 wfbbffffffkfffbbfffw
@@ -22,6 +27,7 @@ wwwfwwwwwwwwwwwwwwww
 - Objects
 h 0 0 CloneLight
 l 0 0 RGBSwitchSolver
+q 0 0 CloneControl
 Q 3 3 Clone
 c 16 2 Chest
 s 15 5 switchR
@@ -33,6 +39,20 @@ y 7 5 pit2
 y 6 6 pit3
 y 8 6 pit4
 o 6 3 hint
+N 3 3 n1
+E 3 7 e1
+N 6 7 n2
+E 6 8 e2
+S 17 8 s1
+W 17 1 w1
+N 15 1 n3
+W 15 2 w2
+N 14 5 n4
+W 14 4 w3
+S 11 4 s2
+W 11 2 w4
+N 5 2 n5
+W 5 3 w5
 - Entries
 3 0 s
 - Comments

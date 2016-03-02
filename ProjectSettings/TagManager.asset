@@ -12,6 +12,7 @@ TagManager:
   - Unpassable
   - Reward
   - LightSink
+  - ShadowPlayer
   layers:
   - Default
   - TransparentFX

@@ -23,39 +23,52 @@ public class ShadowPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        Vector3 temp = transform.position;
+
+
+        temp.x += speed * velocity.x;
+        temp.y += speed * velocity.y;
+        temp.z += speed * velocity.z;
+
+        transform.position = temp;
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            anim_controller.SetBool("right", true);
+            anim_controller.SetBool("left", false);
+            anim_controller.SetBool("up", false);
+            anim_controller.SetBool("down", false);
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            anim_controller.SetBool("right", false);
+            anim_controller.SetBool("left", true);
+            anim_controller.SetBool("up", false);
+            anim_controller.SetBool("down", false);
+        }
+        else if (Input.GetAxis("Vertical") > 0)
+        {
+            anim_controller.SetBool("right", false);
+            anim_controller.SetBool("left", false);
+            anim_controller.SetBool("up", true);
+            anim_controller.SetBool("down", false);
+        }
+        else if (Input.GetAxis("Vertical") < 0)
+        {
+            anim_controller.SetBool("right", false);
+            anim_controller.SetBool("left", false);
+            anim_controller.SetBool("up", false);
+            anim_controller.SetBool("down", true);
+
+        }
+        else
+        {
+            anim_controller.SetBool("right", false);
+            anim_controller.SetBool("left", false);
+            anim_controller.SetBool("up", false);
+            anim_controller.SetBool("down", false);
+        }
     }
-
-	public void changeAnimation(Vector2 vel) {
-
-		if (vel.x > 0) {
-			anim_controller.SetBool ("right", true);
-			anim_controller.SetBool ("left", false);
-			anim_controller.SetBool ("up", false);
-			anim_controller.SetBool ("down", false);
-		} else if (vel.x < 0) {
-			anim_controller.SetBool ("right", false);
-			anim_controller.SetBool ("left", true);
-			anim_controller.SetBool ("up", false);
-			anim_controller.SetBool ("down", false);
-		} else if (vel.y > 0) {
-			anim_controller.SetBool ("right", false);
-			anim_controller.SetBool ("left", false);
-			anim_controller.SetBool ("up", true);
-			anim_controller.SetBool ("down", false);
-		} else if (vel.y < 0) {
-			anim_controller.SetBool ("right", false);
-			anim_controller.SetBool ("left", false);
-			anim_controller.SetBool ("up", false);
-			anim_controller.SetBool ("down", true);
-		} else {
-			anim_controller.SetBool("right", false);
-			anim_controller.SetBool("left", false);
-			anim_controller.SetBool("up", false);
-			anim_controller.SetBool("down", false);
-		}
-
-	}
 
     public void SetVelocity(Vector3 velocity)
     {
