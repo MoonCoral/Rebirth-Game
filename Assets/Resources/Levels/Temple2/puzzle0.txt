@@ -4,6 +4,7 @@ x Objects/BridgeFunc
 g Objects/PermaSwitch
 n Objects/Bridge
 h Objects/BlockDestroy
+e Objects/CloneControl0
 - Backgrounds
 wwwwwwwwwwwwwwwww
 wffffwkfffkwffffw
@@ -23,6 +24,7 @@ wwwwwwwwfwwwwwwww
        wfw       
        wfw       
 - Objects
+e 0 0 CloneControl
 x 0 0 BridgeFunc
 c 8 15 Chest
 Q 8 6 Clone

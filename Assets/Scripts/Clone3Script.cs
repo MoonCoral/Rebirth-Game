@@ -20,7 +20,6 @@ public class Clone3Script : MonoBehaviour {
 	private GameObject clone;
 
 	void Start () {
-		//anim_controller = this.GetComponent<Animator> ();
 		mapEngine = FindObjectOfType<MapEngine>();
 		temple = FindObjectOfType<Temple>();
 		clone = GameObject.Find("Clone");
