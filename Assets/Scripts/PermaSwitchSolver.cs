@@ -15,16 +15,17 @@ public class PermaSwitchSolver : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        switches = transform.parent.GetComponentsInChildren<PermaSwitch>();
+		if (!chest.openned) {
+			switches = transform.parent.GetComponentsInChildren<PermaSwitch> ();
 
-        foreach (var s in switches)
-	    {
-            if (s.tag == "Switch" && !s.triggered)
-	        {
-	            return;
-	        }
-	    }
+			foreach (var s in switches) {
+				if (s.tag == "Switch" && !s.triggered) {
+					return;
+				}
+			}
 
-	    chest.openned = true;
+			chest.openned = true;
+			FindObjectOfType<Overlay>().ChestOpenText();
+		}
 	}
 }

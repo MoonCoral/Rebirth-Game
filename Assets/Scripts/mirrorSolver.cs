@@ -20,8 +20,12 @@ public class mirrorSolver : MonoBehaviour {
 
     void Update()
     {
-		if (lightSink != null && lightSink.GetComponent<LightCheck>().inToleranceFromSource()) {
-			chest.openned = true;
+		if (!chest.openned) {
+			if (lightSink != null && lightSink.GetComponent<LightCheck> ().inToleranceFromSource ()) {
+				chest.openned = true;
+
+				FindObjectOfType<Overlay>().ChestOpenText();
+			}
 		}
 	}
 }
