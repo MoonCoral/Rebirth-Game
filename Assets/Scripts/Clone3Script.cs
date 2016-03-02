@@ -8,6 +8,7 @@ public class Clone3Script : MonoBehaviour {
 	public int mass = 1;
 	
     private MapEngine mapEngine;
+	private Temple temple;
 	private bool canMove, seenPlayer;
 	private Vector2 temp;
 	private float radius1, radius2;
@@ -21,6 +22,7 @@ public class Clone3Script : MonoBehaviour {
 	void Start () {
 		//anim_controller = this.GetComponent<Animator> ();
 		mapEngine = FindObjectOfType<MapEngine>();
+		temple = FindObjectOfType<Temple>();
 		clone = GameObject.Find("Clone");
 		player = GameObject.Find("Player");
 		canMove = false;
@@ -74,9 +76,7 @@ public class Clone3Script : MonoBehaviour {
 				}
 			} else {
 				//penalise player 
-				
-				
-				
+				temple.Penalise(0.5f);				
 				
 				//chase player behaviour
 				seek();

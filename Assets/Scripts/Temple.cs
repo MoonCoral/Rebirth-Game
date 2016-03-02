@@ -151,5 +151,9 @@ public class Temple : MonoBehaviour
 			paused = true;
 		}
 	}
+	
+	public void Penalise(float p) {
+		time -= p;
+	}
 
 }
