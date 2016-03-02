@@ -19,27 +19,27 @@ public class CloneEast : MonoBehaviour {
                 push = new Vector3(push.y, push.x, push.z);
                 break;
             case 2:
-                push = new Vector3(push.x, -push.y, push.z);
+                push = new Vector3(-push.x, push.y, push.z);
                 break;
             case 3:
                 push = new Vector3(push.y, push.x, push.z);
-                push = new Vector3(push.x, -push.y, push.z);
+                push = new Vector3(-push.x, push.y, push.z);
                 break;
             case 4:
                 push = new Vector3(-push.x, push.y, push.z);
                 break;
             case 5:
                 push = new Vector3(push.y, push.x, push.z);
-                push = new Vector3(-push.x, push.y, push.z);
+                push = new Vector3(push.x, -push.y, push.z);
                 break;
             case 6:
-                push = new Vector3(push.x, -push.y, push.z);
                 push = new Vector3(-push.x, push.y, push.z);
+                push = new Vector3(push.x, -push.y, push.z);
                 break;
             case 7:
                 push = new Vector3(push.y, push.x, push.z);
-                push = new Vector3(push.x, -push.y, push.z);
                 push = new Vector3(-push.x, push.y, push.z);
+                push = new Vector3(push.x, -push.y, push.z);
                 break;
         }
 

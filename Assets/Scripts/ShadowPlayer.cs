@@ -13,7 +13,7 @@ public class ShadowPlayer : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        anim_controller = this.GetComponent<Animator>();
+        anim_controller = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,37 +23,33 @@ public class ShadowPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 temp = transform.position;
+        transform.position += speed * velocity;
+    }
 
-
-        temp.x += speed * velocity.x;
-        temp.y += speed * velocity.y;
-        temp.z += speed * velocity.z;
-
-        transform.position = temp;
-
-        if (Input.GetAxis("Horizontal") > 0)
+    public void SetAnimation(Vector3 velocity)
+    {
+        if (velocity.x > 0)
         {
             anim_controller.SetBool("right", true);
             anim_controller.SetBool("left", false);
             anim_controller.SetBool("up", false);
             anim_controller.SetBool("down", false);
         }
-        else if (Input.GetAxis("Horizontal") < 0)
+        else if (velocity.x < 0)
         {
             anim_controller.SetBool("right", false);
             anim_controller.SetBool("left", true);
             anim_controller.SetBool("up", false);
             anim_controller.SetBool("down", false);
         }
-        else if (Input.GetAxis("Vertical") > 0)
+        else if (velocity.y > 0)
         {
             anim_controller.SetBool("right", false);
             anim_controller.SetBool("left", false);
             anim_controller.SetBool("up", true);
             anim_controller.SetBool("down", false);
         }
-        else if (Input.GetAxis("Vertical") < 0)
+        else if (velocity.y < 0)
         {
             anim_controller.SetBool("right", false);
             anim_controller.SetBool("left", false);
@@ -73,6 +69,7 @@ public class ShadowPlayer : MonoBehaviour
     public void SetVelocity(Vector3 velocity)
     {
         this.velocity = velocity;
+        SetAnimation(velocity);
     }
 
     public Vector3 GetVelocity()

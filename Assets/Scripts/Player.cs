@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 public class Player : MonoBehaviour
 {
 
-	public Animator anim_controller;
+	private Animator anim_controller;
 
     public float speed = 1;
     private bool playerControl;
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-		anim_controller = this.GetComponent<Animator> ();
+		anim_controller = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
 				anim_controller.SetBool("left", false);
 				anim_controller.SetBool("up", false);
 				anim_controller.SetBool("down", true);
-			
 			} else {
 				anim_controller.SetBool("right", false);
 				anim_controller.SetBool("left", false);
@@ -75,7 +74,7 @@ public class Player : MonoBehaviour
         return playerControl;
     }
 
-    public bool PositionInitialised()
+    public bool PositionInitialized()
     {
         if (posInit)
         {

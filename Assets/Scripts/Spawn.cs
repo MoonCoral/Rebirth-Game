@@ -10,7 +10,7 @@ public class Spawn : MonoBehaviour {
 
 	    Player player = FindObjectOfType<Player>();
 
-	    if (player.PositionInitialised())
+	    if (player.PositionInitialized())
 	    {
 	        player.transform.position = transform.position;
 	    }
