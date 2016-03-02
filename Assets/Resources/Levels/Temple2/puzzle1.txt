@@ -4,7 +4,7 @@ l Objects/Mirror
 a Objects/LightSource
 z Objects/LightSink
 h Objects/MirrorSolverT2
-Q Objects/Clone1
+e Objects/CloneControl1
 - Backgrounds
 wwwwwwwwwwwwwwwwww
 wfffffbbfffffffffw
@@ -23,6 +23,7 @@ wfbbfffbbffffffffw
 wffbfffbbffffffffw
 wwwwwwwwwwwwwwwwww
 - Objects
+e 0 0 CloneControl
 h 0 0 MirrorSolverT2
 Q 1 3 Clone
 c 15 10 Chest
