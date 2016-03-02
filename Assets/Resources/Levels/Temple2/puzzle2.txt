@@ -4,7 +4,7 @@ h Objects/CloneLight
 s Objects/RedSwitch
 g Objects/GreenSwitch
 j Objects/BlueSwitch
-t Objects/FakeSwitch
+t Objects/FakeSwitchT2
 y Objects/TrapPitT2
 l Objects/RGBSwitchSolver
 - Backgrounds

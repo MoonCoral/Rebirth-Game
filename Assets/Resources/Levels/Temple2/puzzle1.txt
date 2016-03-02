@@ -18,8 +18,8 @@ wkkkkkkkkkkkkkkkkw
 wfbffffffffffffffw
 wffffffbbfffffffbw
 wffffffbffffffffbw
-wffffffbbfffffffbw
-wfbbfffbbffffffbfw
+wffffffbbffffffffw
+wfbbfffbbffffffffw
 wffbfffbbffffffffw
 wwwwwwwwwwwwwwwwww
 - Objects
