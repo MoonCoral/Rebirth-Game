@@ -1,6 +1,7 @@
 Puzzle3
 - Legend
 p Objects/Spawn
+h Objects/CloneControl3
 - Backgrounds
 wwwwfwwwwfwwwww
 wbffffbffffbffw
@@ -17,6 +18,7 @@ wfffbbfffbbfbfw
 wfbffffbfffffbw
 wwwwfwwwwfwwwww
 - Objects
+h 0 0 CloneControl
 Q 7 7 Clone
 p 4 1 Spawn
 - Exits
