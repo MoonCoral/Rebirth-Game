@@ -34,10 +34,14 @@ public class Rule_LightPath : Rule {
 			lc.setup();
 
 			// set pointers ready for next iteration.
+			//previous.
 			previous = current.gameObject;
-			current = next.gameObject;
-			if(i+1 == values.Count) next = null;
-			else next = room.transform.Find(values[i+1]).gameObject;
+			// current.
+			if(next == null) current = next;
+			else current = next.gameObject;
+			// next.
+			if(i+2 >= values.Count) next = null;
+			else next = room.transform.Find(values[i+2]).gameObject;
 		}
 	}
 	

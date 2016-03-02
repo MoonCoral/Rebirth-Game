@@ -36,6 +36,8 @@ z 9 2 sink
 0 12 w
 - Exits
 17 9 e
+- Rules
+lightPath : source, mirror1, mirror2, mirror3, mirror4, sink
 - Comments
 win condition: mirros in right position, switch pressed => chest opens, get reward
 can switch control to clone / clone mimics player movements
