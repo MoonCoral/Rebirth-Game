@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864e0274dd7e98b4484fefd5c570cbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pit: {fileID: 21300000, guid: 9b925795b15b65742b79be43b9ce5964, type: 3}
+  pit: {fileID: 21300000, guid: c09b1caab6f4f5540a73bdc532d89e0a, type: 3}
   triggered: 0
 --- !u!212 &21204548
 SpriteRenderer:
@@ -184,7 +184,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: pit
       value: 
-      objectReference: {fileID: 21300000, guid: 9b925795b15b65742b79be43b9ce5964,
+      objectReference: {fileID: 21300000, guid: c09b1caab6f4f5540a73bdc532d89e0a,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Sprite

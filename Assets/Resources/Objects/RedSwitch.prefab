@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   triggered: 0
-  norm: {fileID: 21300000, guid: 3e3a3f47a57a7904ab0677bd9f0d5b46, type: 3}
-  pressed: {fileID: 21300000, guid: fe69879aecde8424fae78e65a6d2229c, type: 3}
+  norm: {fileID: 21300000, guid: b4a0f17b5b5442344a1ccbddd6dd63fa, type: 3}
+  pressed: {fileID: 21300000, guid: 826766cc271dee544b7874b9a8980023, type: 3}
 --- !u!212 &21259932
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -211,12 +211,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: norm
       value: 
-      objectReference: {fileID: 21300000, guid: 3e3a3f47a57a7904ab0677bd9f0d5b46,
+      objectReference: {fileID: 21300000, guid: b4a0f17b5b5442344a1ccbddd6dd63fa,
         type: 3}
     - target: {fileID: 0}
       propertyPath: pressed
       value: 
-      objectReference: {fileID: 21300000, guid: fe69879aecde8424fae78e65a6d2229c,
+      objectReference: {fileID: 21300000, guid: 826766cc271dee544b7874b9a8980023,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

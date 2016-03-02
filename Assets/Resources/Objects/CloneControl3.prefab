@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 495652}
   - 114: {fileID: 11458182}
   m_Layer: 0
-  m_Name: Clone3Control
+  m_Name: CloneControl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
