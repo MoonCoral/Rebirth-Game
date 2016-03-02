@@ -10,15 +10,11 @@ public class Player : MonoBehaviour
     public float speed = 1;
     private bool playerControl;
     private bool posInit;
-	public GameObject cam;
-
-
 
 	// Use this for initialization
 	void Awake ()
 	{
 		anim_controller = this.GetComponent<Animator> ();
-		cam = GameObject.Find ("Main Camera");
 	}
 	
 	// Update is called once per frame
@@ -66,17 +62,17 @@ public class Player : MonoBehaviour
 				anim_controller.SetBool("up", false);
 				anim_controller.SetBool("down", false);
 			}
-
-        }
-
-		cam.transform.position = new Vector3 (this.transform.position.x, this.transform.position.y, -10);	
-
-		
+        }		
 	}
 
     public void SetPlayerControl(bool toggle)
     {
         playerControl = toggle;
+    }
+	
+	public bool GetPlayerControl()
+    {
+        return playerControl;
     }
 
     public bool PositionInitialised()
