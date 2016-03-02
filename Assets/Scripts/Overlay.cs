@@ -22,6 +22,8 @@ public class Overlay : MonoBehaviour
 	private GameObject continueButton;
 	private GameObject startPanel;
 
+	private GameObject chestText;
+
 	private string overlayString;
 	private string messageString;
 	private string nameString;
@@ -44,6 +46,7 @@ public class Overlay : MonoBehaviour
 		titleText = GameObject.Find("Title Text");
 		continueButton = GameObject.Find("Continue Button");
 		startPanel = GameObject.Find("Start Panel");
+		chestText = GameObject.Find ("ChestText");
         
         overlayText.SetActive(false);
 		nameText.SetActive (false);
@@ -55,6 +58,7 @@ public class Overlay : MonoBehaviour
 		panel.SetActive(false);
         shadowPanel.SetActive(false);
 		titleText.SetActive(false);
+		chestText.SetActive(false);
 	}
 
 	public void IntroCutScene()
@@ -195,5 +199,23 @@ public class Overlay : MonoBehaviour
 	public void setConversationText(string name, string message) {
 		nameString = name;
 		messageString = message;
+	}
+
+	public void ChestOpenText()
+	{
+		Debug.Log("chest unlocked");
+		StartCoroutine (ChestOpenTextHelper());
+		AudioSource audio = chestText.GetComponent<AudioSource>();
+		if (!audio.isPlaying)
+		{
+			audio.Play();
+		}
+	}
+
+	public IEnumerator ChestOpenTextHelper()
+	{
+		chestText.SetActive (true);
+		yield return new WaitForSeconds(1);
+		chestText.SetActive (false);
 	}
 }

@@ -45,7 +45,8 @@ public class ChestScript : MonoBehaviour {
 
 			    if ( openned )
 			    {
-                    this.gameObject.GetComponent<SpriteRenderer>().sprite = open;
+					FindObjectOfType<Overlay>().ChestOpenText();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = open;
                     altar.AddItem(gameObject);
                 }
             }			

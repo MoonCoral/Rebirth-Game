@@ -6,6 +6,12 @@ public class allSwitches : MonoBehaviour
 
     private ChestScript chest;
     private Switch[] switches;
+	private bool triggered;
+
+	void Awake()
+	{
+		triggered = false;
+	}
 
     void Start ()
 	{
@@ -15,16 +21,18 @@ public class allSwitches : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        switches = transform.parent.GetComponentsInChildren<Switch>();
+		if (!triggered) {
+			switches = transform.parent.GetComponentsInChildren<Switch> ();
 
-        foreach (var s in switches)
-	    {
-            if (s.tag == "Switch" && !s.triggered)
-	        {
-	            return;
-	        }
-	    }
+			foreach (var s in switches) {
+				if (s.tag == "Switch" && !s.triggered) {
+					return;
+				}
+			}
 
-	    chest.openned = true;
+			FindObjectOfType<Overlay>().ChestOpenText();
+			chest.openned = true;
+			triggered = true;
+		}
 	}
 }
