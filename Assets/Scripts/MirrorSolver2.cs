@@ -9,6 +9,9 @@ public class MirrorSolver2 : MonoBehaviour {
 	void Start () {
 		chest = transform.parent.GetComponentInChildren<ChestScript>();
 		lightSink = transform.parent.transform.Find ("sink").gameObject;
+		
+		// apply rules to the room.
+        RuleParser.implement(transform.parent.gameObject, FindObjectOfType<MapEngine>().RoomRules(transform.parent.name));
 	}
 	
 	void Update () {

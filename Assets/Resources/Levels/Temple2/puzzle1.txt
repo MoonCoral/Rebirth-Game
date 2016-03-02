@@ -4,6 +4,7 @@ l Objects/Mirror
 a Objects/LightSource
 z Objects/LightSink
 h Objects/MirrorSolverT2
+Q Objects/Clone1
 - Backgrounds
 wwwwwwwwwwwwwwwwww
 wfffffbbfffffffffw
