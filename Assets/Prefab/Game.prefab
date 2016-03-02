@@ -527,6 +527,7 @@ GameObject:
   - 81: {fileID: 8102858}
   - 108: {fileID: 10848236}
   - 82: {fileID: 8266266}
+  - 114: {fileID: 11461876}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1898,6 +1899,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Chest Unlocked!
+--- !u!114 &11461876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c78dc1dc20556345a927e3cdbb54f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11462586
 MonoBehaviour:
   m_ObjectHideFlags: 1
