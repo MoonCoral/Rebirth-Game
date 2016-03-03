@@ -9,11 +9,10 @@ public class DarknessScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		offSwitch = GameObject.Find ("Lswitch2");
-		onSwitch = GameObject.Find ("Lswitch1");
-		MC = GameObject.Find ("Main Camera").GetComponent<Light>();
-
-	}
+		offSwitch = GameObject.Find("Lswitch2");
+		onSwitch = GameObject.Find("Lswitch1");
+		MC = GameObject.Find("Player").GetComponentInChildren<Light>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -1,10 +1,11 @@
 Puzzle2
 - Legend
-h Objects/CloneLight
+h Objects/CloneDarkness
 s Objects/RedSwitch
 g Objects/GreenSwitch
 j Objects/BlueSwitch
 t Objects/FakeSwitchT2
+T Objects/FakeSwitch
 y Objects/TrapPitT2
 l Objects/RGBSwitchSolver
 q Objects/Empty
@@ -21,35 +22,39 @@ wbfffffffffffffffffw
 wfffffffffffbffffffw
 wffffbbbbbbbbffffffw
 wwwfwwwwwwwwwwwwwwww
+  wfw               
+
 - Objects
-h 0 0 CloneLight
+h 0 0 CloneDarkness
 l 0 0 RGBSwitchSolver
+T 3 0 Lswitch1
+T 3 2 Lswitch2
 q 3 1 PitSpawn
-Q 3 3 Clone
-c 16 2 Chest
-s 15 5 switchR
-g 12 8 switchG
-j 12 6 switchB
-t 7 6 trap1
-y 7 7 pit1
-y 7 5 pit2
-y 6 6 pit3
-y 8 6 pit4
-o 6 3 hint
-B 3 3 n1
-B 3 7 e1
-B 6 7 n2
-B 6 8 e2
-B 17 8 s1
-B 17 1 w1
-B 15 1 n3
-B 15 2 w2
-B 14 2 n4
-B 14 4 w3
-B 11 4 s2
-B 11 2 w4
-B 5 2 n5
-B 5 3 w5
+Q 3 4 Clone
+c 16 3 Chest
+s 15 6 switchR
+g 12 9 switchG
+j 12 7 switchB
+t 7 7 trap1
+y 7 8 pit1
+y 7 6 pit2
+y 6 7 pit3
+y 8 7 pit4
+o 6 4 hint
+B 3 4 n1
+B 3 8 e1
+B 6 8 n2
+B 6 9 e2
+B 17 9 s1
+B 17 2 w1
+B 15 2 n3
+B 15 3 w2
+B 14 3 n4
+B 14 5 w3
+B 11 5 s2
+B 11 3 w4
+B 5 3 n5
+B 5 4 w5
 - Entries
 3 0 s
 - Comments
