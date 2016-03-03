@@ -7,7 +7,7 @@ j Objects/BlueSwitch
 t Objects/FakeSwitchT2
 y Objects/TrapPitT2
 l Objects/RGBSwitchSolver
-q Objects/CloneControl2
+q Objects/Empty
 B Objects/CloneBumper
 - Backgrounds
 wwwwwwwwwwwwwwwwwwww
@@ -24,12 +24,12 @@ wwwfwwwwwwwwwwwwwwww
 - Objects
 h 0 0 CloneLight
 l 0 0 RGBSwitchSolver
-q 0 0 CloneControl
+q 3 1 PitSpawn
 Q 3 3 Clone
 c 16 2 Chest
 s 15 5 switchR
-g 12 6 switchG
-j 12 8 switchB
+g 12 8 switchG
+j 12 6 switchB
 t 7 6 trap1
 y 7 7 pit1
 y 7 5 pit2

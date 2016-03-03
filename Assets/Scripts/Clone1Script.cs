@@ -24,7 +24,8 @@ public class Clone1Script : MonoBehaviour {
 			}
 		} else {
 			canMove = false;
-		}
+            clone.GetComponent<ShadowPlayer>().SetAnimation(new Vector3(0, 0, 0));
+        }
 		if (canMove) {
 			Vector2 temp = clone.transform.position;
 			float x = Input.GetAxis("Horizontal");
@@ -32,6 +33,7 @@ public class Clone1Script : MonoBehaviour {
 			temp.x += x * speed * (Time.deltaTime * 4);
 			temp.y += y * speed * (Time.deltaTime * 4);		
 			clone.transform.position = temp;
+            clone.GetComponent<ShadowPlayer>().SetAnimation(new Vector3(x, y, 0));
 		}
 	}
 }

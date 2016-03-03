@@ -55,7 +55,6 @@ public class CloneBumper : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "ShadowPlayer")
         {
             other.gameObject.GetComponent<ShadowPlayer>().SetVelocity(push);
