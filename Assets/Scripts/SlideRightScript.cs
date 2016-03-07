@@ -22,7 +22,7 @@ public class SlideRightScript : MonoBehaviour {
 	
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-            player.GetComponent<Rigidbody2D>().AddForce(transform.right, ForceMode2D.Impulse);
+            player.GetComponent<Rigidbody2D>().AddForce(Vector2.right, ForceMode2D.Impulse);
         }
 	}
 }

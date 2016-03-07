@@ -25,4 +25,25 @@ public class SlideDownScript : MonoBehaviour {
             player.GetComponent<Rigidbody2D>().AddForce(Vector2.down, ForceMode2D.Impulse);
         }
 	}
+	
+	public Vector2 GetForce(Vector2 f) {
+		switch (FindObjectOfType<MapEngine>().RoomOrientation(transform.parent.name))
+        {
+            case 1:
+                return new Vector2(f.y, f.x);
+            case 2:
+                return new Vector2(-f.x, f.y);
+            case 3:
+                return new Vector2(-f.y, f.x);
+            case 4:
+                return new Vector2(f.x, -f.y);
+            case 5:
+                return new Vector2(f.y, -f.x);
+            case 6:
+                return new Vector2(-f.x, -f.y);
+            case 7:
+                return new Vector2(-f.y, -f.x);
+        }
+		return f;		
+	}
 }

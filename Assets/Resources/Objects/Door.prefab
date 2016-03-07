@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6105824}
   - 82: {fileID: 8243616}
   m_Layer: 0
-  m_Name: door2_64x64
+  m_Name: Door
   m_TagString: Unpassable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,10 +10,13 @@ public class Player : MonoBehaviour
     public float speed = 1;
     private bool playerControl;
     private bool posInit;
+	
+	public bool canMove;
 
 	// Use this for initialization
 	void Awake ()
 	{
+		canMove = true;
 		anim_controller = GetComponent<Animator> ();
 	}
 	
@@ -26,7 +29,7 @@ public class Player : MonoBehaviour
 
         Vector3 temp = transform.position;
 
-        if (playerControl)
+        if (playerControl && canMove)
         {
             temp.x += (speed * Input.GetAxis("Horizontal"));
             temp.y += (speed * Input.GetAxis("Vertical"));

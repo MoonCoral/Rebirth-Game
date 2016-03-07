@@ -22,6 +22,10 @@ public class PitScript : MonoBehaviour
             Vector3 vec3 = transform.parent.parent.FindChild(mapEngine.ActiveRoom()).FindChild("PitSpawn").position;
             other.transform.position = new Vector3(vec3.x, vec3.y, -1.0f);
         }
+		else if (other.gameObject.name == "Clone") {
+			Vector3 vec3 = transform.parent.parent.FindChild(mapEngine.ActiveRoom()).FindChild("PitSpawnClone").position;
+            other.transform.position = new Vector3(vec3.x, vec3.y, -1.0f);		
+		}
 		else if (other.gameObject.name.StartsWith("move"))
         {
 			BoxCollider2D[] cols  = other.gameObject.GetComponents<BoxCollider2D> ();

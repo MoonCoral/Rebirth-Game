@@ -11,16 +11,16 @@ public class CloneBumper : MonoBehaviour
         switch (name[0])
         {
             case 'n':
-                push = new Vector3(0, 1, 0);
+                push = new Vector3(0, 0.5f, 0);
                 break;
             case 'w':
-                push = new Vector3(-1, 0, 0);
+                push = new Vector3(-0.5f, 0, 0);
                 break;
             case 's':
-                push = new Vector3(0, -1, 0);
+                push = new Vector3(0, -0.5f, 0);
                 break;
             case 'e':
-                push = new Vector3(1, 0, 0);
+                push = new Vector3(0.5f, 0, 0);
                 break;
         }
 

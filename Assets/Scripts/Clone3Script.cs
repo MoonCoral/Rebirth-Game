@@ -68,8 +68,10 @@ public class Clone3Script : MonoBehaviour {
 					init.x += c2x;
 					if (float.IsNaN(c2y)) c2y = 0;
 					init.y += c2y;
+					
+					init.Normalize();
 						
-					clone.transform.GetComponent<Rigidbody2D>().AddForce(init, ForceMode2D.Force);
+					clone.GetComponent<ShadowPlayer>().SetVelocity(new Vector3(init.x, init.y, transform.position.z));
 				} else {
 					counter ++;
 				}
@@ -86,7 +88,7 @@ public class Clone3Script : MonoBehaviour {
 				currentVelocity *= speed ;
 	
 				// Set the velocity to the rigidbody ’s velocity .
-				clone.transform.GetComponent<Rigidbody2D>().velocity = currentVelocity ;
+				clone.GetComponent<ShadowPlayer>().SetVelocity(currentVelocity);
 			}
 		} 
 		

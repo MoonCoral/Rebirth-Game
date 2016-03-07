@@ -76,6 +76,12 @@ public class ShadowPlayer : MonoBehaviour
     {
         return velocity;
     }
+	
+	public void ReverseVelocity() {
+		Vector3 vel = velocity;
+		Vector3 temp = new Vector3 (-vel.x, -vel.y, vel.z);
+		this.velocity = temp;
+	}
 
     public void SetPosition(Vector3 position)
     {

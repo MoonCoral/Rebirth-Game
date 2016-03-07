@@ -2,6 +2,8 @@ Puzzle3
 - Legend
 p Objects/Spawn
 h Objects/CloneControl3
+j Objects/TempleSolver
+q Objects/Empty
 - Backgrounds
 wwwwfwwwwfwwwww
 wbffffbffffbffw
@@ -19,8 +21,17 @@ wfbffffbfffffbw
 wwwwfwwwwfwwwww
 - Objects
 h 0 0 CloneControl
+j 0 0 TempleSolver
+q 7 7 PitSpawnClone
 Q 7 7 Clone
 p 4 1 Spawn
+d 14 6 Door
+d 9 0 Door
+d 9 13 Door
+d 0 4 Door
+d 0 10 Door
+d 4 0 Door
+d 4 13 Door
 - Exits
 14 6 e
 9 0 s

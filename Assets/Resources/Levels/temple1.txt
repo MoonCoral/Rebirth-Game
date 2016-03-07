@@ -3,7 +3,7 @@ Level1
 w Tiles/wall-1_32x32
 f Tiles/floor-1_32x32
 b Tiles/wall-2_32x32
-d Objects/door2_64x64
+d Objects/Door
 s Objects/Switch
 m Objects/Moving_Block
 k Tiles/pit-1_32x32

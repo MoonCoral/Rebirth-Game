@@ -35,6 +35,8 @@ public class DoorController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
 			toggle ();
+		} else if (other.gameObject.name == "Clone") {
+			other.GetComponent<ShadowPlayer>().ReverseVelocity();
 		}
 	}
 

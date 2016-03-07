@@ -5,8 +5,9 @@ v Objects/TileSlideDown
 ^ Objects/TileSlideUp
 h Objects/Hook
 y Objects/PermaSwitchSolver
-j Objects/CloneTether
+j Objects/CloneControl4
 s Objects/PermaSwitch
+q Objects/Empty
 - Background
 wwwwwwwwwwwwww
 wffffffffffffw
@@ -22,7 +23,9 @@ w^ffffkkbbfffw
 w^fffffffffffw
 wwwwwwwwwwwwww
 - Objects
-j 0 0 CloneTether
+q 4 10 PitSpawnClone
+q 1 10 PitSpawn
+j 0 0 CloneControl
 y 0 0 switchSolver
 Q 4 10 Clone
 s 4 8 permaSwitch1
