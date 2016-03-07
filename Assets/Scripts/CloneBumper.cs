@@ -55,8 +55,7 @@ public class CloneBumper : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-		//move when player in the room
-        if (other.gameObject.tag == "ShadowPlayer" && FindObjectOfType<MapEngine>().ActiveRoom() == transform.parent.gameObject.name)
+        if (other.gameObject.tag == "ShadowPlayer")
         {
             other.gameObject.GetComponent<ShadowPlayer>().SetVelocity(push);
         }

@@ -33,11 +33,17 @@ public class TrapSwitchT2Script : MonoBehaviour {
 	    }
 	}
 
-	void OnTriggerStay2D (Collider2D other) {
-		if(!audio.isPlaying)
-		audio.Play ();
-		if (other.gameObject.tag == "Player") {
-			other.transform.position = transform.parent.parent.Find("Puzzle3").Find("Spawn").position;				
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (!audio.isPlaying)
+        {
+            audio.Play();
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+			other.transform.position = transform.parent.parent.Find("Puzzle3").Find("Spawn").position;
+            transform.parent.GetComponentInChildren<CloneDarkness>().Trigger(true);		
 		}
 	}
 }
