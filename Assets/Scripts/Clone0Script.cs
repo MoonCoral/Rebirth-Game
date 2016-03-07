@@ -5,7 +5,7 @@ public class Clone0Script : MonoBehaviour {
 	private Player player;
 	private CameraControl cam;
     private MapEngine mapEngine;
-	private GameObject clone;
+	private ShadowPlayer clone;
 	private bool canMove;
 	
     public float speed = 1f;
@@ -14,7 +14,7 @@ public class Clone0Script : MonoBehaviour {
 	void Start () {
 		player = FindObjectOfType<Player>();	
 		cam = FindObjectOfType<CameraControl>();
-		clone = transform.parent.Find("Clone").gameObject;
+	    clone = transform.parent.GetComponentInChildren<ShadowPlayer>();
 		mapEngine = FindObjectOfType<MapEngine>();
 		canMove = false;
 	}
@@ -31,13 +31,14 @@ public class Clone0Script : MonoBehaviour {
 		}
 		if (canMove) {
 			player.SetPlayerControl(false);
-			cam.SetClone(clone);
-			Vector2 temp = clone.transform.position;
+			cam.SetClone(clone.gameObject);
+			Vector3 temp = clone.transform.position;
 			float x = Input.GetAxis("Horizontal");
 			float y = Input.GetAxis("Vertical");
 			temp.x += x * speed * (Time.deltaTime * 4);
-			temp.y += y * speed * (Time.deltaTime * 4);		
+			temp.y += y * speed * (Time.deltaTime * 4);
 			clone.transform.position = temp;
+            clone.SetAnimation(new Vector3(x, y, 0));
 		} else {
 			player.SetPlayerControl(true);
 		}

@@ -34,63 +34,51 @@ public class Clone3Script : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		//move only when player is in the room
-		if (mapEngine.ActiveRoom() == transform.parent.gameObject.name) {
-			//if (Input.GetButtonUp ("Action")) { //toggle can move by action button
-				if (canMove) canMove = false;
-				else canMove = true;
-			//}
-		} else {
-			canMove = false;
-		}
-		
-		// if clone can move
-		if (canMove) {
-			if (!seenPlayer) {
-				//wander behaviour
-				if (counter == maxCount) {
-					counter = 0;
-					clone.transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-					Vector2 init = Vector2.zero;
-						
-					// get point on first big circle
-					float c1x = Random.Range(radius1 * (-1), radius1);
-					int g = Random.Range(-1, 2);
-					float c1y = g * Mathf.Sqrt(radius1 * radius1 - c1x * c1x);
-					init.x += c1x;
-					if (float.IsNaN(c1y)) c1y = 0;
-					init.y += c1y;
-					
-					//get point on second small circle
-					float c2x = Random.Range(radius1 * (-1), radius1);
-					g = Random.Range(-1, 2);
-					float c2y = g * Mathf.Sqrt(radius2 * radius2 - c2x * c2x);
-					init.x += c2x;
-					if (float.IsNaN(c2y)) c2y = 0;
-					init.y += c2y;
-					
-					init.Normalize();
-						
-					clone.GetComponent<ShadowPlayer>().SetVelocity(new Vector3(init.x, init.y, transform.position.z));
-				} else {
-					counter ++;
-				}
-			} else {
-				//penalise player 
-				temple.Penalise(0.5f);				
-				
-				//chase player behaviour
-				seek();
 
-				// Add steering component to the current velocity and desired speed
-				currentVelocity = currentVelocity + steering / this.mass ;
-				currentVelocity.Normalize () ;
-				currentVelocity *= speed ;
-	
-				// Set the velocity to the rigidbody ’s velocity .
-				clone.GetComponent<ShadowPlayer>().SetVelocity(currentVelocity);
+		if (!seenPlayer) {
+			//wander behaviour
+			if (counter == maxCount) {
+				counter = 0;
+				clone.transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				Vector2 init = Vector2.zero;
+						
+				// get point on first big circle
+				float c1x = Random.Range(radius1 * (-1), radius1);
+				int g = Random.Range(-1, 2);
+				float c1y = g * Mathf.Sqrt(radius1 * radius1 - c1x * c1x);
+				init.x += c1x;
+				if (float.IsNaN(c1y)) c1y = 0;
+				init.y += c1y;
+					
+				//get point on second small circle
+				float c2x = Random.Range(radius1 * (-1), radius1);
+				g = Random.Range(-1, 2);
+				float c2y = g * Mathf.Sqrt(radius2 * radius2 - c2x * c2x);
+				init.x += c2x;
+				if (float.IsNaN(c2y)) c2y = 0;
+				init.y += c2y;
+					
+				init.Normalize();
+						
+				clone.GetComponent<ShadowPlayer>().SetVelocity(new Vector3(init.x, init.y, transform.position.z));
+			} else {
+				counter ++;
 			}
-		} 
+		} else {
+			//penalise player 
+			temple.Penalise(0.5f);				
+				
+			//chase player behaviour
+			seek();
+
+			// Add steering component to the current velocity and desired speed
+			currentVelocity = currentVelocity + steering / this.mass ;
+			currentVelocity.Normalize () ;
+			currentVelocity *= speed ;
+	
+			// Set the velocity to the rigidbody ’s velocity .
+			clone.GetComponent<ShadowPlayer>().SetVelocity(currentVelocity);
+		}
 		
 		//raycast to check for players
 		RaycastHit2D hit1 = Physics2D.Raycast(clone.transform.position, Vector2.down);

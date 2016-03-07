@@ -9,11 +9,13 @@ public class ShadowPlayer : MonoBehaviour
 
     public float speed = 1;
     private Vector3 velocity;
+    private bool frozen;
 
     // Use this for initialization
     void Awake()
     {
         anim_controller = GetComponent<Animator>();
+        frozen = false;
     }
 
     // Update is called once per frame
@@ -23,7 +25,20 @@ public class ShadowPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += speed * velocity;
+        if (FindObjectOfType<MapEngine>().ActiveRoom() == transform.parent.gameObject.name)
+        {
+            if ( frozen )
+            {
+                SetAnimation(velocity);
+                frozen = false;
+            }
+            transform.position += speed * velocity;
+        }
+        else
+        {
+            SetAnimation(new Vector3(0, 0, 0));
+            frozen = true;
+        }
     }
 
     public void SetAnimation(Vector3 velocity)
