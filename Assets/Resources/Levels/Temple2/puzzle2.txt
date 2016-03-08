@@ -10,6 +10,9 @@ y Objects/TrapPitT2
 l Objects/RGBSwitchSolver
 q Objects/Empty
 B Objects/CloneBumper
+! Tiles/RedHint
+* Tiles/GreenHint
+& Tiles/BlueHint
 - Backgrounds
 wwwwwwwwwwwwwwwwwwww
 wfbbffffffkfffbbfffw
@@ -17,9 +20,9 @@ wfbffffffffffffffffw
 wffffff ffbbbbbffffw
 wfffff f fbfffbkfffw
 wffffff ffbfkkffkffw
-wbffffbbbbbffffffffw
-wbfffffffffffffffffw
-wfffffffffffbffffffw
+&bffffbbbbbffffffffw
+*bfffffffffffffffffw
+!fffffffffffbffffffw
 wffffbbbbbbbbffffffw
 wwwfwwwwwwwwwwwwwwww
   wfw               
@@ -55,6 +58,9 @@ B 11 5 s2
 B 11 3 w4
 B 5 3 n5
 B 5 4 w5
+! 0 3 redHint
+* 0 4 greenHint
+& 0 5 blueHint
 - Entries
 3 0 s
 - Comments
