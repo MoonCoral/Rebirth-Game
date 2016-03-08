@@ -65,9 +65,9 @@ public class MapEngine : MonoBehaviour
 
 			roomData = (TextAsset)Resources.Load(path, typeof(TextAsset));
 
-			string[] data = roomData.text.Split(new string[] {"\n- "}, StringSplitOptions.RemoveEmptyEntries);
+            string[] data = roomData.text.Replace("\r", "").Split(new string[] { "\n- " }, StringSplitOptions.RemoveEmptyEntries);
 
-			Legend = new Dictionary<char, string>();
+            Legend = new Dictionary<char, string>();
 			List<string>  background = new List<string>();
 			Objects = new List<Objects>();
 			Exits = new List<Doors>();

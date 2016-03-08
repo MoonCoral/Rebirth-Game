@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21226728}
   - 61: {fileID: 6197488}
   m_Layer: 0
-  m_Name: wallT2
+  m_Name: RedHint
   m_TagString: Unpassable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
