@@ -10,14 +10,14 @@ q Objects/Empty
 wwwwwwwwwwwwwwwww
 wffffwkfffkwffffw
 wffffwkfffkwffffw
-wffffwkknkkwffffw
-wffffnfwfwfnffffw
+wffffwkk kkwffffw
+wffff fwfwf ffffw
 wfffkkfffffwwwwww
 wkkkkkfffffwffffw
-wffffkkknkkkffffw
+wffffkkk kkkffffw
 wffffkfffffkffffw
 wffffkfffffkffffw
-wffffnfffffnffffw
+wffff fffff ffffw
 wffffkfffffkffffw
 wwwwwwwwfwwwwwwww
        wfw       
