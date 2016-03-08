@@ -22,9 +22,12 @@ public class GreenSwitchScript : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D other) {
-		if (!triggered) {
-			activate();
-			if (switchB.triggered) switchB.deactivate();
+		if (!other.name.Equals ("Clone")) {
+			if (!triggered) {
+				activate ();
+				if (switchB.triggered)
+					switchB.deactivate ();
+			}
 		}
 	}
 	

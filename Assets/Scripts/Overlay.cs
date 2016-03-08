@@ -65,7 +65,7 @@ public class Overlay : MonoBehaviour
 	{
 		nameText.SetActive (true);
 		// add names and messages here
-		updateConversation ();
+		//updateConversation ();
 	}
 
     public void Introduction()
@@ -84,7 +84,7 @@ public class Overlay : MonoBehaviour
         restartButton.SetActive(false);
         pauseButton.SetActive(false);
 		updateOverlay ();
-		updateConversation ();
+		//updateConversation ();
     }
 
 	public void updateOverlay() {
@@ -100,7 +100,7 @@ public class Overlay : MonoBehaviour
 		}
 	}
 
-	public void updateConversation() {
+	/*public void updateConversation() {
 		if (nameText.activeSelf) {
 			messageText.SetActive (true);
 			messageText2.SetActive (true);
@@ -114,7 +114,7 @@ public class Overlay : MonoBehaviour
 			messageText2.SetActive (false);
 			messageText3.SetActive (false);
 		}
-	}
+	}*/
 
     public void MainGame()
     {
@@ -129,7 +129,7 @@ public class Overlay : MonoBehaviour
 		messageString = "test";
 		nameText.SetActive (true);
 		updateOverlay ();
-		updateConversation ();
+		//updateConversation ();
     }
 
     public void EndGame()
@@ -142,7 +142,7 @@ public class Overlay : MonoBehaviour
         pauseButton.SetActive(false);
 		startPanel.SetActive (true);
 		updateOverlay ();
-		updateConversation ();
+		//updateConversation ();
     }
 
     public void GameOver()
@@ -163,7 +163,7 @@ public class Overlay : MonoBehaviour
 			"Your story is yet to unfold...\n\n" +
         	"Will you forever live in the shadow of your father?";
 		updateOverlay ();
-		updateConversation ();
+		//updateConversation ();
     }
 
 	public void Credits() {
@@ -196,10 +196,10 @@ public class Overlay : MonoBehaviour
 		updateOverlay ();
     }
 
-	public void setConversationText(string name, string message) {
-		nameString = name;
-		messageString = message;
-	}
+	//public void setConversationText(string name, string message) {
+		//nameString = name;
+		//messageString = message;
+	//}
 
 	public void ChestOpenText()
 	{
