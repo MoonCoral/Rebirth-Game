@@ -17,10 +17,10 @@ public class RGBSwitchSolver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!chest.openned )
+		if (!chest.unlocked )
 		{
 			if (switchB.triggered && switchR.triggered && switchB.triggered) {
-				chest.openned = true;
+				chest.unlocked = true;
 				FindObjectOfType<Overlay>().ChestOpenText();
 			}
 		}

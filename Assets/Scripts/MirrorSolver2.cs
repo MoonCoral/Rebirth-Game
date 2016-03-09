@@ -16,7 +16,7 @@ public class MirrorSolver2 : MonoBehaviour {
 	
 	void Update () {
 
-		if (!chest.openned) {
+		if (!chest.unlocked) {
 			//check mirror angles not in tolerance.
 			if (lightSink == null || !lightSink.GetComponent<LightCheck> ().inToleranceFromSource ()) {
 				return;
@@ -30,7 +30,7 @@ public class MirrorSolver2 : MonoBehaviour {
 				}
 			}
 		
-			chest.openned = true;
+			chest.unlocked = true;
 			FindObjectOfType<Overlay>().ChestOpenText();
 		}
 	}

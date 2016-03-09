@@ -12,7 +12,7 @@ public class BridgeFunc : MonoBehaviour {
 	void Start () {
 		bridge3 = 0;
 		bridge1 = 0;
-		transform.parent.GetComponentInChildren<ChestScript>().openned = true;		
+		transform.parent.GetComponentInChildren<ChestScript>().unlocked = true;		
 	}
 	
 	// Update is called once per frame

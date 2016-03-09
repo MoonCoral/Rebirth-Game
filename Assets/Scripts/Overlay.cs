@@ -151,6 +151,11 @@ public class Overlay : MonoBehaviour
 		EndGame();
     }
 
+    public void LevelFinished(int level)
+    {
+        //todo
+    }
+
     public void Success()
     {
 		continueButton.SetActive(true);
@@ -171,11 +176,11 @@ public class Overlay : MonoBehaviour
 		overlayString = "Team Two Cubed will return...\n\n" +
 			"Raluca Gaina\n" +
 			"o-s-s\n" +
-			"Paul Leonard\n" +
+			/*"Paul Leonard\n" +*/
 			"Jonathan Nichols\n" +
 			"Olivier Thill\n" +
-			"Ovidio Villarreal\n" +
-			"Harvey Wigton\n";
+			"Ovidio Villarreal\n"/* +
+			"Harvey Wigton\n"*/;
 		EndGame();
 	}
 

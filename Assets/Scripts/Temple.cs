@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Temple : MonoBehaviour
 {
 
     public float InitialTime = 120.0f;
+    public int CurrentLevel;
 
 	private int state;
 	private float time;
@@ -107,7 +109,23 @@ public class Temple : MonoBehaviour
 		state = 3;
 	}
 
-	public void Succes()
+    public void LevelFinished()
+    {
+        player.SetPlayerControl(false);
+        overlay.LevelFinished(CurrentLevel);
+    }
+
+    public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene("Rebirth"+level);
+    }
+
+    public void LoadNextLevel()
+    {
+        LoadLevel(CurrentLevel+1);
+    }
+
+    public void Succes()
 	{
 		Debug.Log("Succes");
         player.SetPlayerControl(false);
@@ -129,7 +147,7 @@ public class Temple : MonoBehaviour
 
 	public void Restart()
 	{
-		Application.LoadLevel(Application.loadedLevel);
+		LoadLevel(CurrentLevel);
 	}
 
 	public void Pause()

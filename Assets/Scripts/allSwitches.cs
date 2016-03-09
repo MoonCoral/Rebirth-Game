@@ -15,7 +15,7 @@ public class allSwitches : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (!chest.openned) {
+		if (!chest.unlocked) {
 			switches = transform.parent.GetComponentsInChildren<Switch> ();
 
 			foreach (var s in switches) {
@@ -25,7 +25,7 @@ public class allSwitches : MonoBehaviour
 			}
 
 			FindObjectOfType<Overlay>().ChestOpenText();
-			chest.openned = true;
+			chest.unlocked = true;
 		}
 	}
 }

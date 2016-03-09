@@ -4,7 +4,8 @@ using System.Collections;
 public class ChestScript : MonoBehaviour {
 
 	public Sprite open;
-	public bool openned = false;
+	public bool unlocked = false;
+    public bool openned = false;
 	//GameObject[] stuff;
 	//int capacity;
 
@@ -25,7 +26,7 @@ public class ChestScript : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			if (Input.GetButtonUp ("Action")) {
 
-				//if (!openned && te.getReward[te.playerRoom()]) {
+				//if (!unlocked && te.getReward[te.playerRoom()]) {
 
 				//	//transfer contents from chest to player inventory
 				//	te.getInventory()[0] = stuff[0];
@@ -38,16 +39,20 @@ public class ChestScript : MonoBehaviour {
 				//		capacity = 0;
 				//	}*/
 
-				//	openned = true;
+				//	unlocked = true;
 				//	this.gameObject.GetComponent<SpriteRenderer>().sprite = open;	
 
 				//}
 
-			    if ( openned )
+			    if ( unlocked )
 			    {
                     gameObject.GetComponent<SpriteRenderer>().sprite = open;
-                    altar.AddItem(gameObject);
-                }
+			        if (altar != null)
+			        {
+			            altar.AddItem(gameObject);
+			        }
+			        openned = true;
+			    }
             }			
 		}
 	}
