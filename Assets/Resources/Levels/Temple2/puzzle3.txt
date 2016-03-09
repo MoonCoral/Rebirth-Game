@@ -4,6 +4,7 @@ p Objects/Spawn
 h Objects/CloneControl3
 j Objects/TempleSolver
 q Objects/Empty
+o Tiles/Door_Locked
 - Backgrounds
 wwwwfwwwwfwwwww
 wbffffbffffbffw
@@ -29,9 +30,9 @@ d 14 6 Door
 d 9 0 Door
 d 9 13 Door
 d 0 4 Door
-d 0 10 Door
-d 4 0 Door
-d 4 13 Door
+o 0 10 Door
+o 4 0 Door
+o 4 13 Door
 - Exits
 14 6 e
 9 0 s
