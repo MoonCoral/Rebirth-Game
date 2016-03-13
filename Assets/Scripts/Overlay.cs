@@ -94,7 +94,7 @@ public class Overlay : MonoBehaviour
                 startText = "Chip, you have fallen to your death...\n\n" +
                     "You have been granted five minutes to revive yourself!\n\n" +
                     "You must solve all four trials in order to retrieve the artifacts from the chests!\n\n" +
-                    "Use WASD to move, E to push/interact and click on the clock to reset time.\n\n"; ;
+                    "Use WASD to move, E to push/interact and click on the clock to reset time.\n\n";
                 loseText = "You ran out of time!";
                 winText = "Congratulations, you have rejoined the world of the living!\n\n" +
                     "The god of time isn't done with you yet...\n\n" +
@@ -106,11 +106,17 @@ public class Overlay : MonoBehaviour
                 break;
             case 2:
                 //temple 2
-                startText = "TODO - start temple 2";
-                loseText = "TODO - lose temple 2";
-                winText = "TODO - win temple 2";
-                conversationList.Add("Sister::First Line\nSecond Line");
-                conversationList.Add("Chip::Answer");
+                startText = "You may be reborn now and regained your strength, \n" +
+						"But you still need to save your village. That's why \n" +
+						"you are here after all. So go ahead and face this new challenge. \n" +
+						"Looks like there's more of you here. Clones, as it's the Temple of Duality. \n\n" + 
+						"Hint: you can now use E to interact with clones as well.";
+                loseText = "You ran out of time!";
+                winText = "Congratualions! You have saved your village!";
+                conversationList.Add("Sister::My long lost brother, Xochipilli is your true name. \n" +
+						"You're a God. My God. How have I missed you. \n Come, join me, my blood. Let's live with our kin now.");
+                conversationList.Add("Chip::Sister?! A God, you say... then I must do what's right \n" +
+						"I must return home to save my village. \n I am sorry, I will deeply miss you.");
                 conversationList.Add("");//triggers end of dialog
                 break;
         }
