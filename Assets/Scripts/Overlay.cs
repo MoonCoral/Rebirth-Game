@@ -1,16 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Overlay : MonoBehaviour
 {
 
     private GameObject overlayText;
-	private GameObject overlayText2;
-	private GameObject overlayText3;
 	private GameObject messageText;
-	private GameObject messageText2;
-	private GameObject messageText3;
 	private GameObject nameText;
     private GameObject startButton;
     private GameObject exitButton;
@@ -20,22 +18,31 @@ public class Overlay : MonoBehaviour
     private GameObject shadowPanel;
 	private GameObject titleText;
 	private GameObject continueButton;
+    private GameObject creditButton;
 	private GameObject startPanel;
+    private GameObject conversation;
+    private GameObject nextConvButton;
+    private GameObject exitConvButton;
 
 	private GameObject chestText;
 
-	private string overlayString;
-	private string messageString;
-	private string nameString;
+    private string startText;
+    private string loseText;
+    private string winText;
+    private string creditText;
+    private List<String> conversationList;
+    private int conversationIndex;
+    private bool[] state;
 
 	// Use this for initialization
 	void Awake () {
+
+        conversationList = new List<string>();
+	    conversationIndex = 0;
+
         overlayText = GameObject.Find("Overlay Text");
-		overlayText2 = GameObject.Find("Overlay Text 2");
-		overlayText3 = GameObject.Find("Overlay Text 3");
+        conversation = GameObject.Find("Conversation Text");
 		messageText = GameObject.Find("Message Text");
-		messageText2 = GameObject.Find("Message Text 2");
-		messageText3 = GameObject.Find("Message Text 3");
 		nameText = GameObject.Find("Name Text");
 		startButton = GameObject.Find("Start Button");
         exitButton = GameObject.Find("Exit Button");
@@ -45,8 +52,11 @@ public class Overlay : MonoBehaviour
 		shadowPanel = GameObject.Find("Shadow Panel");
 		titleText = GameObject.Find("Title Text");
 		continueButton = GameObject.Find("Continue Button");
-		startPanel = GameObject.Find("Start Panel");
+        creditButton = GameObject.Find("Credit Button");
+        startPanel = GameObject.Find("Start Panel");
 		chestText = GameObject.Find ("ChestText");
+	    nextConvButton = GameObject.Find("Continue Dialog Button");
+        exitConvButton = GameObject.Find("Exit Dialog Button");
         
         overlayText.SetActive(false);
 		nameText.SetActive (false);
@@ -54,18 +64,71 @@ public class Overlay : MonoBehaviour
         exitButton.SetActive(false);
         restartButton.SetActive(false);
 		continueButton.SetActive(false);
+        creditButton.SetActive(false);
 		pauseButton.SetActive(false);
 		panel.SetActive(false);
         shadowPanel.SetActive(false);
 		titleText.SetActive(false);
 		chestText.SetActive(false);
+        conversation.SetActive(false);
+        nextConvButton.SetActive(false);
+        exitConvButton.SetActive(false);
+
+        SaveState();
 	}
+
+    public void SetStrings(int level)
+    {
+        switch (level)
+        {
+            case 0:
+                //intro
+                startText = "TODO";
+                loseText = "TODO";
+                winText = "TODO";
+                conversationList.Add("Chip::Hello World!");
+                conversationList.Add("");//triggers end of dialog
+                break;
+            case 1:
+                //temple 1
+                startText = "Chip, you have fallen to your death...\n\n" +
+                    "You have been granted five minutes to revive yourself!\n\n" +
+                    "You must solve all four trials in order to retrieve the artifacts from the chests!\n\n" +
+                    "Use WASD to move, E to push/interact and click on the clock to reset time.\n\n"; ;
+                loseText = "You ran out of time!";
+                winText = "Congratulations, you have rejoined the world of the living!\n\n" +
+                    "The god of time isn't done with you yet...\n\n" +
+                    "Your story is yet to unfold...\n\n" +
+                    "Will you forever live in the shadow of your father?";
+                conversationList.Add("Chip::First Line\nSecond Line");
+                conversationList.Add("Chip::After Clicking Continue");
+                conversationList.Add("");//triggers end of dialog
+                break;
+            case 2:
+                //temple 2
+                startText = "TODO - start temple 2";
+                loseText = "TODO - lose temple 2";
+                winText = "TODO - win temple 2";
+                conversationList.Add("Sister::First Line\nSecond Line");
+                conversationList.Add("Chip::Answer");
+                conversationList.Add("");//triggers end of dialog
+                break;
+        }
+
+        creditText = "Team Two Cubed will return...\n\n" +
+            "Raluca Gaina\n" +
+            "o-s-s\n" +
+            "Jonathan Nichols\n" +
+            "Olivier Thill\n" +
+            "Ovidio Villarreal\n" +
+            "Paul Leonard\n" +
+            "Harvey Wigton\n";
+    }
 
 	public void IntroCutScene()
 	{
 		nameText.SetActive (true);
 		// add names and messages here
-		//updateConversation ();
 	}
 
     public void Introduction()
@@ -73,48 +136,14 @@ public class Overlay : MonoBehaviour
         shadowPanel.SetActive(true);
 		nameText.SetActive (false);
         overlayText.SetActive(true);
-		overlayString = "Chip, you have fallen to your death...\n\n" +
-			"You have been granted five minutes to revive yourself!\n\n" +
-				"You must solve all four trials in order to retrieve the artifacts from the chests!\n\n" +
-				"Use WASD to move, E to push/interact and click on the clock to reset time.\n\n";
+        overlayText.GetComponent<Text>().text = startText;
 		titleText.SetActive(true);
 		titleText.GetComponentInChildren<Text>().text = "REBIRTH";
 		startButton.SetActive(true);
         exitButton.SetActive(false);
         restartButton.SetActive(false);
         pauseButton.SetActive(false);
-		updateOverlay ();
-		//updateConversation ();
     }
-
-	public void updateOverlay() {
-		if (overlayText.activeSelf) {
-			overlayText2.SetActive (true);
-			overlayText3.SetActive (true);
-			overlayText.GetComponentInChildren<Text> ().text = overlayString;
-			overlayText2.GetComponentInChildren<Text> ().text = overlayString;
-			overlayText3.GetComponentInChildren<Text> ().text = overlayString;
-		} else {
-			overlayText2.SetActive (false);
-			overlayText3.SetActive (false);
-		}
-	}
-
-	/*public void updateConversation() {
-		if (nameText.activeSelf) {
-			messageText.SetActive (true);
-			messageText2.SetActive (true);
-			messageText3.SetActive (true);
-			nameText.GetComponentInChildren<Text> ().text = nameString;
-			messageText.GetComponentInChildren<Text> ().text = messageString;
-			messageText2.GetComponentInChildren<Text> ().text = messageString;
-			messageText3.GetComponentInChildren<Text> ().text = messageString;
-		} else {
-			messageText.SetActive (false);
-			messageText2.SetActive (false);
-			messageText3.SetActive (false);
-		}
-	}*/
 
     public void MainGame()
     {
@@ -125,11 +154,7 @@ public class Overlay : MonoBehaviour
         startButton.SetActive(false);
         pauseButton.SetActive(true);
         pauseButton.GetComponentInChildren<Text>().text = "Pause";
-		nameString = "Chip";
-		messageString = "test";
 		nameText.SetActive (true);
-		updateOverlay ();
-		//updateConversation ();
     }
 
     public void EndGame()
@@ -141,46 +166,46 @@ public class Overlay : MonoBehaviour
         restartButton.SetActive(true);
         pauseButton.SetActive(false);
 		startPanel.SetActive (true);
-		updateOverlay ();
-		//updateConversation ();
     }
 
     public void GameOver()
     {
-		overlayString = "You ran out of time!";
+        overlayText.GetComponent<Text>().text = loseText;
 		EndGame();
     }
 
     public void LevelFinished(int level)
     {
-        //todo
+        switch (level)
+        {
+            case 0:
+                //intro
+                continueButton.SetActive(true);
+                break;
+            case 1:
+                //temple 1
+                continueButton.SetActive(true);
+                break;
+            case 2:
+                //temple 2
+                creditButton.SetActive(true);
+                break;
+        }
+        Success();
     }
 
     public void Success()
     {
-		continueButton.SetActive(true);
 		nameText.SetActive (false);
 		overlayText.SetActive(true);
 		pauseButton.SetActive(false);
-		startPanel.SetActive (true);
-		overlayString = "Congratulations, you have rejoined the world of the living!\n\n" +
-			"The god of time isn't done with you yet...\n\n" +
-			"Your story is yet to unfold...\n\n" +
-        	"Will you forever live in the shadow of your father?";
-		updateOverlay ();
-		//updateConversation ();
+		startPanel.SetActive(true);
+        overlayText.GetComponent<Text>().text = winText;
     }
 
 	public void Credits() {
-		continueButton.SetActive(false);
-		overlayString = "Team Two Cubed will return...\n\n" +
-			"Raluca Gaina\n" +
-			"o-s-s\n" +
-			/*"Paul Leonard\n" +*/
-			"Jonathan Nichols\n" +
-			"Olivier Thill\n" +
-			"Ovidio Villarreal\n"/* +
-			"Harvey Wigton\n"*/;
+		creditButton.SetActive(false);
+	    overlayText.GetComponent<Text>().text = creditText;
 		EndGame();
 	}
 
@@ -190,21 +215,113 @@ public class Overlay : MonoBehaviour
         exitButton.SetActive(toggle);
         restartButton.SetActive(toggle);
 
-        if (toggle)
+        pauseButton.GetComponentInChildren<Text>().text = toggle ? "Unpause" : "Pause";
+    }
+
+    public void NextConversation()
+    {
+
+        if (!conversation.activeInHierarchy)
         {
-            pauseButton.GetComponentInChildren<Text>().text = "Unpause";
+            Debug.Log("Conversation Activate");
+            SaveState();
+            overlayText.SetActive(false);
+            shadowPanel.SetActive(false);
+            startPanel.SetActive(false);
+            titleText.SetActive(false);
+            startButton.SetActive(false);
+            pauseButton.SetActive(false);
+            creditButton.SetActive(false);
+            nameText.SetActive(true);
+            conversation.SetActive(true);
+            nextConvButton.SetActive(true);
+        }
+
+        if (conversationIndex >= conversationList.Count)
+        {
+            Debug.Log("Conversation out of bounds!");
+            nameText.GetComponent<Text>().text = "Error";
+            messageText.GetComponent<Text>().text = "Error";
+            nextConvButton.SetActive(false);
+            exitConvButton.SetActive(true);
+            return;
+        }
+
+        if (conversationList[conversationIndex] == "")
+        {
+            Debug.Log("Conversation Empty");
+            conversationIndex++;
+            nameText.GetComponent<Text>().text = "";
+            messageText.GetComponent<Text>().text = "End of Conversation";
+            nextConvButton.SetActive(false);
+            exitConvButton.SetActive(true);
         }
         else
         {
-            pauseButton.GetComponentInChildren<Text>().text = "Pause";
+            Debug.Log("Conversation Normal");
+            string[] conversationStrings = conversationList[conversationIndex].Split(new string[] { "::" }, StringSplitOptions.RemoveEmptyEntries); ;
+            nameText.GetComponent<Text>().text = conversationStrings[0];
+            messageText.GetComponent<Text>().text = conversationStrings[1];
+
+            conversationIndex++;
+
+            if (conversationIndex == conversationList.Count || conversationList[conversationIndex] == "")
+            {
+                nextConvButton.SetActive(false);
+                exitConvButton.SetActive(true);
+                conversationIndex++;
+            }
+
         }
-		updateOverlay ();
     }
 
-	//public void setConversationText(string name, string message) {
-		//nameString = name;
-		//messageString = message;
-	//}
+    public void EndConversation()
+    {
+        RestoreState();
+    }
+
+    private void RestoreState()
+    {
+        overlayText.SetActive(state[0]);
+        nameText.SetActive(state[1]);
+        startButton.SetActive(state[2]);
+        exitButton.SetActive(state[3]);
+        restartButton.SetActive(state[4]);
+        continueButton.SetActive(state[5]);
+        creditButton.SetActive(state[6]);
+        pauseButton.SetActive(state[7]);
+        panel.SetActive(state[8]);
+        shadowPanel.SetActive(state[9]);
+        titleText.SetActive(state[10]);
+        chestText.SetActive(state[11]);
+        conversation.SetActive(state[12]);
+        nextConvButton.SetActive(state[13]);
+        exitConvButton.SetActive(state[14]);
+        startPanel.SetActive(state[15]);
+    }
+
+    private void SaveState()
+    {
+        state = new[]
+        {
+            overlayText.activeInHierarchy,
+            nameText.activeInHierarchy,
+            startButton.activeInHierarchy,
+            exitButton.activeInHierarchy,
+            restartButton.activeInHierarchy,
+            continueButton.activeInHierarchy,
+            creditButton.activeInHierarchy,
+            pauseButton.activeInHierarchy,
+            panel.activeInHierarchy,
+            shadowPanel.activeInHierarchy,
+            titleText.activeInHierarchy,
+            chestText.activeInHierarchy,
+            conversation.activeInHierarchy,
+            nextConvButton.activeInHierarchy,
+            exitConvButton.activeInHierarchy,
+            startPanel.activeInHierarchy
+        };
+    }
 
 	public void ChestOpenText()
 	{

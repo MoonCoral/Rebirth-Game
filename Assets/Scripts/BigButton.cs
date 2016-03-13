@@ -18,7 +18,7 @@ public class BigButton : MonoBehaviour {
 		    Reward[] rewards = FindObjectsOfType<Reward>();
 		    if (rewards[0].Gathered() && rewards[1].Gathered() && rewards[2].Gathered() && rewards[3].Gathered())
 		    {
-                temple.Succes();
+                temple.LevelFinished();
             }
 		}
 	}

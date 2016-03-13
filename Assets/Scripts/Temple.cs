@@ -79,6 +79,7 @@ public class Temple : MonoBehaviour
 	public void Init()
 	{
 		state = 0;
+        overlay.SetStrings(CurrentLevel);
 		time = InitialTime;
 		elapsing = false;
 		paused = false;
@@ -111,8 +112,18 @@ public class Temple : MonoBehaviour
 
     public void LevelFinished()
     {
-        player.SetPlayerControl(false);
-        overlay.LevelFinished(CurrentLevel);
+        if (state < 3)
+        {
+            state = 3;
+            player.SetPlayerControl(false);
+            Debug.Log("Finished Level " + CurrentLevel);
+            overlay.LevelFinished(CurrentLevel);
+            if (CurrentLevel == 2)
+            {
+                StartDialog();
+            }
+        }
+        
     }
 
     public void LoadLevel(int level)
@@ -124,16 +135,6 @@ public class Temple : MonoBehaviour
     {
         LoadLevel(CurrentLevel+1);
     }
-
-    public void Succes()
-	{
-		Debug.Log("Succes");
-        player.SetPlayerControl(false);
-		if (state < 3) {
-			overlay.Success ();
-		}
-		state = 3;
-	}
 
 	public void Credits() {
 		overlay.Credits();
@@ -147,7 +148,14 @@ public class Temple : MonoBehaviour
 
 	public void Restart()
 	{
-		LoadLevel(CurrentLevel);
+	    if (state < 3)
+	    {
+	        LoadLevel(CurrentLevel);
+	    }
+	    else
+	    {
+            LoadLevel(1);
+        }
 	}
 
 	public void Pause()
@@ -169,6 +177,20 @@ public class Temple : MonoBehaviour
 			paused = true;
 		}
 	}
+
+    public void StartDialog()
+    {
+        paused = true;
+        player.SetPlayerControl(false);
+        overlay.NextConversation();
+    }
+
+    public void EndDialog()
+    {
+        paused = false;
+        player.SetPlayerControl(true);//might be worth remembering the state
+        overlay.EndConversation();
+    }
 	
 	public void Penalise(float p) {
 		time -= p;

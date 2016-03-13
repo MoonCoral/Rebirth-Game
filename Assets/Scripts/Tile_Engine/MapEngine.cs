@@ -777,16 +777,19 @@ public class MapEngine : MonoBehaviour
 
 	public string RoomAt(float x, float y)
 	{
-		foreach (var room in roomPositions.Keys)
-		{
-			if (room.x <= x && x < room.z)
-			{
-				if (room.y <= y && y < room.w)
-					return roomPositions[room];
-			}
-		}
+	    if (roomPositions != null)
+	    {
+	        foreach (var room in roomPositions.Keys)
+	        {
+	            if (room.x <= x && x < room.z)
+	            {
+	                if (room.y <= y && y < room.w)
+	                    return roomPositions[room];
+	            }
+	        }
+	    }
 
-		return "Outside";
+	    return "Outside";
 	}
 
     public List<String> RoomRules(string name)

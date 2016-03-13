@@ -20,7 +20,7 @@ public class Sister : MonoBehaviour
 	
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.name == "Player")
-			temple.Succes();
+			temple.LevelFinished();
 	}
 
 
