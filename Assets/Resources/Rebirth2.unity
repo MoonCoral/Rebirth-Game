@@ -128,6 +128,10 @@ Prefab:
       propertyPath: InitialTime
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 8266266, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 427763ba81c6e5344be4f09cf3c11067, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
   m_IsPrefabParent: 0

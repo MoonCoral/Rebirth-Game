@@ -11,7 +11,11 @@ public class BlockDestroy : MonoBehaviour {
 	void Update () {}
 	
 	public void activate() {
+		AudioSource audio = gameObject.GetComponent<AudioSource> ();
 		if (!activated) {
+			if (!audio.isPlaying) {
+				audio.Play();
+			}
 			GameObject.Destroy(gameObject);
 			activated = true;
 		}
