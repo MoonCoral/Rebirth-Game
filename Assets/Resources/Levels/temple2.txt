@@ -3,7 +3,7 @@ Level2
 w Tiles/wallT2
 f Tiles/floorT2
 b Tiles/blockT2
-d Objects/Door
+d Objects/Door2
 s Objects/Switch
 k Tiles/pitT2
 c Objects/Chest-64x64

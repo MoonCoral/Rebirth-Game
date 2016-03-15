@@ -24,7 +24,10 @@ public class Clone0Script : MonoBehaviour {
 		if (mapEngine.ActiveRoom() == transform.parent.gameObject.name) {
 			if (Input.GetButtonUp ("Action")) { //toggle can move by action button
 				if (canMove) canMove = false;
-				else canMove = true;
+				else {
+					canMove = true;					
+					clone = transform.parent.GetComponentInChildren<ShadowPlayer>();
+				}
 			}
 		} else {
 			canMove = false;
