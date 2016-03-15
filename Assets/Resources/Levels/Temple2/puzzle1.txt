@@ -15,7 +15,7 @@ wffffbfffffffffbfw
 wbfffffffffffffffw
 wkkkkkkkkkkkkkkkkw
 wfffffffffffffffbw
-wffffffbffffffffbw
+wffffffbfbfffffffw
 wffffffbbffffffffw
 wfbbfffbbffffffffw
 wffbfffbbffffffffw
@@ -31,8 +31,8 @@ s 16 4 switch1
 a 3 10 source
 l 4 4 mirror1
 l 8 8 mirror2
-l 14 3 mirror3
-l 13 8 mirror4
+l 14 3 mirror4
+l 13 8 mirror3
 z 9 2 sink
 - Entries
 0 9 w

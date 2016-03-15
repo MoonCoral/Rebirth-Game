@@ -195,5 +195,9 @@ public class Temple : MonoBehaviour
 	public void Penalise(float p) {
 		time -= p;
 	}
+	
+	public void Buff(float p) {
+		time += p;
+	}
 
 }

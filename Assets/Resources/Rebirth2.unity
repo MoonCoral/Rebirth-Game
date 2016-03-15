@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11430838, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
       propertyPath: InitialTime
-      value: 600
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8266266, guid: 188963d99f3333d4181fd80eef6e6223, type: 2}
       propertyPath: m_audioClip

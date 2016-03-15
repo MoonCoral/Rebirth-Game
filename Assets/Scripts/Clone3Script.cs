@@ -35,10 +35,17 @@ public class Clone3Script : MonoBehaviour {
 	
 	void FixedUpdate ()
     {
+		clone = GameObject.Find("Clone");
 	    if (clone != null)
 	    {
 	        if (!seenPlayer)
 	        {
+				if (mapEngine.ActiveRoom() == transform.parent.gameObject.name) { //if player in the room
+					//reward player + time
+					if (temple.SecondsLeft() < temple.InitialTime)
+						temple.Buff(Time.deltaTime * 2f);
+				}
+				
 	            //wander behaviour
 	            if (counter == maxCount)
 	            {
@@ -74,7 +81,7 @@ public class Clone3Script : MonoBehaviour {
 	        else
 	        {
 	            //penalise player 
-	            temple.Penalise(0.5f);
+	            temple.Penalise(0.6f);
 
 	            //chase player behaviour
 	            seek();
