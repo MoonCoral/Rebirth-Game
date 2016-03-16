@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 462058}
   - 114: {fileID: 11409542}
-  - 114: {fileID: 11400920}
   m_Layer: 0
   m_Name: TempleSolver
   m_TagString: Untagged
@@ -29,17 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11400920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe027799c1490364dbb5e5e5a5c32d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11409542
 MonoBehaviour:
   m_ObjectHideFlags: 1
