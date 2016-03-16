@@ -17,20 +17,32 @@ public class MirrorSolver2 : MonoBehaviour {
 	void Update () {
 
 		if (!chest.unlocked) {
-			//check mirror angles not in tolerance.
-			if (lightSink == null || !lightSink.GetComponent<LightCheck> ().inToleranceFromSource ()) {
-				return;
-			}
-		
-			//check switch
-			switches = transform.parent.GetComponentsInChildren<Switch> ();
-			foreach (var s in switches) {
-				if (s.tag == "Switch" && !s.triggered) {
-					return;
-				}
-			}
-		
-			chest.unlocked = true;
+            ////check mirror angles not in tolerance.
+            //if (lightSink == null || !lightSink.GetComponent<LightCheck> ().inToleranceFromSource ()) {
+            //	return;
+            //}
+
+            ////check switch
+            //switches = transform.parent.GetComponentsInChildren<Switch> ();
+            //foreach (var s in switches) {
+            //	if (s.tag == "Switch" && !s.triggered) {
+            //		return;
+            //	}
+            //}
+
+            switches = transform.parent.GetComponentsInChildren<Switch>();
+
+            //workaround start
+            foreach (var s in switches)
+            {
+                if (s.tag == "Switch" && !s.triggered)
+                {
+                    return;
+                }
+            }
+            //workaround end
+
+            chest.unlocked = true;
 			FindObjectOfType<Overlay>().ChestOpenText();
 		}
 	}

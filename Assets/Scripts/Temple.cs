@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class Temple : MonoBehaviour
 {
@@ -128,8 +128,8 @@ public class Temple : MonoBehaviour
 
     public void LoadLevel(int level)
     {
-		Application.LoadLevel("Rebirth"+level);
-        //SceneManager.LoadScene("Rebirth"+level);
+		//Application.LoadLevel("Rebirth"+level);
+        SceneManager.LoadScene("Rebirth"+level);
     }
 
     public void LoadNextLevel()

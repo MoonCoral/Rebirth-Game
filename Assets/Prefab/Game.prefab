@@ -1524,11 +1524,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b6d1f71a86bc0224b8d1fefda30b9f3b, type: 3}
-    m_FontSize: 32
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialTime: 300
-  CurrentLevel: 2
+  CurrentLevel: 1
 --- !u!114 &11432878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2747,7 +2747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404f15a9beb0c8a429ea327557f31395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 4900000, guid: fd8d24855177c8343ac94b726f00c98c, type: 3}
+  LevelData: {fileID: 4900000, guid: 8f6d74cf70f70b249b7bc84b165ca3c4, type: 3}
   Player: {fileID: 11420922}
 --- !u!114 &11492444
 MonoBehaviour:
